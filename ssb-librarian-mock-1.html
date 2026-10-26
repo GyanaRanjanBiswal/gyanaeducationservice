@@ -34,6 +34,8 @@ header.top .wrap{display:flex;align-items:center;gap:12px;padding-block:10px;fle
 .hdr-right{display:flex;align-items:center;gap:14px}
 .timer{background:#fff;color:var(--navy);border-radius:4px;padding:4px 10px;font-family:var(--mono);font-size:15px;white-space:nowrap}
 .timer.low{background:var(--red);color:#fff}
+.logout{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.6);border-radius:4px;padding:6px 12px;font-size:13px;font-weight:600}
+.logout:hover{background:rgba(255,255,255,.12)}
 .timer small{font-family:var(--f);font-size:11px;display:block;line-height:1.1;color:inherit;opacity:.8}
 
 /* generic panels */
@@ -161,6 +163,7 @@ td.n{text-align:right;font-variant-numeric:tabular-nums}
     <div class="hdr-right">
       <span class="who" id="hdrName"></span>
       <div class="timer" id="timer" hidden><small>Time Left</small><span id="tleft">120:00</span></div>
+      <button class="logout" id="btnLogout" hidden>Logout</button>
     </div>
   </div>
 </header>
@@ -266,6 +269,18 @@ td.n{text-align:right;font-variant-numeric:tabular-nums}
     <div class="body" id="resBody"></div>
   </div>
 </section>
+
+<div class="modal" id="mLogout" hidden>
+  <div class="card">
+    <h2>Logout</h2>
+    <div class="body">
+      <p style="margin:0 0 14px" id="logoutMsg">Are you sure you want to logout?</p>
+      <div style="display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap">
+        <button class="btn" id="btnLogoutNo">Cancel</button><button class="btn pri" id="btnLogoutYes">Yes, logout</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <div class="modal" id="mSubmit" hidden>
   <div class="card">
@@ -407,7 +422,7 @@ function load(){try{const s=JSON.parse(localStorage.getItem(KEY));if(s&&s.ans&&s
 
 function show(stage){S.stage=stage;save();["sLogin","sInstr","sExam","sResult"].forEach(id=>$(id).hidden=true);
   const map={login:"sLogin",instr:"sInstr",exam:"sExam",result:"sResult"};$(map[stage]).hidden=false;
-  $("timer").hidden=stage!=="exam";$("hdrName").textContent=S.name?S.name+" · "+S.roll:"";
+  $("timer").hidden=stage!=="exam";$("btnLogout").hidden=stage==="login";$("hdrName").textContent=S.name?S.name+" · "+S.roll:"";
   document.body.style.display=stage==="exam"?"flex":"block";document.body.style.flexDirection="column";
   if(stage==="exam"){startExam()} if(stage==="result")renderResult();}
 
@@ -468,6 +483,9 @@ $("btnSubmit").onclick=()=>{const c=renderPal();$("side").classList.remove("open
   $("sumTbl").innerHTML='<tr><th>Total</th><th>Answered</th><th>Not Answered</th><th>Marked</th><th>Not Visited</th></tr><tr><td class="n">'+N+'</td><td class="n">'+(c.an+c.am)+'</td><td class="n">'+c.na+'</td><td class="n">'+(c.mr+c.am)+'</td><td class="n">'+c[""]+'</td></tr>';
   $("mSubmit").hidden=false;$("btnNo").focus()};
 $("btnNo").onclick=()=>$("mSubmit").hidden=true;
+$("btnLogout").onclick=()=>{$("logoutMsg").textContent=S.stage==="exam"?"Your test is in progress. If you logout now, this attempt and all your answers will be cleared. Do you want to logout?":S.stage==="result"?"Logout and return to the login screen? Your score card will be cleared.":"Logout and return to the login screen?";$("side").classList.remove("open");$("mLogout").hidden=false;$("btnLogoutNo").focus()};
+$("btnLogoutNo").onclick=()=>$("mLogout").hidden=true;
+$("btnLogoutYes").onclick=()=>{clearInterval(tick);$("mLogout").hidden=true;S=blank();save();$("roll").value=S.roll;$("cname").value="";$("agree").checked=false;$("btnBegin").disabled=true;show("login");window.scrollTo(0,0)};
 $("btnYes").onclick=finish;
 
 S=load()||blank();$("roll").value=S.roll;$("cname").value=S.name==="Aspirant"?"":S.name;
