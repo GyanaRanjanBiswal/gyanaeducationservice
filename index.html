@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gyana Education Service</title>
+<meta name="description" content="Gyana Education Service (GES) — study materials, theory notes, PYQs, mock tests, daily current affairs and daily quiz for OPSC, OSSC, OSSSC, SSB and other Odisha competitive exams.">
+<meta name="theme-color" content="#0D2B5E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,600;7..72,700;7..72,800&family=Mukta:wght@400;500;600;700&family=Noto+Sans+Oriya:wght@500&display=swap">
+<style>
+/* Layout: contact strip → white sticky header → navy hero (headline + search | live updates panel) → quick-access tiles → exams → library → notices/news → quiz → why GES → CTA band → multi-column footer. */
+:root{
+  --navy:#0D2B5E; --navy-2:#12366f; --navy-deep:#081c40; --gold:#C9941A; --gold-2:#e0ad3a; --gold-soft:#fbf3e0;
+  --bg:#f5f7fb; --surface:#ffffff; --fg:#13203a; --muted:#5a6680; --line:#e2e6ef; --head:#ffffff; --head-fg:#0D2B5E;
+  --ok:#1f8a4c; --ok-bg:#e6f5ec; --bad:#c0392b; --bad-bg:#fcebe8;
+  --display:"Literata", Georgia, "Times New Roman", serif;
+  --body:"Mukta", "Segoe UI", system-ui, sans-serif;
+  --odia:"Noto Sans Oriya", "Mukta", sans-serif;
+  --c-blue:#1d5fd1; --c-green:#1f9254; --c-orange:#e2741d; --c-purple:#7442c8; --c-teal:#0e8f95; --c-rose:#d0345a; --c-gold:#C9941A;
+  --tint-a:#eef4ff; --tint-b:#f2fbf5; --tint-c:#fff7ee;
+  --r:10px; --shadow:0 1px 2px #0d2b5e0d, 0 6px 20px #0d2b5e0f;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#0a1222; --surface:#111c31; --fg:#e7ecf5; --muted:#9aa6bf; --line:#22304b; --head:#0f1a2e; --head-fg:#ffffff;
+  --gold-soft:#2a2414; --ok-bg:#12301f; --bad-bg:#3a1714; --shadow:none; --tint-a:#0e1830; --tint-b:#0d1a20; --tint-c:#1a1610; color-scheme:dark } }
+:root[data-theme="dark"]{ --bg:#0a1222; --surface:#111c31; --fg:#e7ecf5; --muted:#9aa6bf; --line:#22304b; --head:#0f1a2e; --head-fg:#ffffff;
+  --gold-soft:#2a2414; --ok-bg:#12301f; --bad-bg:#3a1714; --shadow:none; --tint-a:#0e1830; --tint-b:#0d1a20; --tint-c:#1a1610; color-scheme:dark }
+
+*{box-sizing:border-box}
+.soft{background:color-mix(in srgb, var(--c) 13%, var(--surface))!important; color:var(--c)!important}
+html{scroll-behavior:smooth; scroll-padding-top:84px}
+body{margin:0; background:var(--bg); color:var(--fg); font:400 16px/1.6 var(--body)}
+a{color:inherit}
+img,svg{max-width:100%}
+.wrap{max-width:1180px; margin:0 auto; padding-left:max(16px, env(safe-area-inset-left,0px)); padding-right:max(16px, env(safe-area-inset-right,0px))}
+h1,h2,h3,h4{font-family:var(--display); line-height:1.22; text-wrap:balance; margin:0}
+:focus-visible{outline:3px solid var(--gold); outline-offset:2px}
+.sr{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0)}
+@media (prefers-reduced-motion: reduce){ *{animation:none!important; transition:none!important; scroll-behavior:auto!important} }
+.ico{width:22px; height:22px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; flex-shrink:0}
+
+/* Top strip */
+.strip{background:var(--navy-deep); color:#b9c6e2; font-size:13px}
+.strip .wrap{display:flex; justify-content:space-between; align-items:center; gap:12px; min-height:34px; flex-wrap:wrap}
+.strip a{text-decoration:none; color:#fff}
+.strip .r{display:flex; gap:18px}
+.strip .ico{width:14px; height:14px; vertical-align:-2px; margin-right:4px}
+@media (max-width:640px){ .strip .l{display:none} .strip .wrap{justify-content:center} }
+
+/* Header */
+body::before{content:""; position:fixed; inset:0 0 auto; height:env(safe-area-inset-top,0px); background:var(--head); z-index:60}
+header{position:sticky; top:env(safe-area-inset-top,0px); z-index:50; background:var(--head); color:var(--head-fg); border-bottom:1px solid var(--line); box-shadow:var(--shadow)}
+.bar{display:flex; align-items:center; gap:18px; min-height:70px}
+.brand{display:flex; align-items:center; gap:12px; text-decoration:none; flex-shrink:0}
+.logo{width:46px; height:46px}
+.brand b{display:block; font:800 19px/1.1 var(--display); color:var(--head-fg)}
+.brand small{display:block; font-size:12px; color:var(--muted); letter-spacing:.3px}
+nav.main{margin-left:auto; display:flex; align-items:center; gap:2px}
+nav.main a{text-decoration:none; padding:8px 12px; font-weight:600; font-size:15px; color:var(--head-fg); border-bottom:2px solid transparent}
+nav.main a:hover{border-bottom-color:var(--gold)}
+.join{margin-left:10px; background:var(--gold); color:#1d1606!important; border-radius:8px; padding:9px 18px!important; border:0!important}
+.join:hover{background:var(--gold-2)}
+.menu-btn{display:none; margin-left:auto; background:none; border:1px solid var(--line); color:var(--head-fg); border-radius:8px; padding:7px 12px; cursor:pointer}
+@media (max-width:960px){
+  .menu-btn{display:flex}
+  nav.main{display:none; position:absolute; left:0; right:0; top:100%; flex-direction:column; align-items:stretch; background:var(--head); padding:8px max(16px, env(safe-area-inset-right,0px)) 16px max(16px, env(safe-area-inset-left,0px)); border-bottom:1px solid var(--line); box-shadow:var(--shadow)}
+  nav.main.open{display:flex}
+  nav.main a{padding:12px 4px; border-bottom:1px solid var(--line)}
+  .join{margin:10px 0 0; text-align:center}
+}
+
+/* Hero */
+.hero{background:linear-gradient(120deg, #0D2B5E 0%, #1b3f92 52%, #0e6f7c 100%); color:#fff; padding-block:52px 60px; position:relative; overflow:hidden}
+.hero::before{content:""; position:absolute; inset:0; background-image:linear-gradient(#ffffff08 1px, transparent 1px), linear-gradient(90deg, #ffffff08 1px, transparent 1px); background-size:40px 40px; mask-image:linear-gradient(90deg, transparent, #000 60%)}
+.hero .wrap{position:relative; display:grid; grid-template-columns:1.35fr 1fr; gap:40px; align-items:center}
+@media (max-width:900px){ .hero .wrap{grid-template-columns:1fr} }
+.pill{display:inline-flex; align-items:center; gap:8px; background:#ffffff12; border:1px solid #ffffff26; padding:4px 12px; border-radius:99px; font-size:13px; color:#dfe6f5}
+.pill .dot{width:8px; height:8px; border-radius:50%; background:#3ddc84; box-shadow:0 0 0 3px #3ddc8433}
+.odia{font-family:var(--odia); color:var(--gold-2); font-size:17px; margin:16px 0 4px}
+.hero h1{font-size:clamp(30px, 4.6vw, 48px); font-weight:800; max-width:18ch}
+.hero h1 em{font-style:normal; background:linear-gradient(90deg, #f3c04e, #ff9f43); -webkit-background-clip:text; background-clip:text; color:transparent}
+.hero p.lead{color:#cdd7ee; max-width:56ch; margin:14px 0 26px; font-size:17px}
+.search{display:flex; background:#fff; border-radius:var(--r); padding:6px; max-width:600px; box-shadow:0 12px 32px #00000040; align-items:center}
+.search .ico{color:#7a869f; margin-left:10px}
+.search input{flex:1; min-width:0; border:0; font:400 17px var(--body); padding:10px; color:#13203a; background:transparent}
+.search input:focus{outline:none}
+.search button{border:0; background:var(--gold); color:#1d1606; font:700 15px var(--body); padding:11px 22px; border-radius:7px; cursor:pointer}
+.search button:hover{background:var(--gold-2)}
+.quick{display:flex; flex-wrap:wrap; gap:8px; margin-top:14px; align-items:center; font-size:14px; color:#aebbd8}
+.quick button{background:transparent; border:1px solid #ffffff33; color:#fff; padding:4px 12px; border-radius:99px; font:500 14px var(--body); cursor:pointer}
+.quick button:hover{border-color:var(--gold-2); color:var(--gold-2)}
+.stats > div{border-left:3px solid var(--c); padding-left:12px}
+.stats{display:grid; grid-template-columns:repeat(4, auto); justify-content:start; gap:32px; margin-top:30px; padding-top:22px; border-top:1px solid #ffffff1f; color:#aebbd8; font-size:13px}
+@media (max-width:520px){ .stats{grid-template-columns:repeat(2, auto); gap:18px 32px} }
+.stats b{display:block; color:#fff; font:800 26px var(--display); font-variant-numeric:tabular-nums}
+
+.live{background:var(--surface); color:var(--fg); border-radius:14px; box-shadow:0 18px 40px #00000040; overflow:hidden; min-width:0}
+.live-h{display:flex; justify-content:space-between; align-items:center; padding:14px 18px; border-bottom:1px solid var(--line)}
+.live-h h3{font-size:17px}
+.live-h a{font-size:13px; font-weight:600; color:var(--gold); text-decoration:none}
+.live-list{max-height:286px; overflow:auto}
+.live-item{display:block; padding:12px 18px; border-bottom:1px solid var(--line); text-decoration:none}
+.live-item:last-child{border-bottom:0}
+.live-item small{color:var(--muted); font-size:12px; font-variant-numeric:tabular-nums}
+.live-item b{display:block; font-size:15px; font-weight:600; line-height:1.35}
+.new{display:inline-block; background:var(--bad); color:#fff; font-size:10px; font-weight:700; padding:0 6px; border-radius:3px; margin-left:6px; vertical-align:middle; letter-spacing:.5px}
+.live-f{padding:12px 18px; background:var(--gold-soft); font-size:14px; display:flex; justify-content:space-between; align-items:center; gap:8px}
+.live-f a{font-weight:700; text-decoration:none; color:var(--fg)}
+
+/* Quick tiles */
+.tiles-wrap{margin-top:-30px; position:relative; z-index:2}
+.tiles{display:grid; grid-template-columns:repeat(6, 1fr); background:var(--surface); border:1px solid var(--line); border-radius:14px; box-shadow:var(--shadow); overflow:hidden}
+@media (max-width:900px){ .tiles{grid-template-columns:repeat(3, 1fr)} }
+@media (max-width:480px){ .tiles{grid-template-columns:repeat(2, 1fr)} }
+.tile{display:flex; flex-direction:column; align-items:center; gap:8px; padding:20px 10px; text-decoration:none; text-align:center; border-right:1px solid var(--line); border-bottom:1px solid var(--line); background:none; border-top:0; border-left:0; font:inherit; color:inherit; cursor:pointer}
+.tile{border-bottom:3px solid transparent}
+.tile:hover{background:color-mix(in srgb, var(--c) 7%, var(--surface)); border-bottom-color:var(--c)}
+.tile .ic{width:48px; height:48px; border-radius:12px; display:grid; place-items:center; background:color-mix(in srgb, var(--c) 14%, var(--surface)); color:var(--c)}
+.tile:hover .ic{background:var(--c); color:#fff}
+.tile b{font-size:15px; font-weight:600}
+.tile small{font-size:12px; color:var(--muted); margin-top:-6px}
+
+/* Sections */
+section{padding-block:56px}
+.sec-head{display:flex; flex-wrap:wrap; align-items:end; justify-content:space-between; gap:12px; margin-bottom:24px}
+.eyebrow{font-size:12px; letter-spacing:1.6px; text-transform:uppercase; color:var(--gold); font-weight:700; margin:0 0 6px; display:flex; align-items:center; gap:8px}
+.eyebrow::before{content:""; width:22px; height:2px; background:var(--gold)}
+.sec-head h2{font-size:clamp(25px, 3.4vw, 33px); font-weight:700}
+.sec-head p{margin:6px 0 0; color:var(--muted); max-width:60ch}
+.link-btn{font-weight:700; font-size:15px; color:var(--gold); text-decoration:none; background:none; border:0; cursor:pointer; font-family:var(--body)}
+
+/* Exams */
+.exams{display:grid; grid-template-columns:repeat(auto-fill, minmax(240px,1fr)); gap:16px}
+.exam{position:relative; background:var(--surface); border:1px solid var(--line); border-radius:var(--r); padding:20px 20px 18px; text-align:left; cursor:pointer; font:inherit; color:inherit; box-shadow:var(--shadow); transition:transform .15s, border-color .15s; overflow:hidden}
+.exam::before{content:""; position:absolute; inset:0 0 auto; height:4px; background:var(--c)}
+.exam:hover{transform:translateY(-3px); border-color:var(--c)}
+.exam{background:linear-gradient(180deg, color-mix(in srgb, var(--c) 9%, var(--surface)) 0, var(--surface) 70%)}
+.exam .code{font:800 22px var(--display); color:var(--c)}
+.exam .full{font-size:14px; color:var(--muted); line-height:1.4; margin-top:4px; min-height:2.8em}
+.exam .count{margin-top:14px; display:flex; justify-content:space-between; align-items:center; font-size:14px; font-weight:600; padding-top:12px; border-top:1px solid var(--line)}
+.exam .count span{color:var(--c)}
+
+/* Library */
+.lib-tools{background:var(--surface); border:1px solid var(--line); border-radius:var(--r); padding:14px 16px; display:grid; gap:10px; margin-bottom:18px; box-shadow:var(--shadow)}
+.filters{display:flex; flex-wrap:wrap; gap:8px; align-items:center}
+.filters > span{font-size:13px; font-weight:700; color:var(--muted); width:52px; text-transform:uppercase; letter-spacing:.6px}
+.chip{border:1px solid var(--line); background:var(--bg); color:var(--fg); padding:5px 14px; border-radius:6px; font:500 14px var(--body); cursor:pointer}
+.chip:hover{border-color:var(--gold)}
+.chip[aria-pressed="true"]{background:var(--c, var(--navy)); border-color:var(--c, var(--navy)); color:#fff}
+.result-line{color:var(--muted); font-size:14px; margin:0 0 14px}
+.grid{display:grid; grid-template-columns:repeat(auto-fill, minmax(290px,1fr)); gap:16px}
+.card{background:var(--surface); border:1px solid var(--line); border-radius:var(--r); padding:20px; display:flex; flex-direction:column; gap:8px; min-width:0; box-shadow:var(--shadow); transition:border-color .15s}
+.card-top{display:flex; align-items:center; gap:10px}
+.card-top .ic{width:38px; height:38px; border-radius:9px; display:grid; place-items:center}
+.type{font-size:12px; font-weight:700; letter-spacing:.6px; text-transform:uppercase}
+.t-material{--c:var(--c-blue)} .t-notes{--c:var(--c-green)} .t-mock{--c:var(--c-orange)} .t-pyq{--c:var(--c-purple)}
+.card{border-top:3px solid var(--c)}
+.card-top .ic{background:color-mix(in srgb, var(--c) 14%, var(--surface)); color:var(--c)} .card .type{color:var(--c)}
+.card:hover{border-color:var(--c)}
+.card h3{font-size:17px; font-weight:600; font-family:var(--display)}
+.card p{margin:0; color:var(--muted); font-size:15px}
+.tags{display:flex; flex-wrap:wrap; gap:6px; margin-top:auto; padding-top:8px}
+.tags span{font-size:12px; font-weight:600; background:var(--bg); border:1px solid var(--line); border-radius:4px; padding:1px 8px; color:var(--muted)}
+.card a.cta{margin-top:8px; display:flex; justify-content:center; align-items:center; gap:8px; text-decoration:none; font-weight:700; font-size:15px; padding:10px; border-radius:8px; background:var(--navy); color:#fff}
+.card a.cta{background:var(--c)}
+.card a.cta:hover{filter:brightness(1.1)}
+.card a.cta .ico{width:18px; height:18px}
+.empty{padding:32px; text-align:center; color:var(--muted); background:var(--surface); border:1px dashed var(--line); border-radius:var(--r)}
+
+/* Notices + news */
+.split{display:grid; grid-template-columns:1fr 1.35fr; gap:24px}
+@media (max-width:860px){ .split{grid-template-columns:1fr} }
+.panel{background:var(--surface); border:1px solid var(--line); border-radius:var(--r); overflow:hidden; min-width:0; box-shadow:var(--shadow)}
+.panel-h{padding:16px 20px; display:flex; justify-content:space-between; align-items:center; gap:8px; background:var(--ph); color:#fff}
+.panel-h h3{font-size:19px; display:flex; align-items:center; gap:10px}
+.panel-h small{color:#ffffffcc; font-variant-numeric:tabular-nums}
+.notice{display:flex; gap:14px; padding:14px 20px; border-bottom:1px solid var(--line)}
+.notice:last-child{border-bottom:0}
+.date{flex-shrink:0; width:54px; text-align:center; background:var(--c, var(--navy)); color:#fff; border-radius:8px; padding:6px 0; line-height:1.1}
+.date b{display:block; font:800 20px var(--display); font-variant-numeric:tabular-nums}
+.date small{font-size:11px; text-transform:uppercase; letter-spacing:.8px; color:#ffffffcc}
+.notice h4{font:700 16px var(--body); margin:0 0 2px}
+.notice p{margin:0; font-size:14px; color:var(--muted)}
+.news-item{padding:16px 20px; border-bottom:1px solid var(--line); display:grid; grid-template-columns:auto 1fr; gap:4px 14px}
+.news-item:last-child{border-bottom:0}
+.news-item .n{grid-row:span 3; width:30px; height:30px; border-radius:50%; background:var(--c); color:#fff; display:grid; place-items:center; font-weight:800; font-size:14px; font-variant-numeric:tabular-nums}
+.news-item .cat{font-size:12px; font-weight:700; color:var(--c); text-transform:uppercase; letter-spacing:.8px}
+.news-item h4{font:700 16px var(--body)}
+.news-item p{margin:0; font-size:14px; color:var(--muted)}
+.example{font-size:11px; color:var(--muted); border:1px dashed var(--muted); border-radius:3px; padding:0 5px; margin-left:6px; text-transform:none; letter-spacing:0; font-weight:500}
+
+/* Quiz */
+.quiz-layout{display:grid; grid-template-columns:1.6fr 1fr; gap:24px; align-items:start}
+@media (max-width:860px){ .quiz-layout{grid-template-columns:1fr} }
+.quiz{background:var(--surface); border:1px solid var(--line); border-radius:var(--r); padding:26px; box-shadow:var(--shadow); min-width:0}
+.quiz-top{display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; color:var(--muted); font-size:14px; margin-bottom:10px; font-variant-numeric:tabular-nums}
+.progress{height:6px; background:var(--line); border-radius:99px; overflow:hidden; margin-bottom:20px}
+.progress div{height:100%; background:var(--gold); transition:width .3s}
+.q-text{font:600 19px/1.45 var(--display); margin:0 0 18px}
+.opts{display:grid; gap:10px}
+.opt{display:flex; gap:14px; align-items:center; text-align:left; width:100%; padding:12px 14px; border:1px solid var(--line); border-radius:9px; background:var(--bg); color:var(--fg); font:400 16px var(--body); cursor:pointer}
+.opt:hover:not(:disabled){border-color:var(--gold)}
+.opt .l{width:30px; height:30px; border-radius:50%; display:grid; place-items:center; font-weight:800; background:var(--surface); border:1px solid var(--line); color:var(--navy); flex-shrink:0}
+.opt.right{background:var(--ok-bg); border-color:var(--ok)} .opt.right .l{background:var(--ok); color:#fff; border-color:var(--ok)}
+.opt.wrong{background:var(--bad-bg); border-color:var(--bad)} .opt.wrong .l{background:var(--bad); color:#fff; border-color:var(--bad)}
+.opt:disabled{cursor:default}
+.explain{margin-top:16px; padding:12px 16px; border-left:4px solid var(--gold); background:var(--gold-soft); border-radius:6px; font-size:15px}
+.q-nav{display:flex; justify-content:flex-end; margin-top:16px}
+.btn{border:0; background:var(--navy); color:#fff; font:700 15px var(--body); padding:11px 24px; border-radius:8px; cursor:pointer; text-decoration:none; display:inline-block}
+.btn:hover{background:var(--navy-2)}
+.btn.gold{background:var(--gold); color:#1d1606} .btn.gold:hover{background:var(--gold-2)}
+.score{text-align:center; padding:14px 0}
+.score b{display:block; font:800 52px var(--display); color:var(--gold); font-variant-numeric:tabular-nums}
+.quiz-side{background:linear-gradient(140deg, #5b35b5 0%, #1d5fd1 100%); color:#fff; border-radius:var(--r); padding:26px}
+.quiz-side h3{font-size:20px; margin-bottom:10px}
+.quiz-side ul{margin:0 0 20px; padding:0; list-style:none; display:grid; gap:10px; color:#cdd7ee; font-size:15px}
+.quiz-side li{display:flex; gap:10px}
+.quiz-side li .ico{color:var(--gold-2); width:20px; height:20px; margin-top:2px}
+
+/* Why */
+.why{background:var(--surface); border-block:1px solid var(--line)}
+.why-grid{display:grid; grid-template-columns:repeat(4, 1fr); gap:28px}
+@media (max-width:900px){ .why-grid{grid-template-columns:repeat(2, 1fr)} }
+@media (max-width:520px){ .why-grid{grid-template-columns:1fr} }
+.why-item{padding:22px; border-radius:var(--r); background:color-mix(in srgb, var(--c) 7%, var(--surface)); border:1px solid color-mix(in srgb, var(--c) 25%, var(--line))}
+.why-item .ic{width:52px; height:52px; border-radius:50%; background:var(--c); color:#fff; display:grid; place-items:center; margin-bottom:14px}
+.why-item h3{font-size:18px; margin-bottom:6px}
+.why-item p{margin:0; color:var(--muted); font-size:15px}
+
+/* CTA */
+.cta-band{background:linear-gradient(100deg, #0D2B5E 0%, #1b3f92 45%, #7442c8 100%); color:#fff; padding-block:44px}
+.cta-band .wrap{display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:20px}
+.cta-band h2{font-size:clamp(22px, 3vw, 30px)}
+.cta-band p{margin:6px 0 0; color:#cdd7ee}
+.cta-band .acts{display:flex; gap:12px; flex-wrap:wrap}
+.btn.ghost{background:transparent; border:1px solid #ffffff55}
+.btn.ghost:hover{background:#ffffff14}
+
+/* Footer */
+footer{border-top:4px solid; border-image:linear-gradient(90deg,#1d5fd1,#1f9254,#C9941A,#e2741d,#d0345a,#7442c8) 1; background:var(--navy-deep); color:#a9b7d6; font-size:15px; padding-block:48px 0}
+.f-grid{display:grid; grid-template-columns:1.5fr 1fr 1fr 1.2fr; gap:32px}
+@media (max-width:860px){ .f-grid{grid-template-columns:1fr 1fr} }
+@media (max-width:520px){ .f-grid{grid-template-columns:1fr} }
+footer h4{color:#fff; font:700 15px var(--body); text-transform:uppercase; letter-spacing:1px; margin-bottom:14px}
+footer ul{list-style:none; margin:0; padding:0; display:grid; gap:8px}
+footer a{text-decoration:none} footer a:hover{color:var(--gold-2)}
+footer .about p{margin:12px 0 0; max-width:36ch}
+.f-contact li{display:flex; gap:10px; align-items:flex-start}
+.f-contact .ico{width:18px; height:18px; color:var(--gold-2); margin-top:3px}
+.f-bottom{margin-top:40px; border-top:1px solid #ffffff1a; padding-block:18px; display:flex; flex-wrap:wrap; justify-content:space-between; gap:10px; font-size:14px}
+.theme-btn{background:none; border:1px solid #ffffff33; color:#fff; border-radius:6px; padding:3px 12px; cursor:pointer; font:500 13px var(--body)}
+.to-top{position:fixed; right:calc(18px + env(safe-area-inset-right,0px)); bottom:calc(18px + env(safe-area-inset-bottom,0px)); width:44px; height:44px; border-radius:50%; border:0; background:var(--gold); color:#1d1606; cursor:pointer; box-shadow:0 6px 18px #0000003a; display:grid; place-items:center; z-index:40}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"/></symbol>
+  <symbol id="i-notes" viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></symbol>
+  <symbol id="i-pyq" viewBox="0 0 24 24"><path d="M12 8v4l3 2"/><path d="M3.05 11a9 9 0 1 1 .5 4"/><path d="M3 4v5h5"/></symbol>
+  <symbol id="i-mock" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4M7 9l2 2 4-4"/></symbol>
+  <symbol id="i-quiz" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6V14M12 17.5h.01"/></symbol>
+  <symbol id="i-news" viewBox="0 0 24 24"><path d="M4 5h13v14H6a2 2 0 0 1-2-2z"/><path d="M17 9h3v8a2 2 0 0 1-2 2M8 9h5M8 13h5"/></symbol>
+  <symbol id="i-bell" viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.5A8.4 8.4 0 1 1 21 11.5z"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></symbol>
+  <symbol id="i-map" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+</svg>
+
+<div class="strip">
+  <div class="wrap">
+    <span class="l">Odisha's trusted preparation platform for OPSC · OSSC · OSSSC · SSB</span>
+    <span class="r">
+      <a id="stripCall" href="#"><svg class="ico"><use href="#i-phone"/></svg><span id="stripPhone"></span></a>
+      <a id="stripWa" href="#" target="_blank" rel="noopener"><svg class="ico"><use href="#i-chat"/></svg>WhatsApp</a>
+    </span>
+  </div>
+</div>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#top" aria-label="Gyana Education Service home">
+      <svg class="logo" viewBox="0 0 48 48" aria-hidden="true">
+        <circle cx="24" cy="24" r="23" fill="#0D2B5E"/>
+        <circle cx="24" cy="24" r="19.5" fill="none" stroke="#C9941A" stroke-width="1.5"/>
+        <path d="M13 31.5c3.5-1.6 7.2-1.6 11 0 3.8-1.6 7.5-1.6 11 0V17.5c-3.5-1.6-7.2-1.6-11 0-3.8-1.6-7.5-1.6-11 0z" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/>
+        <path d="M24 17.5v14" stroke="#fff" stroke-width="1.8"/>
+        <path d="M24 9.5l1.4 2.9 3.1.4-2.3 2.1.6 3.1-2.8-1.5-2.8 1.5.6-3.1-2.3-2.1 3.1-.4z" fill="#C9941A"/>
+      </svg>
+      <span><b>Gyana Education Service</b><small>Competitive Exam Preparation · Odisha</small></span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mainNav" aria-label="Open menu"><svg class="ico"><use href="#i-menu"/></svg></button>
+    <nav class="main" id="mainNav">
+      <a href="#exams">Exams</a>
+      <a href="#library">Study Materials</a>
+      <a href="#library" data-type="mock">Mock Tests</a>
+      <a href="#notices">Notices</a>
+      <a href="#news">Daily News</a>
+      <a href="#quiz">Daily Quiz</a>
+      <a class="join" id="joinBtn" href="#" target="_blank" rel="noopener">Join Now</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <span class="pill"><span class="dot"></span>Updated <span id="heroDate"></span></span>
+      <p class="odia" lang="or">ସଫଳତାର ପଥ</p>
+      <h1>Prepare smarter for <em>Odisha Government Exams</em></h1>
+      <p class="lead">Exam-pattern study materials, theory notes, solved PYQs and online CBT mock tests for OPSC, OSSC, OSSSC, SSB and more, with daily current affairs and a daily quiz.</p>
+      <form class="search" id="searchForm" role="search">
+        <svg class="ico"><use href="#i-search"/></svg>
+        <label for="q" class="sr">Search materials</label>
+        <input id="q" type="search" placeholder="Search exam, subject or post…" autocomplete="off">
+        <button type="submit">Search</button>
+      </form>
+      <div class="quick" id="quick"><span>Popular:</span></div>
+      <div class="stats" id="stats"></div>
+    </div>
+    <aside class="live" aria-label="Latest updates">
+      <div class="live-h"><h3>Latest Updates</h3><a href="#notices">View all</a></div>
+      <div class="live-list" id="liveList"></div>
+      <div class="live-f"><span>Today's quiz is live</span><a href="#quiz">Attempt now →</a></div>
+    </aside>
+  </div>
+</div>
+
+<div class="wrap tiles-wrap">
+  <div class="tiles" id="tiles"></div>
+</div>
+
+<section id="exams" style="background:var(--tint-a)">
+  <div class="wrap">
+    <div class="sec-head"><div><p class="eyebrow">Exam-wise preparation</p><h2>Choose your examination</h2><p>Select an exam to see all its study materials, PYQs and mock tests together.</p></div></div>
+    <div class="exams" id="examGrid"></div>
+  </div>
+</section>
+
+<section id="library">
+  <div class="wrap">
+    <div class="sec-head"><div><p class="eyebrow">Resource library</p><h2>Study materials, notes, PYQs &amp; mock tests</h2></div></div>
+    <div class="lib-tools">
+      <div class="filters" id="examFilters"></div>
+      <div class="filters" id="typeFilters"></div>
+    </div>
+    <p class="result-line" id="resultLine" aria-live="polite"></p>
+    <div class="grid" id="libGrid"></div>
+  </div>
+</section>
+
+<section id="notices" style="background:var(--tint-b)">
+  <div class="wrap split">
+    <div class="panel">
+      <div class="panel-h" style="--ph:linear-gradient(100deg,#c2334d,#e2741d)"><h3><svg class="ico"><use href="#i-bell"/></svg>Notice Board</h3><small id="noticeCount"></small></div>
+      <div id="noticeList"></div>
+    </div>
+    <div class="panel" id="news">
+      <div class="panel-h" style="--ph:linear-gradient(100deg,#0e8f95,#1d5fd1)"><h3><svg class="ico"><use href="#i-news"/></svg>Daily Current Affairs</h3><small id="todayLbl"></small></div>
+      <div id="newsList"></div>
+    </div>
+  </div>
+</section>
+
+<section id="quiz" style="background:var(--tint-c)">
+  <div class="wrap">
+    <div class="sec-head"><div><p class="eyebrow">Practise every day</p><h2>Daily Quiz</h2><p>Five new questions every day from Odisha GK, Polity, History and Commerce.</p></div></div>
+    <div class="quiz-layout">
+      <div class="quiz" id="quizBox"></div>
+      <div class="quiz-side">
+        <h3>Want full-length practice?</h3>
+        <ul>
+          <li><svg class="ico"><use href="#i-check"/></svg>TCS-iON style online CBT mock tests</li>
+          <li><svg class="ico"><use href="#i-check"/></svg>Solved previous year papers with explanations</li>
+          <li><svg class="ico"><use href="#i-check"/></svg>Exam-wise preparation groups with regular practice sets</li>
+        </ul>
+        <a class="btn gold" id="sideMock" href="#" target="_blank" rel="noopener">Take a mock test</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why">
+  <div class="wrap">
+    <div class="sec-head"><div><p class="eyebrow">Why GES</p><h2>Built for Odisha aspirants</h2></div></div>
+    <div class="why-grid">
+      <div class="why-item" style="--c:var(--c-blue)"><div class="ic"><svg class="ico"><use href="#i-target"/></svg></div><h3>Exact exam pattern</h3><p>Questions follow the real pattern and difficulty of each recruitment exam.</p></div>
+      <div class="why-item" style="--c:var(--c-green)"><div class="ic"><svg class="ico"><use href="#i-map"/></svg></div><h3>Odisha-focused content</h3><p>Odisha history, geography, culture and current affairs covered in depth.</p></div>
+      <div class="why-item" style="--c:var(--c-purple)"><div class="ic"><svg class="ico"><use href="#i-shield"/></svg></div><h3>Verified answers</h3><p>Every answer is fact-checked and comes with a clear explanation.</p></div>
+      <div class="why-item" style="--c:var(--c-orange)"><div class="ic"><svg class="ico"><use href="#i-mock"/></svg></div><h3>Real CBT practice</h3><p>Online mock tests that feel like the actual computer-based exam.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-band" id="contact">
+  <div class="wrap">
+    <div><h2>Start your preparation with GES today</h2><p>Message us to get study materials or join an exam preparation group.</p></div>
+    <div class="acts">
+      <a class="btn gold" id="ctaWa" href="#" target="_blank" rel="noopener">Chat on WhatsApp</a>
+      <a class="btn ghost" id="ctaCall" href="#">Call <span id="ctaPhone"></span></a>
+    </div>
+  </div>
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div class="about">
+        <b style="color:#fff;font:800 20px var(--display)">Gyana Education Service</b>
+        <div class="odia" lang="or" style="margin:4px 0 0">ସଫଳତାର ପଥ</div>
+        <p>Study materials, PYQs, theory notes and online mock tests for Odisha and national competitive examinations.</p>
+      </div>
+      <div><h4>Quick links</h4><ul>
+        <li><a href="#exams">Exams</a></li><li><a href="#library">Study Materials</a></li>
+        <li><a href="#notices">Notice Board</a></li><li><a href="#news">Daily Current Affairs</a></li><li><a href="#quiz">Daily Quiz</a></li></ul></div>
+      <div><h4>Exams</h4><ul id="fExams"></ul></div>
+      <div><h4>Contact</h4><ul class="f-contact" id="fContact"></ul></div>
+    </div>
+    <div class="f-bottom">
+      <span>© <span id="yr"></span> Gyana Education Service, Odisha. All rights reserved.</span>
+      <button class="theme-btn" id="themeBtn" type="button">Dark / Light mode</button>
+    </div>
+  </div>
+</footer>
+<button class="to-top" id="toTop" type="button" aria-label="Back to top" hidden><svg class="ico"><use href="#i-up"/></svg></button>
+
+<script>
+/* =====================================================================
+   EDIT YOUR CONTENT HERE — no coding knowledge needed.
+   Change text inside quotes, add new lines by copying an existing { ... },
+   then save and upload the file again.
+   ===================================================================== */
+const SITE = {
+  phone: "9776188019",
+  whatsapp: "919776188019",           // country code + number, no spaces
+  mockTestSite: "https://gyanaranjanbiswal.github.io/ges-mock-tests/",
+  youtube: "",                        // paste your YouTube channel link
+  telegram: ""                        // paste your Telegram group link
+};
+
+/* color = the coloured strip on each exam card */
+const EXAMS = [
+  { code:"OPSC",  full:"Odisha Public Service Commission", color:"#C9941A" },
+  { code:"OSSC",  full:"Odisha Staff Selection Commission", color:"#1d4ea3" },
+  { code:"OSSSC", full:"Odisha Subordinate Staff Selection Commission", color:"#1f7a45" },
+  { code:"SSB",   full:"State Selection Board, Odisha", color:"#c2571a" },
+  { code:"OSCSC", full:"Odisha State Civil Supplies Corporation", color:"#6c35a8" },
+  { code:"OAVS",  full:"Odisha Adarsha Vidyalaya Sangathan", color:"#0f8a8a" },
+  { code:"UGC NET", full:"UGC NET / SET (Commerce, Paper-I)", color:"#b0304a" }
+];
+
+/* type: material | notes | pyq | mock   — link: leave "" to use WhatsApp enquiry, "MOCK" for the mock test site */
+const RESOURCES = [
+  { title:"SSB Librarian 2026 – All Units PYQs Booklet", type:"pyq", exams:["SSB"], desc:"Unit-wise previous year questions with explanations, premium two-column layout.", link:"" },
+  { title:"SSB Librarian 2026 – Premium PYQs Mock Test (Set 1–4)", type:"mock", exams:["SSB"], desc:"100 questions per set in real exam pattern.", link:"" },
+  { title:"SSB Librarian – Unit-wise Study Material", type:"material", exams:["SSB"], desc:"Library & Information Science syllabus covered unit by unit.", link:"" },
+  { title:"SSB Junior Assistant 2026 – Mock Test Series", type:"mock", exams:["SSB"], desc:"Standard and advanced difficulty sets.", link:"" },
+  { title:"SSB Lab Assistant cum Store Keeper – Subject-wise PYQs", type:"pyq", exams:["SSB"], desc:"Physics, Chemistry, Botany, Zoology, Education and Psychology, from the SSB Odisha 2024 papers.", link:"" },
+  { title:"OPSC ASO Recruitment 2025-26 – PYQs", type:"pyq", exams:["OPSC"], desc:"English and General Knowledge papers with answers.", link:"" },
+  { title:"OPSC PGT Compulsory Paper-I – Practice Sets", type:"mock", exams:["OPSC"], desc:"Practice sets in exam pattern for the compulsory paper.", link:"" },
+  { title:"OSSC Preliminary Examination PYQs Sets (CGL/CGLRE)", type:"pyq", exams:["OSSC"], desc:"Previous prelim papers solved, set-wise.", link:"" },
+  { title:"OSCSC Accounts Executive 2026 – Online CBT Mock Tests", type:"mock", exams:["OSCSC"], desc:"TCS-iON style computer based tests. Opens in any browser.", link:"MOCK" },
+  { title:"OAVS 2026 – Current Affairs Practice Sets", type:"material", exams:["OAVS"], desc:"30 questions per set for PGT & TGT compulsory paper.", link:"" },
+  { title:"OAVS Recruitment PYQs (Commerce, Maths, Chemistry)", type:"pyq", exams:["OAVS"], desc:"Solved previous papers for PGT aspirants.", link:"" },
+  { title:"Odisha History PYQs & MCQs Booklet", type:"pyq", exams:["OSSSC","OSSC","OPSC"], desc:"Bilingual (Odia + English) chapter-wise questions.", link:"" },
+  { title:"Odisha Geography MCQs (Part 1 & 2)", type:"material", exams:["OSSSC","OSSC","OPSC"], desc:"500 fact-checked questions on Odisha geography.", link:"" },
+  { title:"Odisha Current Affairs – Premium MCQ Compendium", type:"material", exams:["OSSSC","OSSC","OPSC","SSB"], desc:"State current affairs MCQs for recent months.", link:"" },
+  { title:"Indian Polity & Constitution MCQs", type:"material", exams:["OSSSC","OSSC","OPSC"], desc:"650 questions including 150 Odisha-specific.", link:"" },
+  { title:"English Grammar Notes", type:"notes", exams:["OSSSC","OSSC","SSB"], desc:"Clear rules with examples for Odisha exams.", link:"" },
+  { title:"Financial Management – Theory Notes", type:"notes", exams:["OSCSC","OPSC","UGC NET"], desc:"Chapter-wise theory including Capital Budgeting.", link:"" },
+  { title:"Income Tax Law & Practice – Chapter-wise MCQs", type:"material", exams:["OSCSC","OPSC","UGC NET"], desc:"Based on the new Income-tax Act, 2025.", link:"" },
+  { title:"GST PYQs Booklet", type:"pyq", exams:["OSCSC","OPSC","UGC NET"], desc:"Unit-wise GST previous year questions.", link:"" },
+  { title:"UGC NET Paper-I: Teaching Aptitude Notes", type:"notes", exams:["UGC NET"], desc:"Full theory notes with practice MCQs.", link:"" }
+];
+
+/* Notices: date as "YYYY-MM-DD". The site sorts them newest first automatically. */
+const NOTICES = [
+  { date:"2026-10-26", title:"GES website launched", text:"All study materials, mock tests and updates are now in one place." },
+  { date:"2026-10-20", title:"OSCSC Accounts Executive 2026", text:"Online mock test series open. Class and practice groups available." },
+  { date:"2026-10-16", title:"SSB 2026 preparation groups", text:"Groups for Junior Assistant, Librarian and Lab Assistant. Message us to join." },
+  { date:"2026-10-13", title:"OAVS 2026 PGT & TGT", text:"Telegram support group for the compulsory 120-mark topics." }
+];
+
+/* Daily news: replace these examples with today's news. Remove `example:true` on real items. */
+const NEWS = [
+  { cat:"Odisha", title:"Add today's Odisha news here", text:"Write a 1–2 line summary students can revise quickly.", example:true },
+  { cat:"National", title:"Add today's national news here", text:"Keep facts exam-focused: who, what, where, when.", example:true },
+  { cat:"Economy", title:"Add an economy or banking update here", text:"Useful for OSCSC, OSSC CGL and banking-related papers.", example:true }
+];
+
+/* Daily quiz bank — 5 questions are picked automatically each day. ans = index of correct option (0=A). */
+const QUIZ = [
+  { q:"Which is the capital of Odisha?", o:["Cuttack","Bhubaneswar","Puri","Sambalpur"], ans:1, e:"Bhubaneswar is the capital; the capital moved there from Cuttack in 1948." },
+  { q:"Chilika Lake is best described as:", o:["A freshwater lake","Asia's largest brackish water lagoon","A man-made reservoir","A glacial lake"], ans:1, e:"Chilika is Asia's largest brackish water lagoon, spread over Puri, Khordha and Ganjam districts." },
+  { q:"The Konark Sun Temple was built by which ruler?", o:["Anantavarman Chodaganga","Kapilendra Deva","Narasimha Deva I","Kharavela"], ans:2, e:"Narasimha Deva I of the Eastern Ganga dynasty built it in the 13th century." },
+  { q:"Odisha became a separate province on:", o:["1 April 1936","26 January 1950","15 August 1947","1 November 1956"], ans:0, e:"1 April 1936 — celebrated every year as Utkal Divas." },
+  { q:"Hirakud Dam is built across which river?", o:["Brahmani","Baitarani","Mahanadi","Subarnarekha"], ans:2, e:"Hirakud Dam near Sambalpur is on the Mahanadi." },
+  { q:"Which Article of the Constitution provides the Right to Education?", o:["Article 19","Article 21A","Article 32","Article 45"], ans:1, e:"Article 21A was added by the 86th Amendment, 2002." },
+  { q:"Bhitarkanika National Park is famous for:", o:["Saltwater crocodiles","Asiatic lions","One-horned rhinos","Snow leopards"], ans:0, e:"Bhitarkanika in Kendrapara has one of India's largest saltwater crocodile populations." },
+  { q:"Who is known as 'Utkal Gourav'?", o:["Gopabandhu Das","Madhusudan Das","Fakir Mohan Senapati","Harekrushna Mahtab"], ans:1, e:"Madhusudan Das is called Utkal Gourav; Gopabandhu Das is Utkalmani." },
+  { q:"The Kalinga War was fought by Ashoka in about:", o:["321 BCE","273 BCE","261 BCE","232 BCE"], ans:2, e:"The Kalinga War took place around 261 BCE." },
+  { q:"Odia was declared a classical language in:", o:["2004","2008","2014","2019"], ans:2, e:"Odia became India's sixth classical language in 2014." },
+  { q:"Simlipal National Park is located in which district?", o:["Keonjhar","Mayurbhanj","Sundargarh","Koraput"], ans:1, e:"Simlipal is in Mayurbhanj district." },
+  { q:"Fundamental Duties were added to the Constitution by the:", o:["42nd Amendment, 1976","44th Amendment, 1978","73rd Amendment, 1992","86th Amendment, 2002"], ans:0, e:"The 42nd Amendment, 1976 added Part IV-A (Article 51A)." },
+  { q:"Paradip Port is located in which district?", o:["Balasore","Kendrapara","Jagatsinghpur","Ganjam"], ans:2, e:"Paradip Port is in Jagatsinghpur district." },
+  { q:"How many districts does Odisha have?", o:["28","30","32","34"], ans:1, e:"Odisha has 30 districts." },
+  { q:"Nandankanan Zoological Park is especially known for:", o:["White tigers","Red pandas","Cheetahs","Giraffes"], ans:0, e:"Nandankanan near Bhubaneswar is famous for its white tigers." },
+  { q:"Dhauli near Bhubaneswar is associated with:", o:["Kharavela's inscription","Ashoka's rock edicts","Jagannath Temple","A Buddhist university"], ans:1, e:"Dhauli has Ashoka's rock edicts and the Shanti Stupa." },
+  { q:"The Matching Concept in accounting means:", o:["Assets equal liabilities","Expenses are matched with revenues of the same period","Debit equals credit","Business is separate from owner"], ans:1, e:"Costs incurred to earn revenue are recorded in the same period as that revenue." },
+  { q:"Under the Going Concern concept, a business is assumed to:", o:["Close at year end","Continue operating for the foreseeable future","Be owned by the government","Have no liabilities"], ans:1, e:"Going concern assumes the business will continue, so assets are not valued at break-up prices." }
+];
+/* ===================== END OF EDITABLE CONTENT ===================== */
+
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const icon = id => `<svg class="ico"><use href="#${id}"/></svg>`;
+const TYPES = { material:"Study Material", notes:"Theory Notes", pyq:"PYQs", mock:"Mock Test" };
+const TCOL = { material:"var(--c-blue)", notes:"var(--c-green)", pyq:"var(--c-purple)", mock:"var(--c-orange)" };
+const CYCLE = ["var(--c-blue)","var(--c-rose)","var(--c-green)","var(--c-orange)","var(--c-purple)","var(--c-teal)"];
+const TICON = { material:"i-book", notes:"i-notes", pyq:"i-pyq", mock:"i-mock" };
+const store = { get(k){ try{return localStorage.getItem(k)}catch(e){return null} }, set(k,v){ try{localStorage.setItem(k,v)}catch(e){} } };
+const today = new Date();
+const ymd = d => d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
+const waLink = msg => "https://wa.me/"+SITE.whatsapp+"?text="+encodeURIComponent(msg);
+const M = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+const fmt = s => { const [y,m,d]=s.split("-").map(Number); return d+" "+M[m-1]+" "+y; };
+let state = { q:"", exam:"All", type:"All" };
+
+/* Contact links everywhere */
+const joinMsg = waLink("Hello GES, I want to join / get study materials.");
+["stripWa","joinBtn","ctaWa"].forEach(id => $("#"+id).href = joinMsg);
+["stripCall","ctaCall"].forEach(id => $("#"+id).href = "tel:+91"+SITE.phone);
+$("#stripPhone").textContent = "+91 "+SITE.phone; $("#ctaPhone").textContent = SITE.phone;
+$("#sideMock").href = SITE.mockTestSite;
+$("#heroDate").textContent = today.toLocaleDateString("en-IN",{day:"numeric",month:"short",year:"numeric"});
+
+/* Menu */
+$("#menuBtn").addEventListener("click", e => { const o=$("#mainNav").classList.toggle("open"); e.currentTarget.setAttribute("aria-expanded", o); });
+$("#mainNav").addEventListener("click", e => {
+  const a = e.target.closest("a"); if(!a) return;
+  $("#mainNav").classList.remove("open"); $("#menuBtn").setAttribute("aria-expanded","false");
+  if(a.dataset.type){ setFilter({ type:a.dataset.type, exam:"All" }); }
+});
+
+/* Theme */
+const savedTheme = store.get("ges-theme"); if(savedTheme) document.documentElement.dataset.theme = savedTheme;
+$("#themeBtn").addEventListener("click", () => {
+  const cur = document.documentElement.dataset.theme || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark":"light");
+  const next = cur==="dark" ? "light":"dark"; document.documentElement.dataset.theme = next; store.set("ges-theme", next);
+});
+
+/* Back to top */
+$("#toTop").onclick = () => scrollTo({top:0});
+addEventListener("scroll", () => { $("#toTop").hidden = scrollY < 700; }, {passive:true});
+
+/* Hero */
+$("#quick").insertAdjacentHTML("beforeend", ["Librarian","Junior Assistant","OSSC CGL","Accounts","Odisha History"].map(t=>`<button type="button" data-q="${t}">${t}</button>`).join(""));
+$("#quick").addEventListener("click", e => { const b=e.target.closest("button"); if(!b) return; $("#q").value=b.dataset.q; doSearch(); });
+$("#searchForm").addEventListener("submit", e => { e.preventDefault(); doSearch(); });
+$("#q").addEventListener("input", () => { state.q=$("#q").value.trim(); renderLib(); });
+function doSearch(){ state.q=$("#q").value.trim(); state.exam="All"; state.type="All"; renderFilters(); renderLib(); $("#library").scrollIntoView(); }
+function setFilter(s){ Object.assign(state, {q:""}, s); $("#q").value=""; renderFilters(); renderLib(); setTimeout(()=>$("#library").scrollIntoView(),0); }
+
+const count = t => RESOURCES.filter(r=>r.type===t).length;
+$("#stats").innerHTML = `<div style="--c:#f3c04e"><b>${EXAMS.length}+</b>Exams covered</div><div style="--c:#4fd1c5"><b>${RESOURCES.length}</b>Resources</div><div style="--c:#ff9f43"><b>${count("mock")}</b>Mock test series</div><div style="--c:#a78bfa"><b>Daily</b>News &amp; quiz</div>`;
+
+const sortedNotices = [...NOTICES].sort((a,b)=>b.date.localeCompare(a.date));
+const isNew = s => { const [y,m,d]=s.split("-").map(Number); return (today - new Date(y,m-1,d))/864e5 < 7; };
+$("#liveList").innerHTML = sortedNotices.map(n=>`<a class="live-item" href="#notices"><small>${fmt(n.date)}</small><b>${esc(n.title)}${isNew(n.date)?'<span class="new">NEW</span>':""}</b></a>`).join("");
+
+/* Tiles */
+const tiles = [
+  { t:"Study Materials", c:"var(--c-blue)", s:count("material")+" booklets", i:"i-book", f:{type:"material"} },
+  { t:"Theory Notes", c:"var(--c-green)", s:count("notes")+" notes", i:"i-notes", f:{type:"notes"} },
+  { t:"PYQs", c:"var(--c-purple)", s:count("pyq")+" sets", i:"i-pyq", f:{type:"pyq"} },
+  { t:"Mock Tests", c:"var(--c-orange)", s:count("mock")+" series", i:"i-mock", f:{type:"mock"} },
+  { t:"Daily Quiz", c:"var(--c-rose)", s:"5 questions", i:"i-quiz", h:"#quiz" },
+  { t:"Current Affairs", c:"var(--c-teal)", s:"Updated daily", i:"i-news", h:"#news" }
+];
+$("#tiles").innerHTML = tiles.map((x,k)=> x.h
+  ? `<a class="tile" style="--c:${x.c}" href="${x.h}"><span class="ic">${icon(x.i)}</span><b>${x.t}</b><small>${x.s}</small></a>`
+  : `<button type="button" class="tile" style="--c:${x.c}" data-k="${k}"><span class="ic">${icon(x.i)}</span><b>${x.t}</b><small>${x.s}</small></button>`).join("");
+$("#tiles").addEventListener("click", e => { const b=e.target.closest("button.tile"); if(b) setFilter(Object.assign({exam:"All"}, tiles[b.dataset.k].f)); });
+
+/* Exams */
+$("#examGrid").innerHTML = EXAMS.map(x=>`<button type="button" class="exam" style="--c:${x.color}" data-exam="${esc(x.code)}"><div class="code">${esc(x.code)}</div><div class="full">${esc(x.full)}</div><div class="count">${RESOURCES.filter(r=>r.exams.includes(x.code)).length} resources <span>View ${icon("i-arrow")}</span></div></button>`).join("");
+$("#examGrid").addEventListener("click", e => { const b=e.target.closest(".exam"); if(b) setFilter({ exam:b.dataset.exam, type:"All" }); });
+$("#fExams").innerHTML = EXAMS.map(x=>`<li><a href="#library" data-exam="${esc(x.code)}">${esc(x.code)}</a></li>`).join("");
+$("#fExams").addEventListener("click", e => { const a=e.target.closest("a"); if(a) setFilter({ exam:a.dataset.exam, type:"All" }); });
+
+/* Library */
+function renderFilters(){
+  $("#examFilters").innerHTML = `<span>Exam</span>` + ["All",...EXAMS.map(x=>x.code)].map(c=>`<button type="button" class="chip" style="--c:${(EXAMS.find(x=>x.code===c)||{}).color||"var(--navy)"}" data-exam="${esc(c)}" aria-pressed="${state.exam===c}">${c==="All"?"All":esc(c)}</button>`).join("");
+  $("#typeFilters").innerHTML = `<span>Type</span>` + ["All",...Object.keys(TYPES)].map(t=>`<button type="button" class="chip" style="--c:${t==="All"?"var(--navy)":TCOL[t]}" data-type="${t}" aria-pressed="${state.type===t}">${t==="All"?"All":TYPES[t]}</button>`).join("");
+}
+$("#examFilters").addEventListener("click", e => { const b=e.target.closest(".chip"); if(!b) return; state.exam=b.dataset.exam; renderFilters(); renderLib(); });
+$("#typeFilters").addEventListener("click", e => { const b=e.target.closest(".chip"); if(!b) return; state.type=b.dataset.type; renderFilters(); renderLib(); });
+
+function renderLib(){
+  const words = state.q.toLowerCase().split(/\s+/).filter(Boolean);
+  const list = RESOURCES.filter(r =>
+    (state.exam==="All" || r.exams.includes(state.exam)) &&
+    (state.type==="All" || r.type===state.type) &&
+    words.every(w => (r.title+" "+r.desc+" "+r.exams.join(" ")+" "+TYPES[r.type]).toLowerCase().includes(w)));
+  const parts = [];
+  if(state.exam!=="All") parts.push(state.exam);
+  if(state.type!=="All") parts.push(TYPES[state.type]);
+  if(state.q) parts.push(`“${esc(state.q)}”`);
+  $("#resultLine").innerHTML = `Showing <b>${list.length}</b> result${list.length===1?"":"s"}${parts.length?" for "+parts.join(" · "):""}`;
+  if(!list.length){ $("#libGrid").innerHTML = `<div class="empty">No match found. Try another word, or <a href="${waLink("Hello GES, I am looking for: "+state.q)}" target="_blank" rel="noopener">ask us on WhatsApp</a>.</div>`; return; }
+  $("#libGrid").innerHTML = list.map(r => {
+    const isMock = r.link==="MOCK"; const href = isMock ? SITE.mockTestSite : (r.link || waLink("Hello GES, I want: "+r.title));
+    const label = isMock ? "Start mock test" : (r.link ? "Open" : "Get on WhatsApp");
+    return `<article class="card t-${r.type}"><div class="card-top"><span class="ic">${icon(TICON[r.type])}</span><span class="type">${TYPES[r.type]}</span></div><h3>${esc(r.title)}</h3><p>${esc(r.desc)}</p><div class="tags">${r.exams.map(x=>`<span>${esc(x)}</span>`).join("")}</div><a class="cta${isMock?" mock":""}" href="${esc(href)}" target="_blank" rel="noopener">${label} ${icon("i-arrow")}</a></article>`;
+  }).join("");
+}
+
+/* Notices */
+$("#noticeCount").textContent = sortedNotices.length+" notices";
+$("#noticeList").innerHTML = sortedNotices.map((n,k) => {
+  const [y,m,d] = n.date.split("-").map(Number);
+  return `<div class="notice"><div class="date" style="--c:${CYCLE[k%CYCLE.length]}"><b>${String(d).padStart(2,"0")}</b><small>${M[m-1]}</small></div><div><h4>${esc(n.title)}${isNew(n.date)?'<span class="new">NEW</span>':""}</h4><p>${esc(n.text)}</p></div></div>`;
+}).join("");
+
+/* News */
+$("#todayLbl").textContent = today.toLocaleDateString("en-IN",{day:"numeric",month:"short",year:"numeric"});
+$("#newsList").innerHTML = NEWS.map((n,i)=>`<div class="news-item" style="--c:${CYCLE[(i+2)%CYCLE.length]}"><span class="n">${i+1}</span><span class="cat">${esc(n.cat)}${n.example?'<span class="example">example</span>':""}</span><h4>${esc(n.title)}</h4><p>${esc(n.text)}</p></div>`).join("");
+
+/* Daily quiz — same 5 questions for everyone on a given day */
+function seeded(seed){ return () => { seed = (seed*1103515245+12345) % 2147483648; return seed/2147483648; }; }
+const key = ymd(today);
+const rnd = seeded(Number(key.replace(/-/g,"")));
+const pool = QUIZ.map((x,i)=>[i,rnd()]).sort((a,b)=>a[1]-b[1]).slice(0,5).map(x=>x[0]);
+let qi = 0, score = 0, answered = false;
+
+function renderQuiz(){
+  const box = $("#quizBox");
+  if(qi >= pool.length){
+    store.set("ges-quiz-"+key, String(score));
+    const msg = score===5?"Perfect score! Excellent preparation.":score>=3?"Well done. Keep practising.":"Revise these topics and try tomorrow's quiz.";
+    box.innerHTML = `<div class="score"><p class="eyebrow" style="justify-content:center">Today's result</p><b>${score}/${pool.length}</b><p>${msg}</p><button class="btn gold" id="again" type="button">Try again</button></div>`;
+    $("#again").onclick = () => { qi=0; score=0; renderQuiz(); };
+    return;
+  }
+  const item = QUIZ[pool[qi]]; answered = false;
+  box.innerHTML = `<div class="quiz-top"><span>Question ${qi+1} of ${pool.length}</span><span>Score: ${score}</span></div>
+    <div class="progress"><div style="width:${qi/pool.length*100}%"></div></div>
+    <p class="q-text">${esc(item.q)}</p>
+    <div class="opts">${item.o.map((o,i)=>`<button type="button" class="opt" data-i="${i}"><span class="l">${"ABCD"[i]}</span><span>${esc(o)}</span></button>`).join("")}</div>
+    <div id="after"></div>`;
+  box.querySelectorAll(".opt").forEach(b => b.onclick = () => {
+    if(answered) return; answered = true;
+    const i = +b.dataset.i;
+    box.querySelectorAll(".opt").forEach(x => { x.disabled = true; if(+x.dataset.i===item.ans) x.classList.add("right"); });
+    if(i===item.ans) score++; else b.classList.add("wrong");
+    $("#after").innerHTML = `<div class="explain"><b>${i===item.ans?"Correct.":"Correct answer: "+"ABCD"[item.ans]+"."}</b> ${esc(item.e)}</div><div class="q-nav"><button class="btn" id="nextQ" type="button">${qi+1<pool.length?"Next question":"See result"}</button></div>`;
+    $("#nextQ").onclick = () => { qi++; renderQuiz(); };
+  });
+}
+const prev = store.get("ges-quiz-"+key);
+if(prev!==null){
+  $("#quizBox").innerHTML = `<div class="score"><p class="eyebrow" style="justify-content:center">You already attempted today</p><b>${prev}/5</b><p>Come back tomorrow for new questions.</p><button class="btn gold" id="again" type="button">Attempt again</button></div>`;
+  $("#again").onclick = () => { qi=0; score=0; renderQuiz(); };
+} else renderQuiz();
+
+/* Footer contact */
+const fc = [
+  `<li>${icon("i-phone")}<a href="tel:+91${SITE.phone}">+91 ${SITE.phone}</a></li>`,
+  `<li>${icon("i-chat")}<a href="${joinMsg}" target="_blank" rel="noopener">WhatsApp us</a></li>`,
+  `<li>${icon("i-mock")}<a href="${esc(SITE.mockTestSite)}" target="_blank" rel="noopener">Online mock tests</a></li>`
+];
+if(SITE.youtube) fc.push(`<li>${icon("i-arrow")}<a href="${esc(SITE.youtube)}" target="_blank" rel="noopener">YouTube channel</a></li>`);
+if(SITE.telegram) fc.push(`<li>${icon("i-arrow")}<a href="${esc(SITE.telegram)}" target="_blank" rel="noopener">Telegram group</a></li>`);
+$("#fContact").innerHTML = fc.join("");
+$("#yr").textContent = today.getFullYear();
+
+renderFilters(); renderLib();
+</script>
+</body>
+</html>
