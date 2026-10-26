@@ -444,7 +444,7 @@ footer .about p{margin:12px 0 0; max-width:36ch}
 const SITE = {
   phone: "9776188019",
   whatsapp: "919776188019",           // country code + number, no spaces
-  mockTestSite: "https://gyanaranjanbiswal.github.io/ges-mock-tests/",
+  mockTestSite: "#library",           // "Take a mock test" buttons open the Mock Tests list on this page
   youtube: "",                        // paste your YouTube channel link
   telegram: ""                        // paste your Telegram group link
 };
@@ -460,8 +460,9 @@ const EXAMS = [
   { code:"UGC NET", full:"UGC NET / SET (Commerce, Paper-I)", color:"#b0304a" }
 ];
 
-/* type: material | notes | pyq | mock   — link: leave "" to use WhatsApp enquiry, "MOCK" for the mock test site */
+/* type: material | notes | pyq | mock   — link: leave "" to use WhatsApp enquiry, or paste a full link (e.g. "/ssb-librarian-mock-1.html") */
 const RESOURCES = [
+  { title:"SSB Librarian 2026 – Free CBT Mock Test-1", type:"mock", exams:["SSB"], desc:"100 PYQ-based MCQs, 120 minutes, +1.5/−0.5 marking. TCS-iON style screen with instant score card.", link:"/ssb-librarian-mock-1.html" },
   { title:"SSB Librarian 2026 – All Units PYQs Booklet", type:"pyq", exams:["SSB"], desc:"Unit-wise previous year questions with explanations, premium two-column layout.", link:"" },
   { title:"SSB Librarian 2026 – Premium PYQs Mock Test (Set 1–4)", type:"mock", exams:["SSB"], desc:"100 questions per set in real exam pattern.", link:"" },
   { title:"SSB Librarian – Unit-wise Study Material", type:"material", exams:["SSB"], desc:"Library & Information Science syllabus covered unit by unit.", link:"" },
@@ -470,7 +471,7 @@ const RESOURCES = [
   { title:"OPSC ASO Recruitment 2025-26 – PYQs", type:"pyq", exams:["OPSC"], desc:"English and General Knowledge papers with answers.", link:"" },
   { title:"OPSC PGT Compulsory Paper-I – Practice Sets", type:"mock", exams:["OPSC"], desc:"Practice sets in exam pattern for the compulsory paper.", link:"" },
   { title:"OSSC Preliminary Examination PYQs Sets (CGL/CGLRE)", type:"pyq", exams:["OSSC"], desc:"Previous prelim papers solved, set-wise.", link:"" },
-  { title:"OSCSC Accounts Executive 2026 – Online CBT Mock Tests", type:"mock", exams:["OSCSC"], desc:"TCS-iON style computer based tests. Opens in any browser.", link:"MOCK" },
+  { title:"OSCSC Accounts Executive 2026 – Online CBT Mock Tests", type:"mock", exams:["OSCSC"], desc:"TCS-iON style computer based tests. Opens in any browser.", link:"https://ges-oscsc-mock-tests.netlify.app/" },
   { title:"OAVS 2026 – Current Affairs Practice Sets", type:"material", exams:["OAVS"], desc:"30 questions per set for PGT & TGT compulsory paper.", link:"" },
   { title:"OAVS Recruitment PYQs (Commerce, Maths, Chemistry)", type:"pyq", exams:["OAVS"], desc:"Solved previous papers for PGT aspirants.", link:"" },
   { title:"Odisha History PYQs & MCQs Booklet", type:"pyq", exams:["OSSSC","OSSC","OPSC"], desc:"Bilingual (Odia + English) chapter-wise questions.", link:"" },
@@ -486,6 +487,7 @@ const RESOURCES = [
 
 /* Notices: date as "YYYY-MM-DD". The site sorts them newest first automatically. */
 const NOTICES = [
+  { date:"2026-10-26", title:"SSB Librarian 2026 – Free CBT Mock Test-1 is live", text:"100 questions, 120 minutes, exact SSB pattern. Free, no login needed." },
   { date:"2026-10-26", title:"GES website launched", text:"All study materials, mock tests and updates are now in one place." },
   { date:"2026-10-20", title:"OSCSC Accounts Executive 2026", text:"Online mock test series open. Class and practice groups available." },
   { date:"2026-10-16", title:"SSB 2026 preparation groups", text:"Groups for Junior Assistant, Librarian and Lab Assistant. Message us to join." },
@@ -542,7 +544,8 @@ const joinMsg = waLink("Hello GES, I want to join / get study materials.");
 ["stripWa","joinBtn","ctaWa"].forEach(id => $("#"+id).href = joinMsg);
 ["stripCall","ctaCall"].forEach(id => $("#"+id).href = "tel:+91"+SITE.phone);
 $("#stripPhone").textContent = "+91 "+SITE.phone; $("#ctaPhone").textContent = SITE.phone;
-$("#sideMock").href = SITE.mockTestSite;
+$("#sideMock").href = "#library"; $("#sideMock").removeAttribute("target");
+$("#sideMock").addEventListener("click", e => { e.preventDefault(); setFilter({ exam:"All", type:"mock" }); });
 $("#heroDate").textContent = today.toLocaleDateString("en-IN",{day:"numeric",month:"short",year:"numeric"});
 
 /* Menu */
@@ -621,7 +624,7 @@ function renderLib(){
   if(!list.length){ $("#libGrid").innerHTML = `<div class="empty">No match found. Try another word, or <a href="${waLink("Hello GES, I am looking for: "+state.q)}" target="_blank" rel="noopener">ask us on WhatsApp</a>.</div>`; return; }
   $("#libGrid").innerHTML = list.map(r => {
     const isMock = r.link==="MOCK"; const href = isMock ? SITE.mockTestSite : (r.link || waLink("Hello GES, I want: "+r.title));
-    const label = isMock ? "Start mock test" : (r.link ? "Open" : "Get on WhatsApp");
+    const label = (isMock || (r.type==="mock" && r.link)) ? "Start mock test" : (r.link ? "Open" : "Get on WhatsApp");
     return `<article class="card t-${r.type}"><div class="card-top"><span class="ic">${icon(TICON[r.type])}</span><span class="type">${TYPES[r.type]}</span></div><h3>${esc(r.title)}</h3><p>${esc(r.desc)}</p><div class="tags">${r.exams.map(x=>`<span>${esc(x)}</span>`).join("")}</div><a class="cta${isMock?" mock":""}" href="${esc(href)}" target="_blank" rel="noopener">${label} ${icon("i-arrow")}</a></article>`;
   }).join("");
 }
@@ -678,11 +681,12 @@ if(prev!==null){
 const fc = [
   `<li>${icon("i-phone")}<a href="tel:+91${SITE.phone}">+91 ${SITE.phone}</a></li>`,
   `<li>${icon("i-chat")}<a href="${joinMsg}" target="_blank" rel="noopener">WhatsApp us</a></li>`,
-  `<li>${icon("i-mock")}<a href="${esc(SITE.mockTestSite)}" target="_blank" rel="noopener">Online mock tests</a></li>`
+  `<li>${icon("i-mock")}<a href="#library" id="fMock">Online mock tests</a></li>`
 ];
 if(SITE.youtube) fc.push(`<li>${icon("i-arrow")}<a href="${esc(SITE.youtube)}" target="_blank" rel="noopener">YouTube channel</a></li>`);
 if(SITE.telegram) fc.push(`<li>${icon("i-arrow")}<a href="${esc(SITE.telegram)}" target="_blank" rel="noopener">Telegram group</a></li>`);
 $("#fContact").innerHTML = fc.join("");
+$("#fMock").addEventListener("click", e => { e.preventDefault(); setFilter({ exam:"All", type:"mock" }); });
 $("#yr").textContent = today.getFullYear();
 
 renderFilters(); renderLib();
