@@ -149,8 +149,26 @@ td.n{text-align:right;font-variant-numeric:tabular-nums}
   .side.open{transform:none}
   .palbtn{display:inline-block}
   .hdr-right .who{display:none}
-  .qfoot .btn{padding:9px 11px;font-size:13px}
+  .qfoot{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .qfoot .l,.qfoot .r{display:contents}
+  .qfoot .btn{padding:11px 8px;font-size:13.5px;width:100%}
+  #btnSave{order:4} #btnPrev{order:3}
+  .side .palclose{display:block}
+  .palbtn{white-space:nowrap;padding:8px 12px;flex:none}
+  body.exam-mode .logo{display:none}
+  .backdrop{position:fixed;inset:0;background:rgba(15,25,40,.45);z-index:39}
+  body.exam-mode header.top .wrap{padding-block:6px;gap:10px}
+  body.exam-mode .brand b{font-size:12.5px;letter-spacing:.2px;line-height:1.25;white-space:normal!important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  body.exam-mode .brand span{display:none}
+  body.exam-mode .hdr-right{gap:8px}
+  body.exam-mode .timer{padding:3px 8px;font-size:14px}
+  body.exam-mode .logout{padding:5px 9px;font-size:12px}
+  .strip .wrap{flex-wrap:nowrap}
+  .sec-tab{font-size:12.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+  .marks{display:none}
+  .qhead{padding:8px 16px} .qbody{padding:14px 16px 20px}
 }
+.palclose{display:none;border:0;background:var(--navy);color:#fff;font-weight:600;padding:10px 12px;text-align:right;font-size:14px;width:100%}
 @media (prefers-reduced-motion:reduce){.side{transition:none}}
 </style>
 </head>
@@ -238,7 +256,7 @@ td.n{text-align:right;font-variant-numeric:tabular-nums}
   <div class="strip"><div class="wrap">
     <span class="sec-tab">Library &amp; Information Science</span>
     <span class="marks">Marks: <b>+1.5</b> / <i>−0.5</i></span>
-    <button class="btn palbtn" id="btnPal">Question Palette</button>
+    <button class="btn palbtn" id="btnPal">☰ Palette</button>
   </div></div>
   <div class="main">
     <div class="qpane">
@@ -249,7 +267,9 @@ td.n{text-align:right;font-variant-numeric:tabular-nums}
         <div class="r"><button class="btn" id="btnPrev">Previous</button><button class="btn pri" id="btnSave">Save &amp; Next</button></div>
       </div>
     </div>
+    <div class="backdrop" id="backdrop" hidden></div>
     <aside class="side" id="side">
+      <button class="palclose" id="btnPalClose" aria-label="Close question palette">✕ Close</button>
       <div class="cand">
         <svg viewBox="0 0 48 56" aria-hidden="true"><circle cx="24" cy="20" r="10" fill="#9aa6b5"/><path d="M6 56c2-14 10-20 18-20s16 6 18 20z" fill="#9aa6b5"/></svg>
         <div><b id="sideName"></b><span id="sideRoll"></span></div>
@@ -423,7 +443,7 @@ function load(){try{const s=JSON.parse(localStorage.getItem(KEY));if(s&&s.ans&&s
 function show(stage){S.stage=stage;save();["sLogin","sInstr","sExam","sResult"].forEach(id=>$(id).hidden=true);
   const map={login:"sLogin",instr:"sInstr",exam:"sExam",result:"sResult"};$(map[stage]).hidden=false;
   $("timer").hidden=stage!=="exam";$("btnLogout").hidden=stage==="login";$("hdrName").textContent=S.name?S.name+" · "+S.roll:"";
-  document.body.style.display=stage==="exam"?"flex":"block";document.body.style.flexDirection="column";
+  document.body.style.display=stage==="exam"?"flex":"block";document.body.classList.toggle("exam-mode",stage==="exam");document.body.style.flexDirection="column";
   if(stage==="exam"){startExam()} if(stage==="result")renderResult();}
 
 function status(i){const a=S.ans[i]!==null;if(S.mark[i])return a?"am":"mr";if(a)return "an";return S.vis[i]?"na":"";}
@@ -438,7 +458,7 @@ function renderQ(){const i=S.cur,q=Q[i];S.vis[i]=true;temp=S.ans[i];
 
 function renderPal(){const p=$("palette");p.innerHTML="";
   for(let i=0;i<N;i++){const b=document.createElement("button");b.className="pb "+status(i)+(i===S.cur?" cur":"");b.textContent=i+1;b.setAttribute("aria-label","Question "+(i+1));
-    b.onclick=()=>{S.cur=i;renderQ();$("side").classList.remove("open")};p.appendChild(b)}
+    b.onclick=()=>{S.cur=i;renderQ();pal(false)};p.appendChild(b)}
   const c={an:0,na:0,"":0,mr:0,am:0};for(let i=0;i<N;i++)c[status(i)]++;
   $("counts").innerHTML='<div><span class="pb an">'+c.an+'</span>Answered</div><div><span class="pb na">'+c.na+'</span>Not Answered</div><div><span class="pb">'+c[""]+'</span>Not Visited</div><div><span class="pb mr">'+c.mr+'</span>Marked for Review</div><div class="wide"><span class="pb am">'+c.am+'</span>Answered &amp; Marked for Review (will be evaluated)</div>';
   return c;}
@@ -478,12 +498,14 @@ $("btnSave").onclick=()=>{S.ans[S.cur]=temp;S.mark[S.cur]=false;next()};
 $("btnMark").onclick=()=>{S.ans[S.cur]=temp;S.mark[S.cur]=true;next()};
 $("btnClear").onclick=()=>{S.ans[S.cur]=null;temp=null;S.mark[S.cur]=false;renderQ()};
 $("btnPrev").onclick=()=>{if(S.cur>0){S.cur--;renderQ()}};
-$("btnPal").onclick=()=>$("side").classList.toggle("open");
-$("btnSubmit").onclick=()=>{const c=renderPal();$("side").classList.remove("open");
+function pal(o){$("side").classList.toggle("open",o);$("backdrop").hidden=!o}
+$("btnPal").onclick=()=>pal(!$("side").classList.contains("open"));
+$("btnPalClose").onclick=()=>pal(false);$("backdrop").onclick=()=>pal(false);
+$("btnSubmit").onclick=()=>{const c=renderPal();pal(false);
   $("sumTbl").innerHTML='<tr><th>Total</th><th>Answered</th><th>Not Answered</th><th>Marked</th><th>Not Visited</th></tr><tr><td class="n">'+N+'</td><td class="n">'+(c.an+c.am)+'</td><td class="n">'+c.na+'</td><td class="n">'+(c.mr+c.am)+'</td><td class="n">'+c[""]+'</td></tr>';
   $("mSubmit").hidden=false;$("btnNo").focus()};
 $("btnNo").onclick=()=>$("mSubmit").hidden=true;
-$("btnLogout").onclick=()=>{$("logoutMsg").textContent=S.stage==="exam"?"Your test is in progress. If you logout now, this attempt and all your answers will be cleared. Do you want to logout?":S.stage==="result"?"Logout and return to the login screen? Your score card will be cleared.":"Logout and return to the login screen?";$("side").classList.remove("open");$("mLogout").hidden=false;$("btnLogoutNo").focus()};
+$("btnLogout").onclick=()=>{$("logoutMsg").textContent=S.stage==="exam"?"Your test is in progress. If you logout now, this attempt and all your answers will be cleared. Do you want to logout?":S.stage==="result"?"Logout and return to the login screen? Your score card will be cleared.":"Logout and return to the login screen?";pal(false);$("mLogout").hidden=false;$("btnLogoutNo").focus()};
 $("btnLogoutNo").onclick=()=>$("mLogout").hidden=true;
 $("btnLogoutYes").onclick=()=>{clearInterval(tick);$("mLogout").hidden=true;S=blank();save();$("roll").value=S.roll;$("cname").value="";$("agree").checked=false;$("btnBegin").disabled=true;show("login");window.scrollTo(0,0)};
 $("btnYes").onclick=finish;
