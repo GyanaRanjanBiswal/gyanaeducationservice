@@ -1,0 +1,575 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Gyana Education Service – OSCSC Accounts Executive Recruitment 2026 – Online CBT Mock Test-7 (TCS pattern)">
+<title>OSCSC Accounts Executive 2026 – Mock Test-7 | Gyana Education Service</title>
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<style>
+/* Layout: TCS iON-style exam console — header strip, question pane left, palette right; light-only by design (mirrors the real exam screen) */
+:root{
+  --ink:#1b2430; --muted:#5d6b7c; --line:#cfd8e3; --paper:#ffffff; --wash:#eef3f8;
+  --brand:#0b4f8a; --brand-2:#1167b1; --brand-ink:#ffffff; --head:#e9eef4;
+  --ans:#2e9e3f; --nans:#e2502b; --nv:#e3e6ea; --nv-b:#b9c1cb; --mark:#6a3fb5; --gold:#f4b400;
+  --ok:#1f8a3b; --ok-wash:#e5f5e8; --bad:#c8352a; --bad-wash:#fdeceb; --info-wash:#fff8e1;
+  --f:Arial, "Helvetica Neue", Helvetica, "Noto Sans", sans-serif;
+  color-scheme: light;
+}
+html,body{height:100%}
+#app{height:100%}
+body{background:var(--wash);color:var(--ink);font-family:var(--f);font-size:14px;}
+*{box-sizing:border-box}
+button{font-family:var(--f);cursor:pointer}
+button:focus-visible,input:focus-visible,label:focus-within{outline:2px solid var(--gold);outline-offset:2px}
+.screen{min-height:100%;display:flex;flex-direction:column}
+.pad{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+
+/* top brand strip */
+.topbar{background:var(--brand);color:var(--brand-ink);padding-block:8px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.logo{width:40px;height:40px;border-radius:50%;background:#fff;color:var(--brand);display:grid;place-items:center;font-weight:700;font-size:13px;letter-spacing:.5px;border:2px solid var(--gold);flex:none}
+.tb-text{min-width:0;flex:1 1 220px}
+.tb-org{font-weight:700;letter-spacing:1.2px;font-size:15px}
+.tb-exam{font-size:12.5px;opacity:.92}
+.tb-right{font-size:12px;text-align:right;opacity:.92}
+
+/* login */
+.login-wrap{flex:1;display:flex;align-items:center;justify-content:center;padding-block:28px}
+.login{display:grid;grid-template-columns:1fr 1fr;max-width:860px;width:100%;background:var(--paper);border:1px solid var(--line);box-shadow:0 2px 10px rgba(11,79,138,.08)}
+.login-info{background:var(--head);padding:24px;display:flex;flex-direction:column;gap:12px;border-right:1px solid var(--line)}
+.login-info .row{display:flex;gap:8px;font-size:13.5px}
+.login-info .k{color:var(--muted);min-width:118px}
+.login-info .v{font-weight:700}
+.login-form{padding:24px;display:flex;flex-direction:column;gap:12px}
+.login-form h2{margin:0 0 4px;font-size:18px;color:var(--brand)}
+.field label{display:block;font-size:12.5px;color:var(--muted);margin-bottom:4px}
+.field input{width:100%;padding:9px 10px;border:1px solid var(--nv-b);border-radius:3px;font-size:14px;font-family:var(--f)}
+.btn{border:1px solid var(--nv-b);background:var(--paper);color:var(--ink);padding:9px 16px;border-radius:3px;font-size:13.5px}
+.btn:hover{background:var(--head)}
+.btn-primary{background:var(--brand-2);border-color:var(--brand-2);color:#fff;font-weight:700}
+.btn-primary:hover{background:var(--brand)}
+.btn-primary:disabled{background:#9db8d3;border-color:#9db8d3;cursor:not-allowed}
+.btn-green{background:var(--ans);border-color:var(--ans);color:#fff;font-weight:700}
+.btn-green:hover{filter:brightness(.92)}
+.note{font-size:12px;color:var(--muted);line-height:1.5}
+
+/* instructions */
+.instr{flex:1;padding-block:18px;display:flex;justify-content:center}
+.instr-card{background:var(--paper);border:1px solid var(--line);max-width:980px;width:100%;display:flex;flex-direction:column}
+.instr-head{background:var(--head);padding:12px 18px;font-weight:700;color:var(--brand);border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center}
+.instr-body{padding:16px 22px;line-height:1.6;font-size:13.5px;overflow:auto}
+.instr-body h3{font-size:14px;margin:14px 0 6px;color:var(--brand)}
+.instr-body ol{padding-left:22px;margin:6px 0}
+.instr-body li{margin-bottom:5px}
+.legend-list{display:grid;gap:8px;margin:8px 0 8px 4px}
+.legend-list div{display:flex;align-items:center;gap:10px}
+.pattern{border-collapse:collapse;width:100%;font-size:13px;margin:6px 0}
+.pattern th,.pattern td{border:1px solid var(--line);padding:6px 9px;text-align:left}
+.pattern th{background:var(--head)}
+.pattern td.n{text-align:center;font-variant-numeric:tabular-nums}
+.instr-foot{border-top:1px solid var(--line);padding:12px 18px;display:flex;flex-direction:column;gap:12px}
+.declare{display:flex;gap:10px;align-items:flex-start;font-size:13px;line-height:1.5}
+.declare input{margin-top:3px;width:16px;height:16px;flex:none}
+.instr-actions{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+
+/* exam */
+.exam{height:100%;display:flex;flex-direction:column}
+.exam-main{flex:1;display:flex;min-height:0}
+.qpane{flex:1;display:flex;flex-direction:column;min-width:0;background:var(--paper);border-right:1px solid var(--line)}
+.secbar{display:flex;align-items:center;gap:8px;background:var(--head);border-bottom:1px solid var(--line);padding-block:6px;flex-wrap:wrap}
+.secbar .lbl{font-weight:700;font-size:12.5px;color:var(--muted)}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;flex:1;min-width:0}
+.tab{border:1px solid var(--nv-b);background:var(--paper);padding:6px 10px;font-size:12.5px;border-radius:3px 3px 0 0;color:var(--brand)}
+.tab.on{background:var(--brand-2);color:#fff;border-color:var(--brand-2);font-weight:700}
+.timer{font-weight:700;font-size:13px;background:var(--paper);border:1px solid var(--nv-b);padding:6px 10px;border-radius:3px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.timer b{color:var(--brand)}
+.timer.low b{color:var(--bad)}
+.qtype{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:12.5px;padding-block:7px;border-bottom:1px solid var(--line);color:var(--muted)}
+.qtype .mk span{color:var(--ok);font-weight:700}
+.qtype .mk em{color:var(--bad);font-style:normal;font-weight:700}
+.qhead{display:flex;justify-content:space-between;align-items:center;padding-block:9px;border-bottom:1px solid var(--line);gap:10px;flex-wrap:wrap}
+.qhead h2{margin:0;font-size:15px}
+.qhead .lang{font-size:12px;color:var(--muted)}
+.qhead select{font-size:12px;padding:2px 4px}
+.qbody{flex:1;overflow:auto;padding-block:14px 20px;min-height:0}
+.qtext{font-size:15.5px;line-height:1.65;max-width:78ch}
+.qtext b{font-weight:700}
+.opts{display:flex;flex-direction:column;gap:9px;margin-top:16px;max-width:78ch}
+.opt{display:flex;align-items:flex-start;gap:10px;padding:9px 11px;border:1px solid transparent;border-radius:3px;cursor:pointer;font-size:15px;line-height:1.5}
+.opt:hover{background:#f3f7fb;border-color:var(--line)}
+.opt input{margin-top:4px;width:16px;height:16px;flex:none;accent-color:var(--brand-2)}
+.opt.sel{background:#eaf2fb;border-color:#a9c6e6}
+.actions{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;border-top:1px solid var(--line);background:var(--head);padding-block:9px;padding-bottom:max(9px,env(safe-area-inset-bottom,0px))}
+.actions .l{display:flex;gap:8px;flex-wrap:wrap}
+
+/* palette */
+.palette{width:300px;flex:none;display:flex;flex-direction:column;background:#f7f9fc;min-height:0}
+.cand{display:flex;gap:10px;align-items:center;padding:10px 12px;border-bottom:1px solid var(--line);background:var(--paper)}
+.cand svg{width:50px;height:58px;flex:none;border:1px solid var(--line);background:var(--head)}
+.cand .nm{font-weight:700;font-size:13.5px;word-break:break-word}
+.cand .roll{font-size:12px;color:var(--muted)}
+.legend{display:grid;grid-template-columns:1fr 1fr;gap:8px 8px;padding:10px 12px;border-bottom:1px solid var(--line);font-size:11.5px;line-height:1.25}
+.legend .it{display:flex;align-items:center;gap:6px}
+.legend .it.wide{grid-column:1/-1}
+.pal-sec{background:var(--brand-2);color:#fff;font-weight:700;font-size:12.5px;padding:6px 12px}
+.pal-choose{font-size:12px;color:var(--muted);padding:8px 12px 2px}
+.grid{flex:1;overflow:auto;display:grid;grid-template-columns:repeat(5,1fr);gap:9px 6px;padding:8px 12px 12px;align-content:start;min-height:0}
+.pal-foot{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:10px 12px;border-top:1px solid var(--line);background:var(--head);padding-bottom:max(10px,env(safe-area-inset-bottom,0px))}
+.pal-foot .btn-green{grid-column:1/-1}
+
+/* status shapes */
+.st{width:38px;height:33px;display:inline-grid;place-items:center;font-size:12.5px;font-weight:700;position:relative;border:1px solid transparent;font-variant-numeric:tabular-nums;flex:none;padding:0}
+.st.sm{width:28px;height:25px;font-size:11px}
+.st.nv{background:var(--nv);border-color:var(--nv-b);color:var(--ink);border-radius:3px}
+.st.na{background:var(--nans);color:#fff;border-radius:2px 2px 14px 14px / 2px 2px 9px 9px}
+.st.an{background:var(--ans);color:#fff;border-radius:14px 14px 2px 2px / 9px 9px 2px 2px}
+.st.mk{background:var(--mark);color:#fff;border-radius:50%}
+.st.am{background:var(--mark);color:#fff;border-radius:50%}
+.st.am::after{content:"";position:absolute;right:-3px;bottom:-2px;width:12px;height:12px;border-radius:50%;background:var(--ans);border:2px solid #fff;box-sizing:border-box}
+.st.sm.am::after{width:10px;height:10px;right:-3px;bottom:-2px}
+.grid .st{justify-self:center;cursor:pointer}
+.grid .st.cur{outline:2px solid var(--gold);outline-offset:2px}
+
+/* figures */
+.fig{margin:14px 0 4px;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.word{font-family:"Arial Black",Arial,sans-serif;font-weight:900;font-size:30px;letter-spacing:2px;color:#13294b;padding:6px 14px;border:1px dashed var(--nv-b);background:#fff}
+.mirror-line{display:flex;flex-direction:column;align-items:center;font-size:11px;color:var(--muted);gap:2px}
+.mirror-line i{display:block;width:4px;height:58px;background:linear-gradient(#6aa3db,#2b6cb0)}
+.water-wrap{display:flex;flex-direction:column;gap:3px}
+.water-line{height:5px;background:repeating-linear-gradient(90deg,#4a90d9 0 10px,#9cc5ef 10px 20px);border-radius:3px}
+.optfig{display:inline-block;font-family:"Arial Black",Arial,sans-serif;font-weight:900;font-size:22px;letter-spacing:2px;color:#13294b}
+.optfig.M{transform:scaleX(-1)} .optfig.W{transform:scaleY(-1)} .optfig.R{transform:rotate(180deg)}
+.dice{display:flex;gap:26px;flex-wrap:wrap}
+.dice figure{margin:0;text-align:center;font-size:12px;color:var(--muted)}
+.dice svg{width:120px;height:120px;display:block}
+
+/* modal */
+.scrim{position:fixed;inset:0;background:rgba(15,30,50,.55);display:flex;align-items:center;justify-content:center;z-index:50;padding:16px}
+.modal{background:var(--paper);max-width:760px;width:100%;max-height:90vh;display:flex;flex-direction:column;border:1px solid var(--line);box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.modal-h{background:var(--brand);color:#fff;padding:10px 16px;font-weight:700;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.modal-h button{background:transparent;border:0;color:#fff;font-size:20px;line-height:1}
+.modal-b{padding:14px 16px;overflow:auto}
+.modal-f{padding:12px 16px;border-top:1px solid var(--line);display:flex;justify-content:flex-end;gap:10px;flex-wrap:wrap}
+.tbl-wrap{overflow-x:auto}
+.sumtbl{border-collapse:collapse;width:100%;font-size:13px;min-width:560px}
+.sumtbl th,.sumtbl td{border:1px solid var(--line);padding:7px 8px;text-align:center;font-variant-numeric:tabular-nums}
+.sumtbl th{background:var(--head);font-size:12px}
+.sumtbl td:first-child,.sumtbl th:first-child{text-align:left}
+.sumtbl tr.tot td{font-weight:700;background:#f7f9fc}
+.qp-item{border-bottom:1px solid var(--line);padding:10px 0;font-size:13.5px;line-height:1.55}
+.qp-item .n{font-weight:700;color:var(--brand)}
+
+/* result */
+.result{flex:1;padding-block:18px 30px;display:flex;flex-direction:column;align-items:center;gap:16px}
+.rcard{background:var(--paper);border:1px solid var(--line);max-width:1000px;width:100%}
+.rhead{padding:14px 18px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center}
+.rhead h2{margin:0;font-size:18px;color:var(--brand)}
+.score-row{display:grid;grid-template-columns:auto 1fr;gap:22px;padding:18px;align-items:center}
+.ring{width:150px;height:150px;position:relative}
+.ring svg{width:150px;height:150px;transform:rotate(-90deg)}
+.ring .c{position:absolute;inset:0;display:grid;place-items:center;text-align:center}
+.ring .c b{font-size:30px;display:block;font-variant-numeric:tabular-nums}
+.ring .c span{font-size:12px;color:var(--muted)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;width:100%}
+.stat{border:1px solid var(--line);padding:10px 12px}
+.stat .k{font-size:11.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.6px}
+.stat .v{font-size:20px;font-weight:700;font-variant-numeric:tabular-nums;margin-top:2px}
+.stat.ok .v{color:var(--ok)} .stat.bad .v{color:var(--bad)}
+.verdict{margin:0 18px 16px;padding:10px 14px;background:var(--info-wash);border:1px solid #f1d68a;font-size:13.5px;line-height:1.5}
+.secbars{padding:4px 18px 18px;display:grid;gap:10px}
+.sb{display:grid;grid-template-columns:170px 1fr 70px;gap:10px;align-items:center;font-size:13px}
+.sb .bar{height:14px;background:var(--nv);position:relative;overflow:hidden;border-radius:2px}
+.sb .bar i{position:absolute;inset:0 auto 0 0;background:var(--brand-2)}
+.sb .pc{text-align:right;font-variant-numeric:tabular-nums;font-weight:700}
+.filters{display:flex;gap:6px;flex-wrap:wrap;padding:12px 18px;border-bottom:1px solid var(--line);align-items:center}
+.chip{border:1px solid var(--nv-b);background:var(--paper);padding:5px 10px;border-radius:14px;font-size:12.5px}
+.chip.on{background:var(--brand-2);border-color:var(--brand-2);color:#fff}
+.sol{padding:14px 18px;border-bottom:1px solid var(--line)}
+.sol-top{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:12.5px;color:var(--muted);margin-bottom:6px}
+.pill{padding:2px 8px;border-radius:10px;font-weight:700;font-size:11.5px}
+.pill.ok{background:var(--ok-wash);color:var(--ok)} .pill.bad{background:var(--bad-wash);color:var(--bad)} .pill.skip{background:var(--nv);color:var(--muted)}
+.sol .qtext{font-size:14.5px}
+.sopts{display:grid;gap:6px;margin:10px 0}
+.sopt{padding:7px 10px;border:1px solid var(--line);border-radius:3px;font-size:14px;display:flex;gap:8px;align-items:flex-start}
+.sopt .L{font-weight:700;color:var(--muted);flex:none}
+.sopt.right{background:var(--ok-wash);border-color:#9fd3ac}
+.sopt.wrong{background:var(--bad-wash);border-color:#efb1ab}
+.sopt .tag{margin-left:auto;font-size:11.5px;font-weight:700;white-space:nowrap}
+.sopt.right .tag{color:var(--ok)} .sopt.wrong .tag{color:var(--bad)}
+.exp{background:#f4f8fc;border-left:3px solid var(--brand-2);padding:9px 12px;font-size:13.5px;line-height:1.6}
+.exp h4{margin:0 0 4px;font-size:12px;letter-spacing:.6px;color:var(--brand);text-transform:uppercase}
+.empty{padding:22px 18px;color:var(--muted)}
+
+.palette-toggle{display:none}
+.site-foot{flex:none;min-height:64px;display:flex;align-items:center;gap:6px 14px;flex-wrap:wrap;background:#0a3f6e;color:#dbe8f6;font-size:12px;padding-block:8px;padding-right:max(210px,env(safe-area-inset-right,0px));padding-bottom:max(8px,env(safe-area-inset-bottom,0px))}
+.site-foot b{color:#fff}
+.toast{position:fixed;top:calc(12px + env(safe-area-inset-top,0px));left:50%;transform:translateX(-50%);background:#fff8e1;border:1px solid #f1d68a;color:#5b4300;padding:10px 16px;font-weight:700;font-size:13.5px;z-index:60;box-shadow:0 6px 18px rgba(0,0,0,.15);max-width:calc(100% - 32px);text-align:center}
+.cta{margin:0 18px 16px;padding:12px 14px;border:1px solid #9fc0e3;background:#eef5fc;display:flex;gap:10px 16px;flex-wrap:wrap;align-items:center;justify-content:space-between;font-size:13.5px;line-height:1.5}
+.cta a,.ractions a{text-decoration:none}
+.btn-wa{background:#1f9d55;border-color:#1f9d55;color:#fff;font-weight:700;display:inline-block}
+.btn-wa:hover{filter:brightness(.92)}
+.topics{padding:0 18px 18px}
+.topics h3{font-size:14px;margin:0 0 8px;color:var(--brand)}
+.tchips{display:flex;flex-wrap:wrap;gap:6px}
+.tchip{border:1px solid #efb1ab;background:var(--bad-wash);color:#7a1f17;padding:4px 10px;border-radius:12px;font-size:12.5px}
+.tchip b{font-variant-numeric:tabular-nums}
+.ractions{display:flex;gap:8px;flex-wrap:wrap}
+.result{padding-bottom:84px}
+@media print{.topbar .tb-right,.site-foot,.ractions,#filters,.cta,#logout,#retake,.toast{display:none!important}body{background:#fff}.rcard{border:0}.sol{break-inside:avoid}}
+@media (max-width:860px){
+  .login{grid-template-columns:1fr}
+  .login-info{border-right:0;border-bottom:1px solid var(--line)}
+  .palette{position:fixed;top:0;right:0;bottom:0;width:min(320px,88vw);z-index:40;box-shadow:-6px 0 18px rgba(0,0,0,.2);transform:translateX(105%);transition:transform .2s ease;padding-top:env(safe-area-inset-top,0px)}
+  .palette.open{transform:none}
+  .palette{bottom:64px}
+  .site-foot{padding-right:max(170px,env(safe-area-inset-right,0px));font-size:11px}
+  .site-foot span:nth-child(2){display:none}
+  .palette-toggle{display:inline-block}
+  .tb-right{flex:1 1 100%;text-align:left}
+  .exam .tb-right{display:none}
+  .secbar .lbl{display:none}
+  .tabs{flex:1 1 100%;flex-wrap:nowrap;overflow-x:auto;padding-bottom:2px}
+  .tab{white-space:nowrap;flex:none}
+  .timer{margin-right:auto}
+  .score-row{grid-template-columns:1fr;justify-items:center}
+  .sb{grid-template-columns:110px 1fr 56px}
+  .qtext{font-size:15px}
+}
+@media (prefers-reduced-motion:reduce){.palette{transition:none}}
+</style>
+</head>
+<body>
+<div id="app"></div>
+
+<script>
+const DATA = {"sections": [["A", "Subject Specific"], ["B", "Aptitude & Reasoning"], ["C", "English Language"], ["D", "General Awareness"], ["E", "Computer Knowledge"]], "qs": [{"s": "A", "t": "Income Tax Law and Practice", "q": "A manufacturing company acquires and installs new plant and machinery. Besides normal depreciation, it is eligible for additional depreciation (old Sec 32(1)(iia)) at the rate of:", "o": ["15% of the written down value", "35% of the actual cost in all areas", "20% of the actual cost", "10% of the actual cost"], "a": 2, "e": "Additional depreciation of <b>20%</b> of the actual cost of new P&amp;M is allowed to manufacturing/production units (35% in notified backward areas of certain States). If the asset is used for less than 180 days, only half is allowed that year and the balance next year.", "f": null}, {"s": "A", "t": "Income Tax Law and Practice", "q": "Under the general deduction section (old Sec 37(1)), an expenditure is NOT deductible if it is:", "o": ["Revenue in nature", "Incurred wholly for the business", "Not covered by Sections 30 to 36", "Personal or capital in nature"], "a": 3, "e": "Sec 37(1) allows any expenditure laid out <b>wholly and exclusively</b> for business, provided it is <b>not capital</b>, <b>not personal</b>, and not covered by Secs 30–36. Expenditure for an offence or prohibited purpose is also disallowed (Explanation 1).", "f": null}, {"s": "A", "t": "Income Tax Law and Practice", "q": "A firm pays professional fees of ₹2,00,000 to a resident consultant but fails to deduct TDS. Under old Sec 40(a)(ia), the amount disallowed in computing business income is:", "o": ["₹60,000 (30% of the expenditure)", "₹20,000 (10% of the expenditure)", "₹2,00,000 (the whole expenditure)", "Nil, only interest is payable"], "a": 0, "e": "Sec 40(a)(ia): for failure to deduct (or deposit) TDS on payments to <b>residents</b>, <b>30%</b> of the expenditure is disallowed; it is allowed in the year the TDS is later deposited. For payments to non-residents (Sec 40(a)(i)), 100% is disallowed.", "f": null}, {"s": "A", "t": "Income Tax Law and Practice", "q": "Under old Sec 47(iii), a transfer of a capital asset by an individual under a gift or a will is:", "o": ["Taxable at the market value of the asset", "Treated as income from other sources of the donor", "Not regarded as a transfer for capital gains", "Taxable as short-term capital gain"], "a": 2, "e": "Transfers under a <b>gift, will or irrevocable trust</b> are not ‘transfers’ for capital gains (Sec 47(iii)). When the recipient later sells, the previous owner’s cost and holding period are counted (Sec 49 and 2(42A)).", "f": null}, {"s": "A", "t": "Income Tax Law and Practice", "q": "For a capital asset acquired before 1 April 2001, the cost of acquisition for computing capital gains may be taken as:", "o": ["Actual cost or FMV on 1-4-2001, at the assessee’s option", "Only the actual cost, with no other option", "FMV on the date of sale of the asset", "Nil, since the asset is more than 25 years old"], "a": 0, "e": "Under old Sec 55(2)(b), the assessee may take the <b>fair market value as on 1-4-2001</b> instead of the actual cost (for land and building, the FMV cannot exceed the stamp duty value on that date). 2001-02 is the base year of the Cost Inflation Index.", "f": null}, {"s": "A", "t": "Income Tax Law and Practice", "q": "A business loss of the current year can be carried forward to later years only if:", "o": ["The assessee has opted for the new regime", "The loss is more than ₹1 lakh", "The loss is certified by the Assessing Officer in advance", "The return of loss is filed by the due date under Sec 139(1)"], "a": 3, "e": "Under old Sec 80 read with Sec 139(3), business losses, speculation losses and capital losses can be carried forward only if the return is filed <b>within the due date</b>. House property loss and unabsorbed depreciation are exceptions.", "f": null}, {"s": "A", "t": "Income Tax Law and Practice", "q": "Under the Income-tax law, a deity or a university incorporated by statute (not falling in any other category) is assessed as a/an:", "o": ["Local authority", "Association of persons", "Body of individuals (BOI)", "Artificial juridical person"], "a": 3, "e": "Sec 2(31) defines ‘person’ to include an individual, HUF, company, firm, AOP/BOI, local authority and every <b>artificial juridical person</b> not falling within the preceding categories — such as a deity, a statutory university or a statutory corporation.", "f": null}, {"s": "A", "t": "Income Tax Law and Practice", "q": "Under old Sec 206C(1F), a seller must collect tax at source on the sale of a motor vehicle whose value exceeds ₹10 lakh at the rate of:", "o": ["0.1%", "1%", "5%", "2%"], "a": 1, "e": "TCS of <b>1%</b> applies on the sale of a <b>motor vehicle</b> (and, from 2025, notified luxury goods) of value exceeding <b>₹10 lakh</b>. The buyer can claim credit for this TCS against his tax liability.", "f": null}, {"s": "A", "t": "Income Tax Law and Practice", "q": "Interest for delay in filing the return of income beyond the due date (old Sec 234A) is charged at:", "o": ["2% per month on the total income returned", "A flat ₹5,000 for each late return filed", "1% per month or part of a month on unpaid tax", "1.5% per month on the total assessed tax"], "a": 2, "e": "Sec 234A: simple interest at <b>1% for every month or part of a month</b> from the due date to the date of filing, on the tax remaining unpaid. Late fee under Sec 234F is separate.", "f": null}, {"s": "A", "t": "GST and Indirect Tax", "q": "IGST on goods imported into India is levied and collected under:", "o": ["Section 12 of the Customs Act, 1962", "Section 5(1) of the IGST Act without any customs link", "Section 3(7) of the Customs Tariff Act, 1975", "Section 9 of the CGST Act, 2017"], "a": 2, "e": "The proviso to Sec 5(1) of the IGST Act provides that IGST on imported goods is levied and collected under <b>Sec 3(7) of the Customs Tariff Act, 1975</b>, along with customs duty, at the point of import.", "f": null}, {"s": "A", "t": "GST and Indirect Tax", "q": "Under Sec 2(47) of the CGST Act, ‘exempt supply’ includes supplies that are:", "o": ["Taxed under the reverse charge mechanism", "Zero-rated, such as exports and SEZ supplies", "Nil-rated, notified as exempt, or non-taxable", "Made by taxpayers under the composition scheme"], "a": 2, "e": "‘Exempt supply’ = supply attracting <b>nil rate</b>, supply <b>wholly exempt</b> under Sec 11 or Sec 6 of the IGST Act, and <b>non-taxable</b> supply (e.g. alcoholic liquor for human consumption). Zero-rated supplies are taxable at 0% with ITC refund allowed.", "f": null}, {"s": "A", "t": "GST and Indirect Tax", "q": "A registered supplier (other than a composition taxpayer) receives an advance in October for goods to be supplied in December. GST on this advance is payable:", "o": ["Only when the annual return is filed", "In October, on receipt of the advance", "At whatever time the recipient chooses", "Not on the advance, but at the time of supply"], "a": 3, "e": "By Notification 66/2017-CT, GST is <b>not payable on advances for goods</b> (except by composition taxpayers); tax is paid at the time of invoice/supply. For <b>services</b>, an advance is taxable on receipt.", "f": null}, {"s": "A", "t": "GST and Indirect Tax", "q": "Embassies, consulates and UN bodies that claim refund of GST paid on their purchases are given a:", "o": ["Unique Identity Number (UIN)", "Temporary registration number", "GSTIN as a normal taxpayer", "TAN under GST"], "a": 0, "e": "Under Sec 25(9), a <b>UIN</b> is issued to specialised UN agencies, multilateral financial institutions, consulates or embassies of foreign countries, etc., so that they can claim refund of taxes paid on inward supplies.", "f": null}, {"s": "A", "t": "GST and Indirect Tax", "q": "For export of goods on payment of IGST, the refund of IGST is claimed through:", "o": ["The shipping bill, deemed to be a refund claim", "Form GST RFD-01 filed with the GST officer", "A separate application made to the DGFT", "Form GSTR-9C filed with the annual return"], "a": 0, "e": "Rule 96: for goods exported on payment of IGST, the <b>shipping bill</b> filed by the exporter is <b>deemed to be the application for refund</b>, once the export general manifest and a valid GSTR-3B are filed. RFD-01 is used for refund of unutilised ITC.", "f": null}, {"s": "A", "t": "GST and Indirect Tax", "q": "Under Sec 15(2)(e) of the CGST Act, the value of supply EXCLUDES subsidies provided by:", "o": ["The foreign buyer of goods", "The Central and State Governments", "The holding company of the supplier", "A private charitable trust"], "a": 1, "e": "Subsidies <b>directly linked to the price</b> are included in the value, <b>except subsidies provided by the Central and State Governments</b>. Hence a Government subsidy does not form part of the taxable value.", "f": null}, {"s": "A", "t": "GST and Indirect Tax", "q": "A customer pays ₹500 as late fee for delayed payment of consideration for a taxable supply. Under Sec 15(2)(d), this late fee is:", "o": ["Included in the value of the supply", "Excluded from the value of the supply", "Taxed as a separate exempt supply", "Treated as an actionable claim"], "a": 0, "e": "<b>Interest, late fee or penalty</b> for delayed payment of any consideration for a supply is <b>included in the value</b> of that supply under Sec 15(2)(d).", "f": null}, {"s": "A", "t": "GST and Indirect Tax", "q": "Balance in the electronic credit ledger (ITC) can be used to pay:", "o": ["Output tax as well as interest and late fee", "Penalty imposed by the proper officer", "Any amount, including registration fees", "Output tax only, not interest or late fee"], "a": 3, "e": "Sec 49(4): the electronic credit ledger may be used only for paying <b>output tax</b>. Interest, penalty, fee and other amounts must be paid through the <b>electronic cash ledger</b>.", "f": null}, {"s": "A", "t": "GST and Indirect Tax", "q": "A registered person accumulates ITC because the GST rate on his inputs is higher than on his output supplies. Refund of such unutilised ITC is allowed under Sec 54(3) for:", "o": ["An inverted duty structure", "Deemed exports only", "Supplies to SEZ units only", "Exempt and nil-rated supplies"], "a": 0, "e": "Sec 54(3) allows refund of unutilised ITC in two cases: (i) <b>zero-rated supplies</b> without payment of tax, and (ii) <b>inverted duty structure</b> — where the tax rate on inputs is higher than on output supplies (with specified exceptions).", "f": null}, {"s": "A", "t": "Computerized Accounting", "q": "In Tally, the voucher used to record goods received from a supplier before the purchase invoice is received (like a Goods Receipt Note) is the:", "o": ["Purchase voucher", "Stock Journal", "Rejection In", "Receipt Note"], "a": 3, "e": "A <b>Receipt Note</b> (GRN) records the inward movement of goods and updates stock. The <b>Purchase</b> voucher is entered later when the bill arrives, linked through the tracking number.", "f": null}, {"s": "A", "t": "Computerized Accounting", "q": "In Tally’s inventory, the feature that links a Delivery Note or Receipt Note to the later sales or purchase invoice is called:", "o": ["Batch number", "Voucher class", "Tracking number", "Cost centre"], "a": 2, "e": "A <b>tracking number</b> (e.g. the delivery note number) ties the movement of goods to the invoice, so goods are not counted twice and pending bills can be identified.", "f": null}, {"s": "A", "t": "Computerized Accounting", "q": "To see how long customer bills have remained unpaid (e.g. 0–30, 31–60, 61–90 and over 90 days), the Tally report used is:", "o": ["Ageing analysis of outstandings", "Cash flow statement", "Stock summary by godown", "Ratio analysis report"], "a": 0, "e": "<b>Ageing analysis</b> in the Outstandings (Bills Receivable/Payable) reports groups pending bills by age periods, helping credit control.", "f": null}, {"s": "A", "t": "Computerized Accounting", "q": "A trader buys an item by the box but sells it by the piece (1 box = 12 pieces). In the stock item master in Tally he should use:", "o": ["Price levels", "Alternate units", "Godowns", "Batch-wise details"], "a": 1, "e": "<b>Alternate units</b> let a stock item be recorded in two units (e.g. Box and Nos) with a conversion factor, so Tally shows stock in both.", "f": null}, {"s": "A", "t": "Computerized Accounting", "q": "In Tally, fixing a predetermined purchase cost and selling price for a stock item, to be used for valuation and invoicing, is done through:", "o": ["Cost categories", "Standard rates", "Price levels only", "Voucher class"], "a": 1, "e": "<b>Standard rates</b> (standard cost and standard selling price) can be set in the stock item master with effective dates; stock can then be valued at standard cost.", "f": null}, {"s": "A", "t": "Computerized Accounting", "q": "From TallyPrime, reports such as the Balance Sheet can be exported directly for use in other software in formats such as:", "o": ["Excel, PDF, XML and JPEG", "EXE and BAT program files", "MP4 and MP3 media files", "DOC and PPT formats only"], "a": 0, "e": "TallyPrime’s <b>Export</b> option (Alt + E) saves reports in <b>Excel (xlsx), PDF, XML, JPEG</b> and other formats. GST returns are exported as JSON for upload to the GST portal.", "f": null}, {"s": "A", "t": "Computerized Accounting", "q": "To apply the same HSN code and GST rate to a large number of stock items at once in TallyPrime, the user should create a:", "o": ["Stock Category", "GST Classification", "Voucher Type", "Cost Centre"], "a": 1, "e": "A <b>GST Classification</b> stores HSN/SAC, description and tax rate. Linking it to many stock items or ledgers avoids entering GST details in each master separately.", "f": null}, {"s": "A", "t": "Computerized Accounting", "q": "In Tally’s order processing, an order placed by the business with its supplier is recorded through a:", "o": ["Purchase Order voucher", "Debit Note voucher", "Sales Order voucher", "Receipt Note voucher"], "a": 0, "e": "A <b>Purchase Order</b> records goods ordered from a supplier; it does not affect stock or accounts. Receipt Note records the goods received, and the Purchase voucher records the bill.", "f": null}, {"s": "A", "t": "Fundamentals of FM & Accounting", "q": "Maximum usage of a material is 400 units per week and the maximum lead time is 6 weeks. The reorder level is:", "o": ["3,000 units", "1,600 units", "2,000 units", "2,400 units"], "a": 3, "e": "Reorder level = Maximum usage × Maximum lead time = 400 × 6 = <b>2,400 units</b>.", "f": null}, {"s": "A", "t": "Fundamentals of FM & Accounting", "q": "A company’s EPS is ₹10 and it pays a dividend of ₹4 per share. Its dividend payout ratio is:", "o": ["40%", "25%", "250%", "60%"], "a": 0, "e": "Payout ratio = DPS ÷ EPS × 100 = 4 ÷ 10 × 100 = <b>40%</b>. Retention ratio = 60%.", "f": null}, {"s": "A", "t": "Fundamentals of FM & Accounting", "q": "A share with a market price of ₹100 has earnings per share of ₹8. Its earnings yield is:", "o": ["12.5%", "8%", "80%", "1.25%"], "a": 1, "e": "Earnings yield = EPS ÷ Market price × 100 = 8 ÷ 100 × 100 = <b>8%</b>. It is the reciprocal of the P/E ratio (12.5).", "f": null}, {"s": "A", "t": "Fundamentals of FM & Accounting", "q": "A bill of ₹12,000 is retired (paid) by the acceptor 2 months before its due date. The drawer allows a rebate at 12% p.a. The rebate is:", "o": ["₹240", "₹1,440", "₹120", "₹360"], "a": 0, "e": "Rebate = 12,000 × 12% × 2/12 = <b>₹240</b>. It is an expense (discount allowed) for the drawer and a gain for the acceptor.", "f": null}, {"s": "A", "t": "Fundamentals of FM & Accounting", "q": "Interest on partners’ capitals allowed under the partnership deed is shown in the:", "o": ["Trading Account", "Profit and Loss Account as an expense", "Balance Sheet only", "Profit and Loss Appropriation Account"], "a": 3, "e": "Interest on capital is an <b>appropriation of profit</b>, not a charge against profit, so it is debited to the <b>P&amp;L Appropriation Account</b>.", "f": null}, {"s": "A", "t": "Fundamentals of FM & Accounting", "q": "Under revised AS 10, a change in the method of depreciation (e.g. from WDV to SLM) is treated as a:", "o": ["Change in accounting estimate, applied prospectively", "Prior period item", "Extraordinary item", "Change in accounting policy, applied retrospectively"], "a": 0, "e": "AS 10 (revised): the depreciation method reflects the pattern of consumption of benefits; a change in method is a <b>change in accounting estimate</b> under AS 5 and is applied <b>prospectively</b>.", "f": null}, {"s": "A", "t": "Fundamentals of FM & Accounting", "q": "Which of the following is a spontaneous source of short-term finance that arises naturally from business operations?", "o": ["Trade credit", "Bank overdraft", "Commercial paper", "Public deposits"], "a": 0, "e": "<b>Trade credit</b> (credit from suppliers) and accrued expenses arise <b>spontaneously</b> with purchases. Bank overdraft, CP and public deposits must be arranged.", "f": null}, {"s": "A", "t": "Fundamentals of FM & Accounting", "q": "Long-term risk capital provided to new and innovative start-ups, usually in exchange for an equity stake, is known as:", "o": ["Lease finance", "Bridge loan", "Venture capital", "Factoring"], "a": 2, "e": "<b>Venture capital</b> funds high-risk, high-growth new ventures in return for equity. Venture capital funds are regulated by SEBI (now under the AIF Regulations, 2012).", "f": null}, {"s": "A", "t": "Fundamentals of FM & Accounting", "q": "As per Schedule III to the Companies Act, 2013, debentures redeemable after 5 years are shown in a company’s Balance Sheet under:", "o": ["Non-current assets → Long-term loans and advances", "Shareholders’ funds → Reserves and surplus", "Current liabilities → Short-term borrowings", "Non-current liabilities → Long-term borrowings"], "a": 3, "e": "Debentures are <b>borrowings</b>. If not repayable within 12 months, they appear under <b>Non-current liabilities → Long-term borrowings</b>; the part due within 12 months is shown as current maturities.", "f": null}, {"s": "A", "t": "Banking and Insurance Management", "q": "Sovereign Gold Bonds (SGBs) are government securities denominated in grams of gold and are issued by the:", "o": ["State Bank of India, on its own account", "SEBI, through the stock exchanges", "RBI, on behalf of the Government of India", "Ministry of Commerce, through DGFT"], "a": 2, "e": "SGBs are issued by the <b>RBI on behalf of the Government of India</b>. They carry fixed interest (2.5% p.a. on the issue price for most tranches) and have a tenure of 8 years with an exit option after the 5th year.", "f": null}, {"s": "A", "t": "Banking and Insurance Management", "q": "Under RBI’s asset classification norms, an asset identified as uncollectible by the bank, its auditors or the RBI, but not yet fully written off, is a:", "o": ["Doubtful asset", "Sub-standard asset", "Loss asset", "Special Mention Account"], "a": 2, "e": "NPAs are classified as sub-standard (NPA up to 12 months), doubtful (sub-standard for 12 months) and <b>loss assets</b> — identified as uncollectible but not written off wholly. SMA categories flag early stress before an account becomes an NPA.", "f": null}, {"s": "A", "t": "Banking and Insurance Management", "q": "When a life insurance policyholder stops paying premiums after the policy has acquired a surrender value, but does not surrender it, the policy continues with a reduced sum assured called the:", "o": ["Maturity value", "Revival value", "Surrender value", "Paid-up value"], "a": 3, "e": "The <b>paid-up value</b> is the proportionately reduced sum assured payable on death or maturity. <b>Surrender value</b> is what is paid if the policy is terminated.", "f": null}, {"s": "A", "t": "Banking and Insurance Management", "q": "A life insurance policy under which the sum assured is payable only on the death of the insured, whenever it occurs, is a/an:", "o": ["Term insurance policy", "Money-back policy", "Whole life policy", "Endowment policy"], "a": 2, "e": "A <b>whole life policy</b> covers the insured for life, and the claim arises only on death. Term insurance covers a fixed term only; endowment pays on death or maturity.", "f": null}, {"s": "A", "t": "Banking and Insurance Management", "q": "In life insurance, the table used to estimate the probability of death at each age, on which premium rates are based, is the:", "o": ["Amortisation table", "Morbidity table", "Annuity table", "Mortality table"], "a": 3, "e": "Actuaries use a <b>mortality table</b> (life table) to price life insurance. Morbidity tables estimate the incidence of illness for health insurance.", "f": null}, {"s": "A", "t": "Banking and Insurance Management", "q": "Banks must report cash transactions above ₹10 lakh (or a series of connected cash transactions above ₹10 lakh in a month) under the PMLA to:", "o": ["Reserve Bank of India", "Financial Intelligence Unit – India", "Central Board of Direct Taxes", "Enforcement Directorate directly"], "a": 1, "e": "Under the Prevention of Money Laundering Act, 2002, banks file <b>Cash Transaction Reports (CTRs)</b> and Suspicious Transaction Reports with <b>FIU-IND</b>, which works under the Department of Revenue, Ministry of Finance.", "f": null}, {"s": "A", "t": "Banking and Insurance Management", "q": "Under Basel III, the Net Stable Funding Ratio (NSFR) that banks in India must maintain is at least:", "o": ["125%", "100%", "50%", "75%"], "a": 1, "e": "<b>NSFR = Available stable funding ÷ Required stable funding ≥ 100%</b> (implemented by RBI from October 2021). It ensures banks fund long-term assets with stable sources. The LCR deals with 30-day liquidity.", "f": null}, {"s": "A", "t": "Banking and Insurance Management", "q": "A facility in which the balance in a savings account above a set limit is automatically moved into a fixed deposit to earn higher interest is called a/an:", "o": ["Recurring deposit", "Standing instruction for bill payment", "Sweep-in (auto-sweep) facility", "Overdraft facility"], "a": 2, "e": "In an <b>auto-sweep</b> account, surplus balance is swept into a fixed deposit and swept back (reverse sweep) when needed, combining liquidity with higher FD interest.", "f": null}, {"s": "A", "t": "Auditing, CG and Accounting Standards", "q": "The auditor’s duty to communicate significant deficiencies in internal control to those charged with governance and management is laid down in:", "o": ["SA 260", "SA 230", "SA 265", "SA 250"], "a": 2, "e": "<b>SA 265 – Communicating Deficiencies in Internal Control to Those Charged with Governance and Management</b>. Significant deficiencies must be communicated in writing.", "f": null}, {"s": "A", "t": "Auditing, CG and Accounting Standards", "q": "The external auditor’s use of the work of the entity’s internal audit function is governed by:", "o": ["SA 402", "SA 610", "SA 620", "SA 600"], "a": 1, "e": "<b>SA 610 – Using the Work of Internal Auditors</b>. SA 620 – auditor’s expert · SA 600 – another auditor · SA 402 – service organisation.", "f": null}, {"s": "A", "t": "Auditing, CG and Accounting Standards", "q": "Under AS 25 (Interim Financial Reporting), income tax expense for an interim period is recognised using:", "o": ["Only the previous year’s effective tax rate", "The highest marginal rate of income tax", "The tax actually paid in the interim period", "The estimated average annual effective tax rate"], "a": 3, "e": "<b>AS 25</b> treats each interim period as part of the annual period (integral view for taxes): interim tax expense is computed using the <b>best estimate of the weighted average annual effective income tax rate</b> expected for the full year.", "f": null}, {"s": "A", "t": "Auditing, CG and Accounting Standards", "q": "The auditor’s overall responses to assessed risks and the design of further audit procedures (tests of controls and substantive procedures) are covered in:", "o": ["SA 315", "SA 520", "SA 330", "SA 500"], "a": 2, "e": "<b>SA 330 – The Auditor’s Responses to Assessed Risks</b>. SA 315 is about identifying and assessing the risks; SA 520 about analytical procedures; SA 500 about audit evidence.", "f": null}, {"s": "A", "t": "Auditing, CG and Accounting Standards", "q": "Under AS 7 (Construction Contracts), revenue and costs of a contract whose outcome can be estimated reliably are recognised using the:", "o": ["Instalment sales method", "Percentage of completion method", "Completed contract method", "Cash basis of accounting"], "a": 1, "e": "<b>AS 7</b> requires the <b>percentage of completion method</b>; an expected loss on the contract is recognised as an expense immediately.", "f": null}, {"s": "A", "t": "Auditing, CG and Accounting Standards", "q": "Disclosure of transactions with related parties, such as key management personnel and their relatives, is required by:", "o": ["AS 20", "AS 18", "AS 24", "AS 17"], "a": 1, "e": "<b>AS 18 – Related Party Disclosures</b>. AS 17 – segment reporting · AS 20 – earnings per share · AS 24 – discontinuing operations.", "f": null}, {"s": "A", "t": "Auditing, CG and Accounting Standards", "q": "Under Sec 203 of the Companies Act, 2013, which of the following is NOT a whole-time Key Managerial Personnel that a listed company must appoint?", "o": ["Managing Director or CEO or Manager", "Statutory auditor", "Company Secretary", "Chief Financial Officer"], "a": 1, "e": "Sec 203 requires every listed company (and public companies with paid-up capital of ₹10 crore or more) to appoint whole-time KMP: <b>MD/CEO/Manager</b> (or whole-time director), <b>Company Secretary</b> and <b>CFO</b>. The statutory auditor is an outsider, not KMP.", "f": null}, {"s": "B", "t": "Percentage", "q": "A family spends 60% of its beverage budget on tea and 40% on sugar. The price of tea rises by 25% and that of sugar by 20%. If consumption is unchanged, the expenditure rises by:", "o": ["24%", "23%", "22.5%", "45%"], "a": 1, "e": "Weighted increase = 0.60 × 25% + 0.40 × 20% = 15% + 8% = <b>23%</b>.", "f": null}, {"s": "B", "t": "Percentage", "q": "40 litres of a solution contain 10% salt. How much water must be evaporated so that the solution contains 25% salt?", "o": ["20 litres", "30 litres", "24 litres", "16 litres"], "a": 2, "e": "Salt = 10% of 40 = 4 litres (unchanged). For 25% salt, total volume = 4 ÷ 0.25 = 16 litres.<br>Water evaporated = 40 − 16 = <b>24 litres</b>.", "f": null}, {"s": "B", "t": "Percentage", "q": "Electricity is charged at ₹5 per unit for the first 100 units, ₹6 per unit for the next 100 units and ₹8 per unit beyond 200 units. A consumer’s bill is ₹1,580. How many units did he consume?", "o": ["280", "240", "250", "260"], "a": 3, "e": "First 100 units = ₹500; next 100 = ₹600 → ₹1,100 for 200 units. Remaining ₹480 ÷ 8 = 60 units.<br>Total = <b>260 units</b>.", "f": null}, {"s": "B", "t": "Average", "q": "In a class, the average weight of 24 boys is 40 kg and that of 16 girls is 35 kg. The average weight of the whole class is:", "o": ["38.5 kg", "37.5 kg", "38 kg", "37 kg"], "a": 2, "e": "Total = 24 × 40 + 16 × 35 = 960 + 560 = 1,520 kg; students = 40 → average = <b>38 kg</b>.", "f": null}, {"s": "B", "t": "Average", "q": "The average of x numbers is y, and the average of y numbers is x. The average of all the numbers taken together is:", "o": ["xy / (x + y)", "(x + y) / 2xy", "(x + y) / 2", "2xy / (x + y)"], "a": 3, "e": "Sum of first group = xy; sum of second group = yx. Total = 2xy, count = x + y.<br>Average = <b>2xy / (x + y)</b>.", "f": null}, {"s": "B", "t": "Average", "q": "The average of a non-zero number and its square is 5 times the number. The number is:", "o": ["10", "5", "9", "11"], "a": 2, "e": "(x + x²)/2 = 5x → x² + x = 10x → x² = 9x → <b>x = 9</b> (x ≠ 0).", "f": null}, {"s": "B", "t": "Simple Interest", "q": "The simple interest on a sum for 3 years at 10% per annum is ₹1,050 less than the sum itself. The sum is:", "o": ["₹1,500", "₹2,100", "₹3,500", "₹1,050"], "a": 0, "e": "SI = 0.30P, and P − 0.30P = 1,050 → 0.70P = 1,050 → <b>P = ₹1,500</b>.", "f": null}, {"s": "B", "t": "Simple Interest", "q": "A lends ₹2,500 to B and ₹1,500 to C for 4 years at the same rate of simple interest. He receives ₹960 as total interest from both. The rate of interest is:", "o": ["5% p.a.", "6% p.a.", "4.8% p.a.", "8% p.a."], "a": 1, "e": "Total principal = ₹4,000. 4,000 × r × 4/100 = 960 → 160r = 960 → <b>r = 6%</b>.", "f": null}, {"s": "B", "t": "Simple Interest", "q": "Two equal sums are lent at 5% and 6% per annum simple interest respectively. The total interest after 4 years is ₹1,320. Each sum is:", "o": ["₹3,000", "₹3,300", "₹6,000", "₹2,750"], "a": 0, "e": "Interest = P(20% + 24%) = 0.44P = 1,320 → <b>P = ₹3,000</b>.", "f": null}, {"s": "B", "t": "Profit & Loss", "q": "A fruit seller buys 3 dozen bananas at ₹10 per dozen and 2 dozen at ₹15 per dozen. He sells all of them at ₹14.40 per dozen. His profit percent is:", "o": ["15%", "25%", "20%", "18%"], "a": 2, "e": "Cost = 3 × 10 + 2 × 15 = ₹60. SP = 5 × 14.40 = ₹72. Profit = ₹12 → 12/60 × 100 = <b>20%</b>.", "f": null}, {"s": "B", "t": "Profit & Loss", "q": "A dishonest trader uses a weight 10% heavier than the standard when buying and 10% lighter when selling, and charges the cost price per kg in both cases. His gain percent is:", "o": ["20%", "22 2/9%", "21%", "11 1/9%"], "a": 1, "e": "For the price of 1,000 g he gets 1,100 g; for each 900 g he sells he collects the price of 1,000 g.<br>Gain = 1,100/900 − 1 = 2/9 = <b>22 2/9%</b>.", "f": null}, {"s": "B", "t": "Profit & Loss", "q": "A stationer buys 50 pens at ₹18 each and spends ₹100 on transport. He sells all the pens at ₹24 each. His profit percent is:", "o": ["33⅓%", "16⅔%", "25%", "20%"], "a": 3, "e": "Total cost = 50 × 18 + 100 = ₹1,000. SP = 50 × 24 = ₹1,200 → profit = ₹200 → <b>20%</b>.", "f": null}, {"s": "B", "t": "Time & Work", "q": "A contractor undertakes to finish a job in 40 days and engages 30 men. After 20 days, he finds that only one-third of the work is done. How many more men must he engage to finish the job on time?", "o": ["40", "60", "30", "20"], "a": 2, "e": "Work done = 1/3 in 30 × 20 = 600 man-days → whole job = 1,800 man-days. Remaining 2/3 = 1,200 man-days in 20 days → 60 men needed.<br>Extra men = 60 − 30 = <b>30</b>.", "f": null}, {"s": "B", "t": "Time & Work", "q": "A and B can do a work in 30 days and 20 days respectively. They start together, but A leaves after some days and B finishes the remaining work in 5 days. After how many days did A leave?", "o": ["8 days", "12 days", "10 days", "9 days"], "a": 3, "e": "B’s 5 days = 5/20 = 1/4. So together they did 3/4 at 1/30 + 1/20 = 1/12 per day → 3/4 ÷ 1/12 = <b>9 days</b>.", "f": null}, {"s": "B", "t": "Time & Work", "q": "Three pipes with uniform flow fill a tank. The first two pipes together fill it in the same time as the third pipe alone. The second pipe fills it 5 hours faster than the first and 4 hours slower than the third. The first pipe alone fills the tank in:", "o": ["20 hours", "12 hours", "10 hours", "15 hours"], "a": 3, "e": "Let first = x h, second = x − 5, third = x − 9. 1/x + 1/(x − 5) = 1/(x − 9).<br>Try x = 15: 1/15 + 1/10 = 1/6 = 1/(15 − 9) ✓ → <b>15 hours</b>.", "f": null}, {"s": "B", "t": "Time & Distance", "q": "A man walks to a place and rides back, taking 6¼ hours in all. He would take 7¾ hours to walk both ways. How long would he take to ride both ways?", "o": ["4½ hours", "3¾ hours", "4¾ hours", "5 hours"], "a": 2, "e": "Walk one way = 7¾ ÷ 2 = 3⅞ h. Ride one way = 6¼ − 3⅞ = 2⅜ h. Ride both ways = 2 × 2⅜ = <b>4¾ hours</b> (4 h 45 min).", "f": null}, {"s": "B", "t": "Time & Distance", "q": "A 110 m long train running at 60 km/h passes a man who is running at 6 km/h in the direction opposite to the train. The time taken is:", "o": ["7 seconds", "5 seconds", "6.6 seconds", "6 seconds"], "a": 3, "e": "Relative speed = 60 + 6 = 66 km/h = 66 × 5/18 = 55/3 m/s. Time = 110 ÷ (55/3) = <b>6 seconds</b>.", "f": null}, {"s": "B", "t": "Time & Distance", "q": "If a person walks at 14 km/h instead of 10 km/h, he would have walked 20 km more in the same time. The actual distance he walked is:", "o": ["70 km", "50 km", "40 km", "56 km"], "a": 1, "e": "In time t: 14t − 10t = 20 → t = 5 h. Actual distance = 10 × 5 = <b>50 km</b>.", "f": null}, {"s": "B", "t": "Probability", "q": "Five persons, including Ravi, sit in a row of five chairs at random. The probability that Ravi sits at one of the two ends of the row is:", "o": ["1/2", "3/5", "1/5", "2/5"], "a": 3, "e": "Ravi is equally likely to be in any of the 5 chairs; 2 of them are end chairs. P = <b>2/5</b>.", "f": null}, {"s": "B", "t": "Probability", "q": "A coin is tossed and a die is rolled together. The probability of getting a head on the coin and an even number on the die is:", "o": ["1/3", "1/6", "1/2", "1/4"], "a": 3, "e": "The events are independent: P(head) × P(even) = 1/2 × 3/6 = <b>1/4</b>. (Total outcomes 12, favourable 3.)", "f": null}, {"s": "B", "t": "Probability", "q": "A bag contains 6 white and 4 black balls. Three balls are drawn at random. The probability that exactly two are white and one is black is:", "o": ["3/10", "1/3", "2/5", "1/2"], "a": 3, "e": "Favourable = ⁶C₂ × ⁴C₁ = 15 × 4 = 60. Total = ¹⁰C₃ = 120. P = 60/120 = <b>1/2</b>.", "f": null}, {"s": "B", "t": "Mirror Image", "q": "A mirror is placed on the right side of the figure shown below. Choose its correct mirror image.", "o": ["@P", "@W", "@M", "@R"], "a": 2, "e": "Mirror image: <b>left and right interchange</b> — the order of characters is reversed and each character is laterally inverted; top and bottom stay the same.<br>The other options are the water image, a 180° rotation and the characters only written in reverse order.", "f": {"kind": "mirror", "text": "PROFIT 85"}}, {"s": "B", "t": "Water Image", "q": "Choose the correct water image of the figure shown below.", "o": ["@P", "@R", "@W", "@M"], "a": 2, "e": "Water image: the figure is flipped <b>top to bottom</b>; the left-to-right order stays the same.<br>The others are the mirror image, a 180° rotation and a simple reversal of order.", "f": {"kind": "water", "text": "LOAN 5290"}}, {"s": "B", "t": "Cubes", "q": "A cuboid of 12 cm × 9 cm × 6 cm is cut into the largest possible equal cubes without any wastage. The number of cubes obtained is:", "o": ["18", "12", "24", "36"], "a": 2, "e": "Side of the largest cube = HCF(12, 9, 6) = 3 cm. Number = (12/3) × (9/3) × (6/3) = 4 × 3 × 2 = <b>24</b>.", "f": null}, {"s": "B", "t": "Dice", "q": "Two positions of the same die are shown. Which number is on the face opposite 3?", "o": ["5", "2", "4", "6"], "a": 2, "e": "Faces <b>1 and 2</b> appear in both positions. The remaining visible faces — <b>3</b> in position (i) and <b>4</b> in position (ii) — are therefore opposite each other: <b>3 ↔ 4</b>.", "f": {"kind": "dice", "a": [1, 2, 3], "b": [4, 2, 1]}}, {"s": "B", "t": "Relationship", "q": "Pointing to a girl in a photograph, Arun said, “Her father’s only son’s wife is my mother.” How is Arun related to the girl?", "o": ["Cousin", "Nephew", "Son", "Brother"], "a": 1, "e": "The girl’s father’s only son is the girl’s brother. His wife is Arun’s mother → the girl’s brother is Arun’s father → the girl is Arun’s aunt (father’s sister) → Arun is her <b>nephew</b>.", "f": null}, {"s": "B", "t": "Relationship", "q": "P is the son of Q. Q is the daughter of R. R is the wife of S. How is P related to S?", "o": ["Nephew", "Grandson", "Son-in-law", "Son"], "a": 1, "e": "Q is the daughter of R and S (R’s husband). P is Q’s son → P is S’s <b>grandson</b> (daughter’s son).", "f": null}, {"s": "B", "t": "Coding-Decoding", "q": "If MACHINE is coded as 19-7-9-14-15-20-11, how is DANGER coded in the same way?", "o": ["10-6-20-13-11-23", "10-7-20-13-11-24", "10-7-19-13-11-24", "9-7-20-13-11-24"], "a": 1, "e": "Each letter’s position is increased by 6: M(13)→19, A(1)→7, C(3)→9 … ✓.<br>DANGER: D 4→10, A 1→7, N 14→20, G 7→13, E 5→11, R 18→24 = <b>10-7-20-13-11-24</b>.", "f": null}, {"s": "B", "t": "Coding-Decoding", "q": "If 7 @ 3 = 421 and 6 @ 2 = 412, then 9 @ 4 = ?", "o": ["5136", "536", "365", "1336"], "a": 1, "e": "Rule: write (a − b) followed by (a × b). 7 @ 3 → 4 and 21 = 421 ✓; 6 @ 2 → 4 and 12 = 412 ✓.<br>9 @ 4 → 5 and 36 = <b>536</b>.", "f": null}, {"s": "B", "t": "Age Calculation", "q": "The ages of two persons differ by 16 years. Six years ago, the elder one was three times as old as the younger one. The present age of the elder person is:", "o": ["30 years", "28 years", "32 years", "24 years"], "a": 0, "e": "E − Y = 16 and E − 6 = 3(Y − 6) → Y + 10 = 3Y − 18 → Y = 14 → <b>E = 30 years</b>.<br>Check: six years ago 24 = 3 × 8 ✓", "f": null}, {"s": "C", "t": "Verb", "q": "Choose the correct verb: A pair of new shoes ______ lying under the bed.", "o": ["have been", "were", "are", "is"], "a": 3, "e": "With ‘<b>a pair of</b> + plural noun’, the verb agrees with ‘pair’, which is singular: ‘A pair of shoes <b>is</b> lying…’.", "f": null}, {"s": "C", "t": "Verb", "q": "Choose the correct option: The manager said, “Let him ______ the report by evening.”", "o": ["submits", "submit", "submitted", "to submit"], "a": 1, "e": "‘<b>Let</b>’ is followed by an object and the <b>bare infinitive</b> (without ‘to’): ‘Let him <b>submit</b> the report.’", "f": null}, {"s": "C", "t": "Adverb", "q": "Choose the correct option: I have ______ finished my work, so I can help you now.", "o": ["yet", "already", "ever", "still"], "a": 1, "e": "‘<b>Already</b>’ is used in affirmative present perfect sentences for something done sooner than expected. ‘Yet’ is used in negatives and questions.", "f": null}, {"s": "C", "t": "Preposition", "q": "Choose the correct preposition: Every registered dealer must comply ______ the provisions of the GST Act.", "o": ["by", "to", "for", "with"], "a": 3, "e": "The verb <b>comply</b> takes ‘<b>with</b>’: comply with the rules / provisions / orders.", "f": null}, {"s": "C", "t": "Preposition", "q": "Choose the correct preposition: The new accounting software is quite different ______ the old one.", "o": ["than", "from", "against", "with"], "a": 1, "e": "Standard usage is ‘different <b>from</b>’. ‘Different than’ is informal, and ‘different with’ is incorrect.", "f": null}, {"s": "C", "t": "Synonyms", "q": "Choose the word most similar in meaning to <b>VINDICTIVE</b>.", "o": ["Victorious", "Generous", "Forgiving", "Revengeful"], "a": 3, "e": "<b>Vindictive</b> = having a strong desire for revenge → <b>revengeful</b>. Opposite: forgiving.", "f": null}, {"s": "C", "t": "Synonyms", "q": "Choose the word most similar in meaning to <b>EMINENT</b>.", "o": ["Temporary", "Ordinary", "Distinguished", "Imminent"], "a": 2, "e": "<b>Eminent</b> = famous and respected in a field → <b>distinguished</b>. ‘Imminent’ (about to happen) is a look-alike word with a different meaning.", "f": null}, {"s": "C", "t": "Antonyms", "q": "Choose the word opposite in meaning to <b>LETHARGIC</b>.", "o": ["Sluggish", "Drowsy", "Lazy", "Energetic"], "a": 3, "e": "<b>Lethargic</b> = lacking energy, sluggish. Opposite → <b>energetic</b>. The other three are synonyms.", "f": null}, {"s": "C", "t": "Antonyms", "q": "Choose the word opposite in meaning to <b>TIMID</b>.", "o": ["Nervous", "Shy", "Bold", "Fearful"], "a": 2, "e": "<b>Timid</b> = lacking courage or confidence. Opposite → <b>bold</b>. Shy, fearful and nervous are similar in meaning.", "f": null}, {"s": "C", "t": "Sentence Rearrangement", "q": "Arrange the sentences in a meaningful order:<br>P: These reptiles can grow longer than six metres.<br>Q: Bhitarkanika National Park in Kendrapada district is known for its mangrove forests.<br>R: Visitors can watch them basking on the muddy banks during winter boat trips.<br>S: Its creeks are home to a large population of saltwater crocodiles.", "o": ["QSPR", "QPSR", "SQPR", "QSRP"], "a": 0, "e": "<b>Q</b> introduces the park → <b>S</b> ‘Its creeks … saltwater crocodiles’ → <b>P</b> ‘These reptiles…’ → <b>R</b> ‘Visitors can watch them…’.", "f": null}, {"s": "C", "t": "Sentence Rearrangement", "q": "Arrange the sentences in a meaningful order:<br>P: On the festival day, the first grain is offered to the presiding deity.<br>Q: Nuakhai is the most important agricultural festival of western Odisha.<br>R: After the offering, family members eat the new rice together and seek blessings from elders.<br>S: It is celebrated to welcome the new rice of the season.", "o": ["SQPR", "QSRP", "QPSR", "QSPR"], "a": 3, "e": "<b>Q</b> introduces Nuakhai → <b>S</b> its purpose → <b>P</b> the first ritual of offering → <b>R</b> ‘After the offering…’ follows.", "f": null}, {"s": "C", "t": "Articles", "q": "Fill in the blanks: He works as ______ SBI officer in ______ Cuttack.", "o": ["a, the", "a, no article", "an, no article", "an, the"], "a": 2, "e": "‘SBI’ is read letter by letter and begins with the vowel sound ‘es’ → <b>an</b> SBI officer. Names of cities take <b>no article</b>.", "f": null}, {"s": "C", "t": "Error Correction", "q": "Find the part with an error:<br>Though he worked very hard (A) / but he could not (B) / clear the examination. (C) / No error (D)", "o": ["Though he worked very hard", "but he could not", "clear the examination.", "No error"], "a": 1, "e": "‘<b>Though/Although</b>’ is not followed by ‘but’ in the second clause. Correct: ‘Though he worked very hard, he could not clear…’ (or use ‘yet’). The error is in part (B).", "f": null}, {"s": "C", "t": "Error Correction", "q": "Find the part with an error:<br>The accountant told that (A) / the GST return had been (B) / filed before the due date. (C) / No error (D)", "o": ["The accountant told that", "the GST return had been", "filed before the due date.", "No error"], "a": 0, "e": "‘<b>Tell</b>’ needs an indirect object (told <b>me</b> that…); without one, use ‘<b>said</b> that’. Correct: ‘The accountant <b>said</b> that…’. The error is in part (A).", "f": null}, {"s": "C", "t": "Passage", "q": "The Pradhan Mantri Jan Dhan Yojana, launched in August 2014, aimed to give every household access to a basic bank account. Accounts can be opened with zero balance, and account holders receive a RuPay debit card with built-in accident insurance cover. These accounts have become the channel through which government subsidies and benefits are paid directly to beneficiaries, reducing leakages. However, experts point out that opening an account is only the first step; true financial inclusion needs regular use of savings, credit and insurance services.<br><br><b>Q.</b> According to the passage, what do experts say about financial inclusion?", "o": ["Opening an account is only a first step; regular use matters", "It depends only on issuing RuPay debit cards to all", "It is fully achieved once every household has an account", "It requires every account to keep a minimum balance"], "a": 0, "e": "The last sentence says that ‘<b>opening an account is only the first step; true financial inclusion needs regular use</b> of savings, credit and insurance services’.", "f": null}, {"s": "D", "t": "Current National Events – General (2026)", "q": "In 2026, Ravi Agrawal was reappointed for six months (July–December 2026) as the Chairman of which body?", "o": ["GST Network (GSTN)", "Central Board of Direct Taxes (CBDT)", "Central Board of Indirect Taxes and Customs (CBIC)", "Securities Appellate Tribunal (SAT)"], "a": 1, "e": "<b>Ravi Agrawal</b>, a 1988-batch IRS officer, was reappointed <b>CBDT Chairman</b> from 1 July to 31 December 2026. The CBDT is constituted under the Central Board of Revenue Act, 1963 and works under the Department of Revenue, Ministry of Finance.", "f": null}, {"s": "D", "t": "Current National Events – General (2026)", "q": "In the Hurun Global Unicorn Index 2026, India, with 61 unicorns, was ranked:", "o": ["Third", "Fifth", "Second", "Fourth"], "a": 3, "e": "India ranked <b>fourth</b> with 61 unicorns, behind the <b>USA (806)</b>, <b>China (381)</b> and the <b>UK (70)</b>. In India, Bengaluru leads with 25 unicorns, followed by Mumbai (13).", "f": null}, {"s": "D", "t": "Current National Events – Odisha (2026)", "q": "In 2026, Odisha completed the digitisation of 42.96 lakh legacy court case records under the e-Courts project. The real-time case disposal data of the State is shared with the:", "o": ["National Judicial Data Grid (NJDG)", "Odisha State Data Centre only", "Supreme Court Registry by post", "National Informatics Centre Cloud only"], "a": 0, "e": "The work was done through <b>Record Room Digitisation Centres</b> in all <b>30 judicial districts</b>. The records are linked to the e-Filing 3.0 portal, and disposal metrics flow to the <b>National Judicial Data Grid</b>.", "f": null}, {"s": "D", "t": "Current National Events – Odisha (2026)", "q": "In April 2026, the Odisha CM launched a ₹585 crore package to develop the birthplace of Utkalmani Gopabandhu Das and the Satyabadi area. His birthplace is:", "o": ["Sakhigopal, Puri district", "Suando, Puri district", "Cuttack town", "Bhadrak town"], "a": 1, "e": "Gopabandhu Das was born at <b>Suando</b> in <b>Puri</b> district. The package includes ₹90 crore to revive the <b>Bakul Bana</b> and upgrade the Bana Vidyalaya at Satyabadi (near Sakhigopal), and a heritage corridor.", "f": null}, {"s": "D", "t": "History of Odisha", "q": "The Odia poet Gangadhar Meher, known as ‘Swabhaba Kabi’ (nature poet), wrote the famous kavya:", "o": ["Tapaswini", "Chha Mana Atha Guntha", "Lavanyavati", "Chilika"], "a": 0, "e": "<b>Gangadhar Meher</b> (Barpali, Bargarh) wrote <b>Tapaswini</b>. ‘Chilika’ is by Radhanath Ray, ‘Lavanyavati’ by Upendra Bhanja, and ‘Chha Mana Atha Guntha’ by Fakir Mohan Senapati.", "f": null}, {"s": "D", "t": "History of Odisha", "q": "Bhima Bhoi, the blind saint-poet of Odisha who wrote ‘Stuti Chintamani’, was a follower of the:", "o": ["Vaishnava Bhakti of Chaitanya", "Panchasakha movement", "Mahima Dharma", "Arya Samaj"], "a": 2, "e": "<b>Bhima Bhoi</b> (19th century) spread the teachings of <b>Mahima Dharma</b>, founded by Mahima Gosain, which rejected idol worship and caste distinctions.", "f": null}, {"s": "D", "t": "Geography of Odisha", "q": "Gahirmatha Marine Sanctuary, one of the world’s largest mass-nesting sites of Olive Ridley turtles, is located in which district?", "o": ["Kendrapada", "Balasore", "Ganjam", "Puri"], "a": 0, "e": "<b>Gahirmatha</b> (Kendrapada district), near the mouths of the Brahmani–Baitarani, is a major arribada site. Rushikulya (Ganjam) and Devi river mouth are other nesting sites.", "f": null}, {"s": "D", "t": "Geography of Odisha", "q": "The Talcher coalfield, one of the largest coal reserves of India, lies in which district of Odisha?", "o": ["Sambalpur", "Jharsuguda", "Sundargarh", "Angul"], "a": 3, "e": "The <b>Talcher</b> coalfield is in <b>Angul</b> district in the Brahmani valley. The <b>Ib Valley</b> coalfield is in Jharsuguda–Sundargarh. Both are operated by Mahanadi Coalfields Ltd.", "f": null}, {"s": "D", "t": "Indian Polity – General", "q": "Under Article 75(3) of the Constitution, the Council of Ministers is collectively responsible to the:", "o": ["Rajya Sabha", "President", "Lok Sabha", "Parliament as a whole (both Houses)"], "a": 2, "e": "<b>Article 75(3)</b>: the Council of Ministers is <b>collectively responsible to the Lok Sabha</b>. Hence a no-confidence motion can be moved only in the Lok Sabha.", "f": null}, {"s": "D", "t": "Indian Polity – General", "q": "Elections to the Lok Sabha and State Legislative Assemblies on the basis of adult suffrage are provided under:", "o": ["Article 324", "Article 330", "Article 326", "Article 280"], "a": 2, "e": "<b>Article 326</b> – elections on the basis of <b>adult suffrage</b> (voting age 18 after the 61st Amendment). Article 324 – Election Commission · Article 330 – reservation of seats for SC/ST in Lok Sabha.", "f": null}, {"s": "D", "t": "Indian Polity – Odisha", "q": "Who became the first woman Speaker of the Odisha Legislative Assembly, in 2023?", "o": ["Nandini Satpathy", "Pramila Mallik", "Surama Padhy", "Pravati Parida"], "a": 1, "e": "<b>Pramila Mallik</b> was elected unopposed as Odisha’s first woman Speaker in September 2023. Surama Padhy became Speaker in 2024; Nandini Satpathy was the first woman CM.", "f": null}, {"s": "D", "t": "General Science", "q": "Night blindness is caused by the deficiency of:", "o": ["Vitamin A", "Vitamin B1", "Vitamin C", "Vitamin D"], "a": 0, "e": "<b>Vitamin A</b> (retinol) is needed to form rhodopsin in the retina; its deficiency causes <b>night blindness</b>. B1 deficiency causes beriberi, C scurvy, D rickets.", "f": null}, {"s": "D", "t": "General Science", "q": "‘Dry ice’, used to keep things frozen during transport, is the solid form of:", "o": ["Carbon dioxide", "Ammonia", "Liquid nitrogen", "Water"], "a": 0, "e": "<b>Dry ice</b> is solid <b>CO₂</b>, at about −78.5 °C. It sublimates directly into gas without melting, so it leaves no liquid.", "f": null}, {"s": "D", "t": "Indian Economy", "q": "India’s First Five Year Plan (1951–56), which gave priority to agriculture and irrigation, was based on the:", "o": ["Rao–Manmohan model", "Harrod–Domar model", "Mahalanobis model", "Gadgil formula"], "a": 1, "e": "The <b>First Plan</b> was based on the <b>Harrod–Domar</b> growth model. The Second Plan (1956–61), focusing on heavy industry, followed the <b>Mahalanobis</b> model.", "f": null}, {"s": "D", "t": "Indian Economy", "q": "Gross Value Added (GVA) at basic prices, used to measure sectoral output, is related to GDP as:", "o": ["GDP = GVA + net factor income from abroad", "GDP = GVA + product taxes − product subsidies", "GDP = GVA − depreciation", "GDP = GVA − product taxes + product subsidies"], "a": 1, "e": "<b>GDP = GVA at basic prices + product taxes − product subsidies</b>. GVA shows supply-side output by sector; NSO releases both.", "f": null}, {"s": "E", "t": "MS Word", "q": "In MS Word, the shortcut Ctrl + F2 is used to:", "o": ["Show the print preview", "Save the document", "Open the Find box", "Insert a new footnote"], "a": 0, "e": "<b>Ctrl + F2</b> opens <b>print preview</b> (in Backstage view). Ctrl + F opens Find in the Navigation pane; Ctrl + S saves.", "f": null}, {"s": "E", "t": "MS Word", "q": "In MS Word, pressing Ctrl + F opens:", "o": ["The Font dialog box to format", "The Format Painter for copying", "The Navigation pane to find text", "A new blank document window"], "a": 2, "e": "<b>Ctrl + F</b> opens the <b>Navigation pane</b> with a search box (Find). Ctrl + H opens Find and Replace; Ctrl + D opens the Font dialog.", "f": null}, {"s": "E", "t": "MS Excel", "q": "Which MS Excel function returns the average of only those cells that meet a given condition?", "o": ["=AVERAGEIF()", "=AVERAGEA()", "=AVERAGE()", "=COUNTIF()"], "a": 0, "e": "<b>=AVERAGEIF(range, criteria, [average_range])</b>, e.g. the average sales of only Odisha branches. AVERAGEIFS allows several conditions.", "f": null}, {"s": "E", "t": "MS Excel", "q": "In MS Excel, the shortcut Ctrl + 1 opens the:", "o": ["Format Cells dialog box", "Go To dialog", "Print dialog", "Insert Function dialog"], "a": 0, "e": "<b>Ctrl + 1</b> opens <b>Format Cells</b> (number, alignment, font, border, fill, protection). Shift + F3 opens Insert Function; F5 opens Go To.", "f": null}, {"s": "E", "t": "MS Excel", "q": "In MS Excel, Ctrl + Spacebar is used to:", "o": ["Insert a space in the cell", "Select the entire row", "Select the whole worksheet", "Select the entire column"], "a": 3, "e": "<b>Ctrl + Space</b> selects the entire <b>column</b>; <b>Shift + Space</b> selects the entire row; Ctrl + A selects the worksheet.", "f": null}, {"s": "E", "t": "Internet", "q": "The domain extension ‘.edu’ is generally used by websites of:", "o": ["Educational institutions", "Non-profit organisations", "Government departments", "Commercial companies"], "a": 0, "e": "<b>.edu</b> is for educational institutions (in India, ‘.ac.in’ and ‘.edu.in’ are used). .gov / .gov.in – government; .com – commercial; .org – organisations.", "f": null}, {"s": "E", "t": "Internet", "q": "When a smartphone shares its mobile data connection with a laptop through Wi-Fi, the phone is acting as a:", "o": ["Modem dial-up", "Mobile hotspot", "Firewall", "Proxy server"], "a": 1, "e": "A <b>mobile hotspot</b> (tethering) turns the phone into a Wi-Fi access point so that other devices can use its internet connection.", "f": null}, {"s": "E", "t": "Computer Fundamentals", "q": "In Windows, pressing the Windows logo key + L:", "o": ["Locks the computer", "Logs off and shuts down", "Opens the Settings app", "Opens File Explorer"], "a": 0, "e": "<b>Windows + L</b> locks the computer instantly; <b>Windows + E</b> opens File Explorer and <b>Windows + I</b> opens Settings.", "f": null}, {"s": "E", "t": "Computer Fundamentals", "q": "In Windows, the Task Manager, used to close a program that is not responding, opens directly with:", "o": ["Ctrl + Shift + Esc", "Ctrl + Alt + Tab", "Ctrl + Esc", "Alt + Shift + F4"], "a": 0, "e": "<b>Ctrl + Shift + Esc</b> opens Task Manager directly (Ctrl + Alt + Del shows a menu with Task Manager). Alt + F4 closes the active window.", "f": null}, {"s": "E", "t": "Abbreviations", "q": "Navigation apps on smartphones use satellite signals from GPS. GPS stands for:", "o": ["General Packet Service", "Geographic Position Sensor", "Global Path Satellite", "Global Positioning System"], "a": 3, "e": "<b>GPS – Global Positioning System</b>, run by the USA. India’s own regional system is <b>NavIC</b> (IRNSS).", "f": null}]};
+const EXAM = {
+  org: "GYANA EDUCATION SERVICE",
+  title: "OSCSC Accounts Executive Recruitment 2026",
+  test: "Mock Test - 7",
+  minutes: 120,
+  plus: 1, minus: 0
+};
+const KEY = "ges-oscsc-mock7-v1";
+const L = ["A","B","C","D"];
+const QS = DATA.qs, SECS = DATA.sections;
+const secIdx = {}; SECS.forEach((s,i)=>secIdx[s[0]]=i);
+const secRange = SECS.map(s=>{const idx=QS.map((q,i)=>q.s===s[0]?i:-1).filter(i=>i>=0);return [idx[0], idx[idx.length-1]];});
+
+let S = load() || fresh();
+function fresh(){return {stage:"login", name:"", roll:"", status:QS.map(()=>"nv"), saved:QS.map(()=>null), pending:null, cur:0, endAt:null, startedAt:null, submittedAt:null, filter:"all", fsec:"all"};}
+function load(){try{const r=localStorage.getItem(KEY);return r?JSON.parse(r):null;}catch(e){return null;}}
+function persist(){try{localStorage.setItem(KEY, JSON.stringify(S));}catch(e){}}
+const $ = (s,el=document)=>el.querySelector(s);
+const esc = t=>String(t).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+function pad2(n){return String(n).padStart(2,"0");}
+
+function footer(){
+  return `<footer class="site-foot pad"><span>© 2026 <b>Gyana Education Service</b></span><span>${EXAM.title} · ${EXAM.test}</span><span>Helpline: <b>9776188019</b></span><a href="https://gyanaeducationservice.co.in/#library" style="color:#fff;font-weight:700">All mock tests</a></footer>`;
+}
+function topbar(right){
+  return `<header class="topbar pad"><div class="logo" aria-hidden="true">GES</div>
+  <div class="tb-text"><div class="tb-org">${EXAM.org}</div><div class="tb-exam">${EXAM.title} &nbsp;|&nbsp; ${EXAM.test}</div></div>
+  <div class="tb-right">${right||"Computer Based Test (CBT)"}</div></header>`;
+}
+const PHOTO = `<svg viewBox="0 0 50 58" aria-hidden="true"><rect width="50" height="58" fill="#dfe6ee"/><circle cx="25" cy="21" r="10" fill="#9fb0c3"/><path d="M6 58c2-13 10-20 19-20s17 7 19 20z" fill="#9fb0c3"/></svg>`;
+
+/* ---------- LOGIN ---------- */
+function renderLogin(){
+  app.innerHTML = `<div class="screen">${topbar()}
+  <main class="login-wrap pad"><div class="login">
+    <section class="login-info">
+      <div class="row"><span class="k">System Name</span><span class="v">C${pad2(Math.floor(Math.random()*90)+10)}7</span></div>
+      <div class="row"><span class="k">Candidate Name</span><span class="v" id="nmEcho">${esc(S.name||"Candidate")}</span></div>
+      <div class="row"><span class="k">Subject</span><span class="v">${EXAM.title}</span></div>
+      <div class="row"><span class="k">Test</span><span class="v">${EXAM.test}</span></div>
+      <div class="row"><span class="k">Duration</span><span class="v">${EXAM.minutes} Minutes</span></div>
+      <div style="display:flex;gap:12px;align-items:center;margin-top:8px">${PHOTO.replace('<svg','<svg style="width:70px;height:82px;border:1px solid #cfd8e3"')}
+      <p class="note" style="margin:0">Kindly contact the invigilator if there are any discrepancies in the name and photograph displayed on the screen or if the photograph is not yours.</p></div>
+    </section>
+    <form class="login-form" id="lf" autocomplete="off">
+      <h2>Candidate Login</h2>
+      <div class="field"><label for="nm">Candidate Name</label><input id="nm" value="${esc(S.name)}" placeholder="Enter your name" maxlength="40"></div>
+      <div class="field"><label for="rl">Roll No. / Username</label><input id="rl" value="${esc(S.roll)}" placeholder="e.g. GES2026001" maxlength="20"></div>
+      <div class="field"><label for="pw">Password</label><input id="pw" type="password" value="ges2026" placeholder="Any password (practice test)"></div>
+      <button class="btn btn-primary" type="submit">Sign In</button>
+      <p class="note">This is a practice test by Gyana Education Service. No typing needed — just click Sign In. Your progress is kept on this device, so you can reload the page and continue.</p>
+    </form>
+  </div></main>${footer()}</div>`;
+  $("#nm").addEventListener("input",e=>{$("#nmEcho").textContent=e.target.value||"Candidate";});
+  $("#lf").addEventListener("submit",e=>{e.preventDefault();S.name=($("#nm").value.trim()||"Candidate");S.roll=($("#rl").value.trim()||"GES2026001");S.stage="instr";persist();render();});
+}
+
+/* ---------- INSTRUCTIONS ---------- */
+function legendItems(){
+  return `<div class="legend-list">
+  <div><span class="st nv">1</span>You have not visited the question yet.</div>
+  <div><span class="st na">3</span>You have not answered the question.</div>
+  <div><span class="st an">5</span>You have answered the question.</div>
+  <div><span class="st mk">7</span>You have NOT answered the question, but have marked the question for review.</div>
+  <div><span class="st am">9</span>The question(s) "Answered and Marked for Review" will be considered for evaluation.</div></div>`;
+}
+function patternTable(){
+  let rows = SECS.map((s,i)=>{const n=secRange[i][1]-secRange[i][0]+1;return `<tr><td>${s[1]}</td><td class="n">${secRange[i][0]+1}–${secRange[i][1]+1}</td><td class="n">${n}</td><td class="n">${n*EXAM.plus}</td></tr>`}).join("");
+  return `<div class="tbl-wrap"><table class="pattern"><thead><tr><th>Section</th><th>Q. Nos.</th><th>Questions</th><th>Marks</th></tr></thead><tbody>${rows}<tr><td><b>Total</b></td><td></td><td class="n"><b>${QS.length}</b></td><td class="n"><b>${QS.length*EXAM.plus}</b></td></tr></tbody></table></div>`;
+}
+function instrHTML(){
+  return `<h3>General Instructions</h3><ol>
+  <li>Total duration of the examination is <b>${EXAM.minutes} minutes</b>. There are <b>${QS.length} multiple-choice questions</b>, each with four options and only one correct answer.</li>
+  <li>Each correct answer carries <b>${EXAM.plus} mark</b>. There is <b>no negative marking</b> for wrong answers.</li>
+  <li>The clock is set at the server (here: your device). The countdown timer in the top right corner of the screen shows the time remaining. When the timer reaches zero, the examination ends by itself; you will not need to submit it.</li>
+  <li>The Question Palette on the right shows the status of each question using one of the following symbols:</li></ol>
+  ${legendItems()}
+  <ol start="5"><li>You can click on the "&gt;" arrow / Question Palette button (on small screens) to show or hide the palette.</li></ol>
+  <h3>Navigating to a Question</h3><ol start="6">
+  <li>To answer a question: click the question number in the Question Palette to go to that question directly. <b>Note that using this option does NOT save your answer to the current question.</b></li>
+  <li>Click <b>Save &amp; Next</b> to save your answer for the current question and then go to the next question.</li>
+  <li>Click <b>Mark for Review &amp; Next</b> to save your answer for the current question, mark it for review, and then go to the next question.</li></ol>
+  <h3>Answering a Question</h3><ol start="9">
+  <li>To select an answer, click the button of one of the options. To deselect your chosen answer, click the button of the chosen option again or click <b>Clear Response</b>.</li>
+  <li>To change a chosen answer, click the button of another option. To save your answer, you MUST click <b>Save &amp; Next</b>.</li>
+  <li>To mark a question for review, click <b>Mark for Review &amp; Next</b>. If an answer is selected for a question that is Marked for Review, that answer will be considered in the evaluation.</li></ol>
+  <h3>Navigating through Sections</h3><ol start="12">
+  <li>Sections are displayed on the top bar of the screen. Questions in a section can be viewed by clicking the section name. The section you are currently viewing is highlighted.</li>
+  <li>After clicking <b>Save &amp; Next</b> on the last question of a section, you will automatically be taken to the first question of the next section.</li>
+  <li>You can move between sections and questions at any time during the examination.</li></ol>
+  <h3>Pattern of this Mock Test</h3>${patternTable()}`;
+}
+function renderInstr(){
+  app.innerHTML = `<div class="screen">${topbar(`Candidate: <b>${esc(S.name)}</b>`)}
+  <main class="instr pad"><div class="instr-card">
+    <div class="instr-head"><span>Instructions — Please read carefully</span><span class="lang">View in: <select aria-label="Language"><option>English</option></select></span></div>
+    <div class="instr-body">${instrHTML()}</div>
+    <div class="instr-foot">
+      <label class="declare"><input type="checkbox" id="agree"><span>I have read and understood the instructions. All computer hardware allotted to me is in proper working condition. I declare that I am not in possession of / not wearing / not carrying any prohibited gadget like mobile phone, Bluetooth device etc. or any prohibited material with me into the examination hall. I agree that in case of not adhering to the instructions, I shall be liable to be debarred from this test and/or to disciplinary action.</span></label>
+      <div class="instr-actions"><button class="btn" id="back">&lt; Previous</button><button class="btn btn-primary" id="go" disabled>I am ready to begin</button></div>
+    </div></div></main>${footer()}</div>`;
+  $("#agree").addEventListener("change",e=>{$("#go").disabled=!e.target.checked;});
+  $("#back").onclick=()=>{S.stage="login";persist();render();};
+  $("#go").onclick=()=>{try{const de=document.documentElement; if(de.requestFullscreen) de.requestFullscreen().catch(()=>{});}catch(e){} S.stage="exam";S.startedAt=Date.now();S.endAt=Date.now()+EXAM.minutes*60000;S.cur=0;visit(0);persist();render();};
+}
+
+/* ---------- EXAM ---------- */
+let tick=null;
+function visit(i){ if(S.status[i]==="nv") S.status[i]="na"; S.cur=i; S.pending=S.saved[i]; }
+function counts(from=0,to=QS.length-1){
+  const c={an:0,na:0,nv:0,mk:0,am:0};
+  for(let i=from;i<=to;i++) c[S.status[i]]++;
+  return c;
+}
+function figHTML(q){
+  const f=q.f; if(!f) return "";
+  if(f.kind==="mirror") return `<div class="fig"><span class="word">${esc(f.text)}</span><span class="mirror-line"><span>M</span><i></i><span>N</span></span></div>`;
+  if(f.kind==="water") return `<div class="fig"><div class="water-wrap"><span class="word">${esc(f.text)}</span><div class="water-line"></div><span class="note" style="text-align:center">water surface</span></div></div>`;
+  if(f.kind==="dice") return `<div class="fig dice"><figure>${dieSVG(f.a)}<figcaption>Position (i)</figcaption></figure><figure>${dieSVG(f.b)}<figcaption>Position (ii)</figcaption></figure></div>`;
+  return "";
+}
+function dieSVG([top,front,right]){
+  return `<svg viewBox="0 0 120 120" role="img" aria-label="Die showing ${top} on top, ${front} in front, ${right} on the right">
+  <polygon points="20,38 60,18 100,38 60,58" fill="#dbe8f6" stroke="#13294b" stroke-width="2"/>
+  <polygon points="20,38 60,58 60,108 20,88" fill="#ffffff" stroke="#13294b" stroke-width="2"/>
+  <polygon points="60,58 100,38 100,88 60,108" fill="#c3d6ec" stroke="#13294b" stroke-width="2"/>
+  <text x="60" y="44" text-anchor="middle" font-size="17" font-weight="700" fill="#13294b" font-family="Arial">${top}</text>
+  <text x="40" y="81" text-anchor="middle" font-size="20" font-weight="700" fill="#13294b" font-family="Arial">${front}</text>
+  <text x="80" y="81" text-anchor="middle" font-size="20" font-weight="700" fill="#13294b" font-family="Arial">${right}</text></svg>`;
+}
+function optHTML(q,o){
+  if(o[0]==="@" && q.f){
+    const t=q.f.text, code=o[1];
+    if(code==="P") return `<span class="optfig">${esc(t.split("").reverse().join(""))}</span>`;
+    return `<span class="optfig ${code}">${esc(t)}</span>`;
+  }
+  return o;
+}
+function secOf(i){return secIdx[QS[i].s];}
+function renderExam(){
+  const i=S.cur, q=QS[i], si=secOf(i), [a,b]=secRange[si], c=counts();
+  const tabs=SECS.map((s,k)=>`<button class="tab ${k===si?"on":""}" data-sec="${k}" title="${s[1]}: Q${secRange[k][0]+1}–${secRange[k][1]+1}">${s[1]}</button>`).join("");
+  let grid=""; for(let k=a;k<=b;k++) grid+=`<button class="st ${S.status[k]} ${k===i?"cur":""}" data-q="${k}" aria-label="Question ${k+1}">${k+1}</button>`;
+  const opts=q.o.map((o,k)=>`<label class="opt ${S.pending===k?"sel":""}"><input type="radio" name="opt" value="${k}" ${S.pending===k?"checked":""}><span>${optHTML(q,o)}</span></label>`).join("");
+  app.innerHTML = `<div class="exam">${topbar(`Candidate: <b>${esc(S.name)}</b> &nbsp;|&nbsp; Roll No: ${esc(S.roll)}`)}
+  <div class="exam-main">
+    <section class="qpane">
+      <div class="secbar pad"><span class="lbl">Sections</span><div class="tabs">${tabs}</div>
+        <span class="timer" id="timer">Time Left: <b>--:--</b></span>
+        <button class="btn palette-toggle" id="ptog" aria-controls="pal">Question Palette ›</button></div>
+      <div class="qtype pad"><span>Question Type: <b>MCQ</b></span><span class="mk">Marks for correct answer: <span>${EXAM.plus}</span> &nbsp;|&nbsp; Negative Marks: <em>${EXAM.minus}</em></span></div>
+      <div class="qhead pad"><h2>Question No. ${i+1}</h2><span class="lang">View in: <select aria-label="Language"><option>English</option></select></span></div>
+      <div class="qbody pad"><div class="qtext">${q.q}</div>${figHTML(q)}<div class="opts" role="radiogroup" aria-label="Options">${opts}</div></div>
+      <div class="actions pad"><div class="l"><button class="btn" id="mark">Mark for Review &amp; Next</button><button class="btn" id="clear">Clear Response</button></div>
+        <button class="btn btn-primary" id="save">Save &amp; Next</button></div>
+    </section>
+    <aside class="palette" id="pal">
+      <div class="cand">${PHOTO}<div style="flex:1;min-width:0"><div class="nm">${esc(S.name)}</div><div class="roll">Roll No: ${esc(S.roll)}</div></div><button class="btn palette-toggle" id="pclose" aria-label="Close palette">×</button></div>
+      <div class="legend">
+        <div class="it"><span class="st sm an">${c.an}</span>Answered</div>
+        <div class="it"><span class="st sm na">${c.na}</span>Not Answered</div>
+        <div class="it"><span class="st sm nv">${c.nv}</span>Not Visited</div>
+        <div class="it"><span class="st sm mk">${c.mk}</span>Marked for Review</div>
+        <div class="it wide"><span class="st sm am">${c.am}</span>Answered &amp; Marked for Review (will also be evaluated)</div>
+      </div>
+      <div class="pal-sec">${SECS[si][1]}</div>
+      <div class="pal-choose">Choose a Question</div>
+      <div class="grid">${grid}</div>
+      <div class="pal-foot"><button class="btn" id="qp">Question Paper</button><button class="btn" id="ins">Instructions</button><button class="btn btn-green" id="sub">Submit</button></div>
+    </aside>
+  </div>${footer()}</div>`;
+  app.querySelectorAll('input[name="opt"]').forEach(r=>{
+    r.addEventListener("click",e=>{const v=+e.target.value; if(S.pending===v){S.pending=null;e.target.checked=false;} else S.pending=v; app.querySelectorAll(".opt").forEach((l,k)=>l.classList.toggle("sel",S.pending===k)); persist();});
+  });
+  app.querySelectorAll(".tab").forEach(t=>t.onclick=()=>{go(secRange[+t.dataset.sec][0]);});
+  app.querySelectorAll(".grid .st").forEach(t=>t.onclick=()=>{go(+t.dataset.q);});
+  $("#save").onclick=()=>{ if(S.pending!==null){S.saved[i]=S.pending;S.status[i]="an";} else {S.saved[i]=null;S.status[i]="na";} next(); };
+  $("#mark").onclick=()=>{ if(S.pending!==null){S.saved[i]=S.pending;S.status[i]="am";} else {S.saved[i]=null;S.status[i]="mk";} next(); };
+  $("#clear").onclick=()=>{ S.pending=null; S.saved[i]=null; S.status[i]="na"; persist(); renderExam(); };
+  $("#sub").onclick=()=>confirmSubmit();
+  $("#qp").onclick=()=>showQP();
+  $("#ins").onclick=()=>modal("Instructions", instrHTML(), `<button class="btn btn-primary" data-close>Close</button>`);
+  $("#ptog").onclick=()=>$("#pal").classList.add("open");
+  $("#pclose").onclick=()=>$("#pal").classList.remove("open");
+  updateTimer();
+}
+function go(k){ visit(k); persist(); renderExam(); const qb=$(".qbody"); if(qb) qb.scrollTop=0; }
+function next(){ go(S.cur < QS.length-1 ? S.cur+1 : 0); }
+function updateTimer(){
+  const left=Math.max(0, S.endAt-Date.now()), m=Math.floor(left/60000), s=Math.floor(left/1000)%60;
+  const t=$("#timer"); if(t){ t.innerHTML=`Time Left: <b>${pad2(m)}:${pad2(s)}</b>`; t.classList.toggle("low", left<5*60000); }
+  if(S.stage==="exam"){
+    if(left<=10*60000 && left>5*60000 && !S.w10){ S.w10=true; persist(); toast("Only 10 minutes left. Review your marked questions."); }
+    if(left<=5*60000 && left>0 && !S.w5){ S.w5=true; persist(); toast("Only 5 minutes left! The test will be submitted automatically at 00:00."); }
+  }
+  if(left<=0 && S.stage==="exam"){ finish(true); }
+}
+
+function toast(msg){ const t=document.createElement("div"); t.className="toast"; t.setAttribute("role","status"); t.textContent=msg; document.body.appendChild(t); setTimeout(()=>t.remove(),6000); }
+/* ---------- MODALS ---------- */
+function modal(title, body, foot){
+  const d=document.createElement("div"); d.className="scrim";
+  d.innerHTML=`<div class="modal" role="dialog" aria-modal="true" aria-label="${esc(title)}"><div class="modal-h"><span>${title}</span><button data-close aria-label="Close">×</button></div><div class="modal-b">${body}</div>${foot?`<div class="modal-f">${foot}</div>`:""}</div>`;
+  document.body.appendChild(d);
+  d.addEventListener("click",e=>{ if(e.target===d || e.target.hasAttribute("data-close")) d.remove(); });
+  return d;
+}
+function summaryTable(){
+  let rows="", T={an:0,na:0,nv:0,mk:0,am:0,n:0};
+  SECS.forEach((s,k)=>{const [a,b]=secRange[k], c=counts(a,b), n=b-a+1; for(const x in c) T[x]+=c[x]; T.n+=n;
+    rows+=`<tr><td>${s[1]}</td><td>${n}</td><td>${c.an}</td><td>${c.na}</td><td>${c.mk}</td><td>${c.am}</td><td>${c.nv}</td></tr>`;});
+  rows+=`<tr class="tot"><td>Total</td><td>${T.n}</td><td>${T.an}</td><td>${T.na}</td><td>${T.mk}</td><td>${T.am}</td><td>${T.nv}</td></tr>`;
+  return `<div class="tbl-wrap"><table class="sumtbl"><thead><tr><th>Section Name</th><th>No. of Questions</th><th>Answered</th><th>Not Answered</th><th>Marked for Review</th><th>Answered &amp; Marked for Review (will be evaluated)</th><th>Not Visited</th></tr></thead><tbody>${rows}</tbody></table></div>`;
+}
+function confirmSubmit(){
+  const d=modal("Exam Summary", summaryTable()+`<p style="margin:14px 0 0;font-weight:700;text-align:center">Are you sure you want to submit for final marking? No changes will be allowed after submission.</p>`,
+    `<button class="btn" data-close>No</button><button class="btn btn-primary" id="yes">Yes</button>`);
+  $("#yes",d).onclick=()=>{d.remove(); finish(false);};
+}
+function showQP(){
+  const body=QS.map((q,k)=>`<div class="qp-item"><span class="n">Q${k+1}.</span> <span class="note">[${SECS[secOf(k)][1]}]</span><div>${q.q}</div>${figHTML(q)}<div class="note">${q.o.map((o,j)=>`(${j+1}) ${q.f&&o[0]==="@"?optHTML(q,o):o}`).join(" &nbsp; ")}</div></div>`).join("");
+  modal("Question Paper", body, `<button class="btn btn-primary" data-close>Close</button>`);
+}
+function finish(auto){
+  if(S.stage!=="exam") return;
+  S.stage="result"; S.submittedAt=Math.min(Date.now(), S.endAt); persist();
+  clearInterval(tick); tick=null;
+  render();
+  if(auto) modal("Time Over", `<p>Your time is over. The test has been submitted automatically.</p>`, `<button class="btn btn-primary" data-close>View Result</button>`);
+}
+
+/* ---------- RESULT ---------- */
+function evalAll(){
+  const per=SECS.map(()=>({n:0,c:0,w:0,u:0}));
+  let c=0,w=0,u=0;
+  QS.forEach((q,k)=>{const p=per[secOf(k)]; p.n++; const a=S.saved[k];
+    if(a===null||a===undefined){u++;p.u++;} else if(a===q.a){c++;p.c++;} else {w++;p.w++;}});
+  return {c,w,u,per,score:c*EXAM.plus-w*EXAM.minus};
+}
+function fmtDur(ms){const t=Math.round(ms/1000);return `${Math.floor(t/60)} min ${pad2(t%60)} s`;}
+function renderResult(){
+  const R=evalAll(), att=R.c+R.w, acc=att?Math.round(R.c/att*100):0, pct=R.score/QS.length;
+  const C=2*Math.PI*62;
+  const verdict = pct>=0.75?"Excellent! You are well prepared — keep revising the explanations of the few you missed.":
+    pct>=0.6?"Good attempt. Focus on the sections with the lowest score below, then take the next mock.":
+    pct>=0.4?"Fair. Read every explanation below carefully; most misses come from concepts that repeat in the real exam.":
+    "Keep practising. Study the explanations below section by section and retake the test after revision.";
+  const bars=SECS.map((s,k)=>{const p=R.per[k], v=p.c/p.n*100; return `<div class="sb"><span>${s[1]}</span><span class="bar" role="img" aria-label="${p.c} of ${p.n}"><i style="width:${v}%"></i></span><span class="pc">${p.c}/${p.n}</span></div>`;}).join("");
+  const sec=SECS.map((s,k)=>{const p=R.per[k];return `<tr><td>${s[1]}</td><td>${p.n}</td><td>${p.c+p.w}</td><td style="color:var(--ok);font-weight:700">${p.c}</td><td style="color:var(--bad);font-weight:700">${p.w}</td><td>${p.u}</td><td><b>${p.c*EXAM.plus-p.w*EXAM.minus}</b></td></tr>`}).join("");
+  app.innerHTML = `<div class="screen">${topbar(`Candidate: <b>${esc(S.name)}</b> &nbsp;|&nbsp; Roll No: ${esc(S.roll)}`)}
+  <main class="result pad">
+    <section class="rcard">
+      <div class="rhead"><h2>Score Card — ${EXAM.test}</h2><span style="display:flex;gap:10px;align-items:center;flex-wrap:wrap"><span class="note">Submitted: ${new Date(S.submittedAt).toLocaleString("en-IN")}</span><span class="ractions"><a class="btn btn-wa" target="_blank" rel="noopener" href="https://wa.me/?text=${encodeURIComponent("I scored "+R.score+"/"+QS.length+" in the GES OSCSC Accounts Executive 2026 "+EXAM.test+" (TCS pattern CBT). Try it free: "+location.href.split("#")[0])}">Share score</a><button class="btn" id="print">Print / Save PDF</button><button class="btn" id="logout">Logout</button></span></span></div>
+      <div class="score-row">
+        <div class="ring"><svg viewBox="0 0 150 150"><circle cx="75" cy="75" r="62" fill="none" stroke="#e3e6ea" stroke-width="14"/><circle cx="75" cy="75" r="62" fill="none" stroke="#1167b1" stroke-width="14" stroke-dasharray="${C*pct} ${C}" stroke-linecap="butt"/></svg>
+          <div class="c"><div><b>${R.score}</b><span>out of ${QS.length}</span></div></div></div>
+        <div class="stats">
+          <div class="stat ok"><div class="k">Correct</div><div class="v">${R.c}</div></div>
+          <div class="stat bad"><div class="k">Wrong</div><div class="v">${R.w}</div></div>
+          <div class="stat"><div class="k">Not attempted</div><div class="v">${R.u}</div></div>
+          <div class="stat"><div class="k">Accuracy</div><div class="v">${acc}%</div></div>
+          <div class="stat"><div class="k">Time taken</div><div class="v" style="font-size:16px">${fmtDur(S.submittedAt-S.startedAt)}</div></div>
+          <div class="stat"><div class="k">Percentage</div><div class="v">${(pct*100).toFixed(1)}%</div></div>
+        </div>
+      </div>
+      <div class="verdict">${verdict}</div>
+      ${topicsHTML()}
+      <div class="secbars">${bars}</div>
+      <div class="pad" style="padding-bottom:16px"><div class="tbl-wrap"><table class="sumtbl"><thead><tr><th>Section</th><th>Questions</th><th>Attempted</th><th>Correct</th><th>Wrong</th><th>Not attempted</th><th>Score</th></tr></thead><tbody>${sec}</tbody></table></div></div>
+      <div class="cta"><span>Want more full-length mock tests, PYQs and daily practice for <b>OSCSC Accounts Executive 2026</b>? Join the GES preparation group.</span>
+        <span class="ractions"><a class="btn btn-wa" target="_blank" rel="noopener" href="https://wa.me/919776188019?text=${encodeURIComponent("Hello Sir, I took the GES OSCSC "+EXAM.test+" and scored "+R.score+"/"+QS.length+". I want to join the OSCSC preparation group.")}">Join on WhatsApp</a></span></div>
+    </section>
+    <section class="rcard" id="sols">
+      <div class="rhead"><h2>Solutions &amp; Explanations</h2><button class="btn" id="retake">Retake Test</button></div>
+      <div class="filters" id="filters"></div>
+      <div id="sollist"></div>
+    </section>
+  </main>${footer()}</div>`;
+  $("#print").onclick=()=>{ try{ window.print(); }catch(e){} };
+  $("#logout").onclick=()=>{
+    const d=modal("Logout", `<p>You will be logged out and this result will be cleared from this device. The next candidate can then sign in with a new name.</p>`, `<button class="btn" data-close>Cancel</button><button class="btn btn-primary" id="lo">Logout</button>`);
+    $("#lo",d).onclick=()=>{S=fresh(); try{localStorage.removeItem(KEY);}catch(e){} d.remove(); render();};
+  };
+  $("#retake").onclick=()=>{
+    const d=modal("Retake Test", `<p>Your current answers and score will be cleared and a fresh 120-minute test will start from the login screen.</p>`, `<button class="btn" data-close>Cancel</button><button class="btn btn-primary" id="rt">Clear and retake</button>`);
+    $("#rt",d).onclick=()=>{const nm=S.name, rl=S.roll; S=fresh(); S.name=nm; S.roll=rl; persist(); d.remove(); render(); window.scrollTo(0,0);};
+  };
+  renderSolutions();
+}
+function topicsHTML(){
+  const m={};
+  QS.forEach((q,k)=>{ const a=S.saved[k]; const miss = a===null||a===undefined||a!==q.a; const t=q.t.replace(/\s*\(.*\)$/,"").replace(/\s*–.*$/,""); if(!m[t]) m[t]={miss:0,n:0}; m[t].n++; if(miss) m[t].miss++; });
+  const list=Object.entries(m).filter(([t,v])=>v.miss>0).sort((x,y)=>y[1].miss-x[1].miss||x[0].localeCompare(y[0])).slice(0,12);
+  if(!list.length) return `<div class="topics"><h3>Topics to revise</h3><p class="note">No weak topics — every question was answered correctly!</p></div>`;
+  return `<div class="topics"><h3>Topics to revise (wrong or not attempted)</h3><div class="tchips">${list.map(([t,v])=>`<span class="tchip">${esc(t)} · <b>${v.miss}/${v.n}</b></span>`).join("")}</div></div>`;
+}
+function renderSolutions(){
+  const F=[["all","All"],["wrong","Wrong"],["skip","Not attempted"],["right","Correct"]];
+  const secs=[["all","All sections"]].concat(SECS.map(s=>[s[0],s[1]]));
+  $("#filters").innerHTML = F.map(f=>`<button class="chip ${S.filter===f[0]?"on":""}" data-f="${f[0]}">${f[1]}</button>`).join("") +
+    `<span style="width:10px"></span>` + secs.map(s=>`<button class="chip ${S.fsec===s[0]?"on":""}" data-s="${s[0]}">${s[1]}</button>`).join("");
+  $("#filters").querySelectorAll("[data-f]").forEach(b=>b.onclick=()=>{S.filter=b.dataset.f;persist();renderSolutions();});
+  $("#filters").querySelectorAll("[data-s]").forEach(b=>b.onclick=()=>{S.fsec=b.dataset.s;persist();renderSolutions();});
+  let html="";
+  QS.forEach((q,k)=>{
+    const a=S.saved[k], st = a===null||a===undefined ? "skip" : (a===q.a?"right":"wrong");
+    if(S.filter!=="all" && S.filter!==st) return;
+    if(S.fsec!=="all" && S.fsec!==q.s) return;
+    const pill = st==="right"?`<span class="pill ok">Correct +${EXAM.plus}</span>`:st==="wrong"?`<span class="pill bad">Wrong</span>`:`<span class="pill skip">Not attempted</span>`;
+    const opts=q.o.map((o,j)=>{const cls=j===q.a?"right":(j===a?"wrong":""); const tag=j===q.a?"Correct answer":(j===a?"Your answer":""); return `<div class="sopt ${cls}"><span class="L">${j+1}.</span><span>${optHTML(q,o)}</span>${tag?`<span class="tag">${tag}${j===q.a&&j===a?" · Your answer":""}</span>`:""}</div>`;}).join("");
+    html+=`<article class="sol"><div class="sol-top"><span><b style="color:var(--ink)">Q${k+1}</b> · ${SECS[secOf(k)][1]} · ${q.t}</span>${pill}</div>
+      <div class="qtext">${q.q}</div>${figHTML(q)}<div class="sopts">${opts}</div><div class="exp"><h4>Explanation</h4>${q.e}</div></article>`;
+  });
+  $("#sollist").innerHTML = html || `<p class="empty">No questions match this filter.</p>`;
+}
+
+/* ---------- ROUTER ---------- */
+const app=$("#app");
+function render(){
+  window.scrollTo(0,0);
+  if(S.stage==="exam" && S.endAt && Date.now()>=S.endAt){ finish(true); return; }
+  if(S.stage==="login") renderLogin();
+  else if(S.stage==="instr") renderInstr();
+  else if(S.stage==="exam"){ if(S.pending===undefined) S.pending=S.saved[S.cur]; renderExam(); if(!tick) tick=setInterval(updateTimer,1000); }
+  else renderResult();
+}
+render();
+</script>
+</body>
+</html>
