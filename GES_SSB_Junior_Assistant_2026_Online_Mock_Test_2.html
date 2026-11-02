@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SSB Junior Assistant 2026 Online Mock Test 2 | Gyana Education Service</title>
+<style>
+:root{--blue:#0b3d91;--blue2:#1558c0;--yellow:#f6b800;--green:#0f8a3c;--red:#d9342b;--purple:#6b3fa0;--grey:#e4e7ec;--ink:#1c2430;--mut:#5c6675;--bg:#eef1f6;--card:#fff;--line:#d3d9e3}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{font-family:Arial,Helvetica,"Segoe UI",sans-serif;color:var(--ink);background:var(--bg);font-size:15px;-webkit-text-size-adjust:100%}
+button{font-family:inherit;cursor:pointer}
+.hide{display:none!important}
+/* brand bar */
+.top{background:linear-gradient(90deg,var(--blue),var(--blue2));color:#fff;display:flex;align-items:center;gap:12px;padding:8px 14px;border-bottom:4px solid var(--yellow)}
+.logo{width:40px;height:40px;border-radius:8px;background:#fff;color:var(--blue);font-weight:800;display:flex;align-items:center;justify-content:center;font-size:17px;letter-spacing:.5px;flex:none;border-bottom:4px solid var(--green)}
+.brand{line-height:1.15;min-width:0}
+.brand b{font-size:17px;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.brand span{font-size:12px;opacity:.9}
+.tright{margin-left:auto;text-align:right;font-size:12px;line-height:1.3}
+.sidebar-line{height:6px;background:linear-gradient(90deg,var(--blue) 0 33%,var(--yellow) 33% 66%,var(--green) 66%)}
+.foot{font-size:12px;text-align:center;color:var(--mut);padding:10px 12px}
+.foot b{color:var(--blue)}
+/* intro */
+.wrap{max-width:900px;margin:0 auto;padding:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px;margin-bottom:12px;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+h1{font-size:21px;margin:0 0 4px;color:var(--blue)}
+h2{font-size:16px;margin:0 0 8px;color:var(--blue)}
+table.pat{border-collapse:collapse;width:100%;font-size:14px}
+table.pat th,table.pat td{border:1px solid var(--line);padding:7px 9px;text-align:left}
+table.pat th{background:#f0f4fb}
+.ins li{margin:5px 0;line-height:1.45}
+.legend{display:flex;flex-wrap:wrap;gap:10px 18px;margin-top:8px;font-size:13px}
+.legend div{display:flex;align-items:center;gap:7px}
+.field{display:flex;flex-direction:column;gap:5px;margin:8px 0}
+.field input{padding:10px;border:1px solid var(--line);border-radius:6px;font-size:16px}
+.btn{border:0;border-radius:6px;padding:11px 18px;font-size:15px;font-weight:700;color:#fff;background:var(--blue2)}
+.btn.g{background:var(--green)}.btn.o{background:#fff;color:var(--blue);border:1px solid var(--blue2)}.btn.p{background:var(--purple)}.btn.r{background:var(--red)}.btn.y{background:var(--yellow);color:#222}
+.btn:disabled{opacity:.5}
+.note{font-size:12.5px;color:var(--mut);margin-top:8px}
+.warn{background:#fff8e1;border:1px solid #f0d27a;border-radius:8px;padding:10px;font-size:13.5px}
+/* palette symbols */
+.sym{display:inline-flex;align-items:center;justify-content:center;width:34px;height:30px;font-weight:700;font-size:13px;color:#fff;flex:none;position:relative}
+.s0{background:#e8e8e8;color:#222;border:1px solid #bbb;border-radius:4px}
+.s1{background:var(--red);clip-path:polygon(0 18%,50% 0,100% 18%,100% 100%,0 100%)}
+.s2{background:var(--green);clip-path:polygon(0 0,100% 0,100% 82%,50% 100%,0 82%)}
+.s3{background:var(--purple);border-radius:50%;width:32px;height:32px}
+.s4{background:var(--purple);border-radius:50%;width:32px;height:32px}
+.s4::after{content:"";position:absolute;right:0;bottom:1px;width:10px;height:10px;background:var(--green);border-radius:50%;border:1px solid #fff}
+.cur{outline:3px solid var(--yellow);outline-offset:1px}
+/* exam */
+#exam{display:flex;flex-direction:column;height:100vh;height:100dvh}
+.hdrline{display:flex;align-items:center;gap:10px;background:#fff;border-bottom:1px solid var(--line);padding:6px 12px;flex-wrap:wrap}
+.timer{margin-left:auto;font-weight:700;font-size:15px;background:#0b2a55;color:#fff;border-radius:6px;padding:6px 12px;font-variant-numeric:tabular-nums}
+.timer.low{background:var(--red)}
+.cand{font-size:13px;color:var(--mut)}
+.cand b{color:var(--ink)}
+.tabs{display:flex;gap:4px;background:#dfe6f3;padding:6px 8px 0;overflow-x:auto;white-space:nowrap}
+.tab{border:1px solid var(--line);border-bottom:0;background:#f4f7fc;color:var(--blue);padding:8px 14px;border-radius:8px 8px 0 0;font-weight:700;font-size:13.5px}
+.tab.on{background:var(--blue2);color:#fff;border-color:var(--blue2)}
+.main{flex:1;display:flex;min-height:0}
+.qarea{flex:1;display:flex;flex-direction:column;min-width:0;background:#fff}
+.qhead{display:flex;justify-content:space-between;align-items:center;padding:8px 14px;border-bottom:1px solid var(--line);background:#f7f9fc;font-size:13.5px;gap:8px;flex-wrap:wrap}
+.qhead b{font-size:15px}
+.marks{color:var(--mut)}
+.marks i{font-style:normal;color:var(--green);font-weight:700}.marks u{text-decoration:none;color:var(--red);font-weight:700}
+.qbody{flex:1;overflow:auto;padding:14px;-webkit-overflow-scrolling:touch}
+.split{display:flex;gap:14px}
+.passage{flex:1;border:1px solid var(--line);background:#fbfcfe;border-radius:8px;padding:12px;font-size:14.5px;line-height:1.6;max-height:100%;overflow:auto}
+.passage h3{margin:0 0 6px;font-size:13px;color:var(--blue);text-transform:uppercase;letter-spacing:.4px}
+.passage p{margin:0 0 9px;text-align:justify}
+.qcol{flex:1;min-width:0}
+.qtext{font-size:16.5px;line-height:1.55;margin-bottom:12px}
+.opt{display:flex;gap:10px;align-items:flex-start;border:1px solid var(--line);border-radius:8px;padding:11px 12px;margin:8px 0;cursor:pointer;line-height:1.45;background:#fff}
+.opt:hover{background:#f3f7fd}
+.opt input{margin-top:3px;width:18px;height:18px;flex:none;accent-color:var(--blue2)}
+.opt.sel{border-color:var(--blue2);background:#eaf1fd}
+.opt .l{font-weight:700;color:var(--blue);min-width:20px}
+.ctrl{display:flex;flex-wrap:wrap;gap:8px;padding:10px 14px;border-top:1px solid var(--line);background:#f7f9fc}
+.ctrl .sp{flex:1}
+.pal{width:300px;border-left:1px solid var(--line);background:#f4f7fc;display:flex;flex-direction:column;min-height:0}
+.palh{padding:10px;border-bottom:1px solid var(--line);font-size:12px}
+.palh .legend{margin-top:0;gap:6px 10px;font-size:11.5px}
+.palh .sym{width:26px;height:24px;font-size:11px}.palh .s3,.palh .s4{width:25px;height:25px}
+.palsec{padding:7px 10px;background:var(--blue);color:#fff;font-weight:700;font-size:13px}
+.grid{padding:10px;display:grid;grid-template-columns:repeat(5,1fr);gap:8px;overflow:auto;flex:1;align-content:start;justify-items:center}
+.grid button{border:0;background:none;padding:0}
+.palf{padding:10px;border-top:1px solid var(--line)}
+.palf .btn{width:100%}
+.palbtn{display:none}
+.overlay{position:fixed;inset:0;background:rgba(10,20,40,.55);display:flex;align-items:center;justify-content:center;z-index:50;padding:14px}
+.modal{background:#fff;border-radius:10px;padding:18px;max-width:460px;width:100%;max-height:90vh;overflow:auto}
+.modal h2{margin-top:0}
+.sumtab{width:100%;border-collapse:collapse;font-size:13.5px;margin:8px 0}
+.sumtab th,.sumtab td{border:1px solid var(--line);padding:6px 8px;text-align:center}
+.sumtab th{background:#f0f4fb}.sumtab td:first-child,.sumtab th:first-child{text-align:left}
+@media(max-width:820px){
+ .palbtn{display:inline-block}
+ .pal{position:fixed;right:0;top:0;bottom:0;width:min(86vw,320px);z-index:40;transform:translateX(100%);transition:transform .22s;box-shadow:-4px 0 14px rgba(0,0,0,.25)}
+ .pal.open{transform:none}
+ .split{flex-direction:column}
+ .passage{max-height:36vh;flex:none}
+ .qtext{font-size:16px}
+ .brand b{font-size:14.5px}.tright{display:none}
+ .btn{padding:10px 12px;font-size:14px}
+ .sumtab{font-size:12px}.sumtab th,.sumtab td{padding:5px 4px}.card{overflow-x:auto}
+ .ctrl .btn{flex:1 1 45%}.ctrl .sp{display:none}
+}
+/* result */
+.score{display:flex;flex-wrap:wrap;gap:10px}
+.kpi{flex:1 1 130px;border:1px solid var(--line);border-radius:10px;padding:12px;text-align:center;background:#fff}
+.kpi b{display:block;font-size:24px;color:var(--blue)}
+.kpi span{font-size:12px;color:var(--mut)}
+.flt{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0}
+.flt button{border:1px solid var(--blue2);background:#fff;color:var(--blue);padding:6px 12px;border-radius:16px;font-size:13px}
+.flt button.on{background:var(--blue2);color:#fff}
+.rv{border:1px solid var(--line);border-radius:10px;padding:12px;margin:10px 0;background:#fff}
+.rv.c{border-left:6px solid var(--green)}.rv.w{border-left:6px solid var(--red)}.rv.u{border-left:6px solid #9aa3b2}
+.rv .h{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;font-size:12.5px;color:var(--mut);margin-bottom:6px}
+.rv .o{padding:6px 9px;border-radius:6px;margin:4px 0;border:1px solid transparent}
+.rv .o.ok{background:#e7f6ec;border-color:#9ad3ae}
+.rv .o.no{background:#fdeceb;border-color:#f0b0ab}
+.exp{background:#fff8e1;border:1px solid #f0d27a;border-radius:8px;padding:9px;margin-top:8px;font-size:14px;line-height:1.5}
+.tag{display:inline-block;font-size:11px;border-radius:4px;padding:2px 6px;background:#e6efff;color:var(--blue);font-weight:700}
+.tag.ca{background:#e2f6e9;color:var(--green)}
+.tag.fl{background:#fdeceb;color:var(--red)}
+/* login */
+#login{min-height:100vh;min-height:100dvh;display:flex;flex-direction:column}
+.lgwrap{flex:1;display:flex;align-items:center;justify-content:center;padding:16px}
+.lgbox{background:#fff;border:1px solid var(--line);border-radius:12px;width:100%;max-width:420px;box-shadow:0 6px 24px rgba(11,61,145,.12);overflow:hidden}
+.lghead{background:#f0f4fb;padding:12px 16px;display:flex;justify-content:space-between;font-size:13px;color:var(--mut);border-bottom:1px solid var(--line)}
+.lghead b{color:var(--ink)}
+.lgbody{padding:18px 16px}
+.lgbody h2{text-align:center;margin-bottom:14px}
+.ip{display:flex;align-items:center;border:1px solid var(--line);border-radius:6px;margin:10px 0;background:#fafbfd}
+.ip span{padding:0 12px;color:var(--blue);font-weight:700;font-size:13px;width:95px;border-right:1px solid var(--line);align-self:stretch;display:flex;align-items:center}
+.ip input{border:0;background:transparent;padding:12px;font-size:16px;flex:1;min-width:0;outline:none}
+.avatar{width:64px;height:64px;border-radius:50%;background:#e6efff;color:var(--blue);display:flex;align-items:center;justify-content:center;font-size:30px;margin:0 auto 8px}
+.logout{margin-left:8px;background:#fff;color:var(--red);border:1px solid #fff;border-radius:6px;padding:6px 10px;font-weight:700;font-size:12.5px;flex:none}
+.hdrline .logout{border-color:var(--red)}
+@media print{.top,.flt,.noprint,.foot{display:none!important}body{background:#fff}.rv{break-inside:avoid}}
+</style>
+</head>
+<body>
+
+<!-- ============ LOGIN ============ -->
+<div id="login">
+  <div class="top"><div class="logo">GES</div><div class="brand"><b>Gyana Education Service</b><span>Online Mock Test Series</span></div><div class="tright">SSB Odisha<br>Junior Assistant 2026</div></div>
+  <div class="sidebar-line"></div>
+  <div class="lgwrap">
+    <div class="lgbox">
+      <div class="lghead"><span>System Name: <b>GES-C002</b></span><span>Mock Test 2</span></div>
+      <div class="lgbody">
+        <div class="avatar">&#128100;</div>
+        <h2>Candidate Login</h2>
+        <div class="ip"><span>Username</span><input id="lgUser" value="GES-SSBJA-MT2" autocomplete="off" aria-label="Username"></div>
+        <div class="ip"><span>Password</span><input id="lgPass" type="password" value="ges2026" autocomplete="off" aria-label="Password"></div>
+        <button class="btn g" id="lgBtn" style="width:100%;font-size:17px;padding:13px;margin-top:6px">Sign In</button>
+        <div class="note" style="text-align:center">Username and password are already filled in. Just tap <b>Sign In</b>.</div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><b>Gyana Education Service</b> &bull; Contact: 9776188019</div>
+</div>
+
+<!-- ============ INTRO ============ -->
+<div id="intro" class="hide">
+  <div class="top"><div class="logo">GES</div><div class="brand"><b>Gyana Education Service</b><span>Online Mock Test Series</span></div><div class="tright">SSB Odisha<br>Junior Assistant 2026</div><button class="logout" data-lo="1">Logout</button></div>
+  <div class="sidebar-line"></div>
+  <div class="wrap">
+    <div class="card">
+      <h1>SSB Junior Assistant Recruitment 2026 &mdash; Mock Test 2</h1>
+      <div style="color:var(--mut);font-size:14px">Computer-based test in the TCS iON style &bull; Advt. No. 01/2026 pattern &bull; No login required</div>
+    </div>
+    <div class="card">
+      <h2>Exam Pattern (Written Test)</h2>
+      <table class="pat">
+        <tr><th>Section</th><th>Questions</th><th>Marks</th></tr>
+        <tr><td>General English (up to Graduation level, incl. unseen passage)</td><td>30</td><td>60</td></tr>
+        <tr><td>General Knowledge &amp; Current Affairs</td><td>20</td><td>40</td></tr>
+        <tr><td>General Mathematics (up to HSC standard)</td><td>20</td><td>40</td></tr>
+        <tr><td>Reasoning &amp; Mental Ability (incl. Numerical Ability)</td><td>30</td><td>60</td></tr>
+        <tr><th>Total</th><th>100</th><th>200</th></tr>
+      </table>
+      <p style="margin:10px 0 0"><b>Time:</b> 2 hours &nbsp;|&nbsp; <b>Correct:</b> +2 &nbsp;|&nbsp; <b>Wrong:</b> &minus;0.50 &nbsp;|&nbsp; <b>Unattempted:</b> 0</p>
+    </div>
+    <div class="card">
+      <h2>About this Mock Test</h2>
+      <ul class="ins" style="margin:0;padding-left:20px">
+        <li>All 100 questions are <b>newly set by Gyana Education Service</b> on the exact topic pattern and moderate difficulty of the <b>official SSB Odisha Junior Assistant 2024 paper</b>. They are PYQ-pattern questions, not copies of that paper (Mock Test 1 has the original paper).</li>
+        <li>Every topic is taken from the <b>Advt. No. 01/2026 syllabus</b>, and the English section has an unseen passage of about 445 words.</li>
+        <li>Q.45&ndash;48 are <b>2026 current affairs</b>, each verified from news sources and tagged <span class="tag ca">GES 2026 CA</span> in the review.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h2>Instructions</h2>
+      <ol class="ins" style="margin:0;padding-left:20px">
+        <li>The countdown timer runs at the top right. The test is submitted automatically when it reaches zero.</li>
+        <li>You can move freely between sections and questions using the Question Palette.</li>
+        <li><b>Save &amp; Next</b> saves your answer. <b>Mark for Review &amp; Next</b> flags the question; if an option is chosen it is still counted.</li>
+        <li><b>Clear Response</b> removes your chosen option.</li>
+      </ol>
+      <div class="legend">
+        <div><span class="sym s0">1</span> Not Visited</div>
+        <div><span class="sym s1">2</span> Not Answered</div>
+        <div><span class="sym s2">3</span> Answered</div>
+        <div><span class="sym s3">4</span> Marked for Review</div>
+        <div><span class="sym s4">5</span> Answered &amp; Marked for Review</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="field"><label for="nm"><b>Candidate name</b> (optional)</label><input id="nm" maxlength="40" placeholder="Your name" autocomplete="off"></div>
+      <div id="resumeBox" class="warn hide" style="margin:8px 0">You have an unfinished attempt on this device. <button class="btn y" id="resumeBtn" style="padding:6px 12px">Resume</button> <button class="btn o" id="discardBtn" style="padding:6px 12px">Start fresh</button></div>
+      <button class="btn g" id="startBtn" style="width:100%;font-size:17px;padding:13px">Start Test</button>
+      <div class="note">Works on mobile, tablet and laptop. Your attempt is saved on this device only, so refreshing the page will not lose it. Nothing is sent anywhere.</div>
+    </div>
+    <div class="foot"><b>Gyana Education Service</b> &bull; Contact: 9776188019<br>Free practice resource. Not affiliated with the State Selection Board, Odisha.</div>
+  </div>
+</div>
+
+<!-- ============ EXAM ============ -->
+<div id="exam" class="hide">
+  <div class="top"><div class="logo">GES</div><div class="brand"><b>Gyana Education Service</b><span>SSB Junior Assistant 2026 &bull; Mock Test 2</span></div><div class="tright">Candidate: <b id="cName">-</b></div></div>
+  <div class="hdrline">
+    <span class="cand">Section: <b id="secLbl"></b></span>
+    <button class="btn o palbtn" id="palBtn" style="padding:6px 10px;font-size:13px">Question Palette</button>
+    <div class="timer" id="timer">02:00:00</div><button class="logout" data-lo="1">Logout</button>
+  </div>
+  <div class="tabs" id="tabs"></div>
+  <div class="main">
+    <div class="qarea">
+      <div class="qhead"><b id="qno"></b><span class="marks">Marks: <i>+2</i> / <u>&minus;0.50</u></span></div>
+      <div class="qbody" id="qbody"></div>
+      <div class="ctrl">
+        <button class="btn p" id="bMark">Mark for Review &amp; Next</button>
+        <button class="btn o" id="bClear">Clear Response</button>
+        <button class="btn o" id="bPrev">&laquo; Previous</button>
+        <span class="sp"></span>
+        <button class="btn g" id="bSave">Save &amp; Next</button>
+      </div>
+    </div>
+    <aside class="pal" id="pal">
+      <div class="palh">
+        <div class="legend">
+          <div><span class="sym s2" id="cA">0</span> Answered</div>
+          <div><span class="sym s1" id="cN">0</span> Not Answered</div>
+          <div><span class="sym s0" id="cV">0</span> Not Visited</div>
+          <div><span class="sym s3" id="cM">0</span> Marked</div>
+          <div style="grid-column:1/-1"><span class="sym s4" id="cAM">0</span> Answered &amp; Marked for Review</div>
+        </div>
+      </div>
+      <div class="palsec" id="palSec"></div>
+      <div class="grid" id="grid"></div>
+      <div class="palf"><button class="btn r" id="bSubmit">Submit Test</button><button class="btn o palbtn" id="palClose" style="width:100%;margin-top:8px">Close Palette</button></div>
+    </aside>
+  </div>
+</div>
+
+<!-- ============ RESULT ============ -->
+<div id="result" class="hide">
+  <div class="top"><div class="logo">GES</div><div class="brand"><b>Gyana Education Service</b><span>Result &amp; Detailed Solutions</span></div><button class="logout" data-lo="1" style="margin-left:auto">Logout</button></div>
+  <div class="sidebar-line"></div>
+  <div class="wrap" id="resBody"></div>
+</div>
+
+<div id="modalHost"></div>
+
+<script>
+"use strict";
+/* ============== DATA ==============
+   [section, question, [A,B,C,D], answerIndex, explanation, optional flag]
+   GES original questions on the SSB Odisha JA 2024 paper pattern. flag "ca" = verified 2026 current affairs. */
+var PASSAGE=["In the village of Nandapur, on the bank of a slow, wide river, lived an old potter named Madhu. For nearly fifty years he had shaped clay into pots, lamps and toys that were known in every market of the district. People said that water kept in Madhu&rsquo;s pots stayed cool even in the hottest month of summer, and travellers often stopped at his small shed only to watch his hands at work.", "One monsoon, a young boy named Biren came to Madhu and asked to be taught the craft. Biren was clever and quick, but he was also impatient. On the very first day he wanted to make a large water jar. Madhu smiled and gave him a lump of clay. &ldquo;First learn to knead the clay,&rdquo; he said. &ldquo;A pot is only as strong as the clay it is made of.&rdquo;", "For weeks Biren did nothing but knead clay and pick tiny stones out of it. He grumbled that he was wasting his time, yet the old man was firm. Only when the clay felt smooth and even under his palms did Madhu allow him to sit at the wheel. Even then, many of Biren&rsquo;s pots cracked in the kiln. Each time, Madhu calmly asked him to find out why, and each time the boy discovered a careless mistake of his own.", "In the second year a rich merchant from the city visited the shed. He offered Madhu a large sum of money to produce five hundred pots within ten days for a festival. Biren was delighted, but Madhu politely refused. &ldquo;In ten days I can make five hundred pots,&rdquo; he said, &ldquo;but not five hundred good pots. I will not sell what I would not use in my own house.&rdquo; The merchant left in anger, and Biren could not understand why his master had turned away such good fortune.", "A few weeks later, news reached the village that the pots the merchant had bought from a hurried workshop had leaked and broken during the festival. The merchant came back to Nandapur, this time humbly, and placed a regular order with Madhu, allowing him all the time he needed.", "That evening Biren sat beside his master near the glowing kiln. &ldquo;Now I understand,&rdquo; he said. &ldquo;Speed is useful, but without care it is worth nothing.&rdquo; The old potter nodded. &ldquo;Remember,&rdquo; he said, &ldquo;the clay does not hurry, and neither should the hands that shape it. Patience is the first tool of every craftsman.&rdquo;", "Years later, when Madhu was too old to work, it was Biren who kept the wheel turning, and buyers still said that water stayed cool in the pots of Nandapur."];
+var Q=[["E", "Neither the teacher nor the students (be) present in the hall yesterday. The correct form of the verb is:", ["was", "were", "is", "are"], 1, "With <i>neither&hellip;nor</i>, the verb agrees with the nearer subject (&ldquo;students&rdquo;, plural), and &ldquo;yesterday&rdquo; needs the past tense: <b>were</b>."], ["E", "Each of the boys (have) submitted his project. The correct form of the verb is:", ["have", "are having", "has", "having"], 2, "&ldquo;Each&rdquo; is singular, so the verb is singular: <b>has</b> submitted."], ["E", "You ________ not smoke near a petrol pump; it is strictly prohibited.<br>Which is the correct modal to complete the sentence?", ["need", "would", "might", "must"], 3, "<b>Must not</b> expresses prohibition."], ["E", "Which of the following is a grammatically correct sentence?", ["I saw him yesterday.", "I have seen him yesterday.", "I had saw him yesterday.", "I have saw him yesterday."], 0, "&ldquo;Yesterday&rdquo; is a finished past time, so the simple past <b>saw</b> is correct. The present perfect cannot be used with it, and &ldquo;had saw/have saw&rdquo; use the wrong verb form."], ["E", "He is too proud ________ for help.<br>The correct non-finite verb to complete the sentence is:", ["to ask", "asking", "asked", "ask"], 0, "The pattern <i>too + adjective + to-infinitive</i> needs <b>to ask</b>."], ["E", "The boy ________ in the corner is my brother.<br>The correct non-finite verb to complete the sentence is:", ["sitting", "to sit", "sat", "sits"], 0, "The present participle <b>sitting</b> describes the noun &ldquo;boy&rdquo; (= the boy who is sitting)."], ["E", "The farmers are harvesting the crops.<br>This can be changed into passive voice as:", ["The crops were being harvested by the farmers.", "The crops have been harvested by the farmers.", "The crops are harvested by the farmers.", "The crops are being harvested by the farmers."], 3, "Present continuous active &rarr; <i>is/are + being + past participle</i>: <b>are being harvested</b>."], ["E", "________ I come in, sir?<br>Which is the correct modal to complete the sentence?", ["May", "Must", "Should", "Will"], 0, "<b>May</b> is the modal used to ask for permission politely."], ["E", "It is a very beautiful scene.<br>This can be changed into an exclamatory sentence as:", ["What a beautiful scene it is!", "How a beautiful scene it is!", "What beautiful scene it is!", "How beautiful scene!"], 0, "Pattern: <i>What + a/an + adjective + noun + subject + verb!</i> &rarr; <b>What a beautiful scene it is!</b>"], ["E", "On reaching the station, he found the train gone.<br>This can be changed into a complex sentence as:", ["He reached the station and found the train gone.", "Reaching the station, the train had gone.", "When he reached the station, he found that the train had gone.", "He reached the station, so the train had gone."], 2, "A complex sentence has a subordinate clause: <b>When he reached the station</b> (adverb clause) + <b>that the train had gone</b> (noun clause). Option A is compound."], ["E", "He was seriously ill; ________ he attended the meeting.<br>The correct connector to fill in the blank is:", ["therefore", "because", "so", "nevertheless"], 3, "The clauses contrast (ill, yet attended), so the contrast connector <b>nevertheless</b> is needed."], ["E", "<u>Whatever you say</u> will be recorded. The underlined noun clause acts as:", ["Subject of the verb", "Object of a transitive verb", "Complement of a verb", "Object of a preposition"], 0, "The clause answers &ldquo;What will be recorded?&rdquo; so it is the <b>subject</b> of the verb &ldquo;will be recorded&rdquo;."], ["E", "This is the house <u>where I was born</u>. The underlined clause is a/an ________.<br>Pick out the correct alternative.", ["Adjective (relative) clause", "Noun clause", "Adverb clause of place", "Principal clause"], 0, "It qualifies the noun &ldquo;house&rdquo;, so it is an <b>adjective (relative) clause</b>. (An adverb clause of place would modify a verb, e.g. &ldquo;Sit where you like.&rdquo;)"], ["E", "She said, &ldquo;I am writing a letter.&rdquo;<br>This sentence can be changed into indirect speech as:", ["She said that she is writing a letter.", "She said that I was writing a letter.", "She said that she was writing a letter.", "She said that she had written a letter."], 2, "With a past reporting verb, present continuous becomes past continuous and &ldquo;I&rdquo; becomes &ldquo;she&rdquo;: <b>she was writing</b>."], ["E", "The teacher ordered the students to stand up.<br>This sentence can be changed into direct speech as:", ["The teacher said to the students, &ldquo;Stand up.&rdquo;", "The teacher said to the students, &ldquo;You stood up.&rdquo;", "The teacher said to the students, &ldquo;Let us stand up.&rdquo;", "The teacher said to the students, &ldquo;You may stand up.&rdquo;"], 0, "&ldquo;Ordered &hellip; to + verb&rdquo; reports an imperative, so the direct form is the command <b>&ldquo;Stand up.&rdquo;</b>"], ["E", "Very few cities in India are as big as Mumbai.<br>This sentence can be rewritten in the comparative degree as:", ["Mumbai is bigger than any other city in India.", "Mumbai is bigger than most other cities in India.", "Mumbai is the biggest city in India.", "Mumbai is as big as other cities in India."], 1, "&ldquo;Very few &hellip; as big as&rdquo; means a few cities are equally big, so Mumbai is bigger than <b>most other</b> cities, not than <i>any other</i> city."], ["E", "Which of the following sentences is grammatically correct?", ["He is an European.", "She is a honest girl.", "It is a hour&rsquo;s journey.", "He is an MLA."], 3, "The article depends on the first <i>sound</i>: MLA begins with the vowel sound &ldquo;em&rdquo;, so <b>an MLA</b>. Correct forms of the others: a European, an honest girl, an hour&rsquo;s journey."], ["E", "The ________ of the river was a pleasant sight.<br>The correct word to complete the sentence is:", ["beauty", "beautiful", "beautify", "beautifully"], 0, "After &ldquo;The&rdquo; and before &ldquo;of&rdquo; a noun is needed: <b>beauty</b>."], ["E", "She sings very ________.<br>The correct word to fill in the blank is:", ["sweet", "sweetness", "sweeten", "sweetly"], 3, "An adverb modifies the verb &ldquo;sings&rdquo;: <b>sweetly</b>."], ["E", "He is senior ________ me by two years. Identify the correct preposition.", ["than", "from", "over", "to"], 3, "Latin comparatives (senior, junior, superior, inferior, prior) take <b>to</b>, not &ldquo;than&rdquo;."], ["E", "Of the two brothers, Ram is the ________.<br>Pick out the correct word to complete the sentence.", ["tall", "taller", "tallest", "more tall"], 1, "When only <i>two</i> are compared, the comparative is used even with &ldquo;the&rdquo;: <b>the taller</b>."], ["E", "Which of the following sentences is grammatically correct?", ["The police has arrested the thief.", "He gave me many informations.", "The cattle are grazing in the field.", "The scissors is blunt."], 2, "&ldquo;Cattle&rdquo; is always plural, so <b>The cattle are grazing</b> is correct. Correct forms: The police <i>have</i>, much <i>information</i>, The scissors <i>are</i>."], ["E", "The old man died ________ cholera.<br>The correct preposition to fill in the blank is:", ["from", "by", "of", "with"], 2, "We die <b>of</b> a disease (die <i>from</i> a wound or an injury)."], ["E", "Why did Madhu make Biren knead clay for weeks?", ["He wanted free help in his shed.", "Biren was too young to use the wheel.", "There was no wheel in the shed.", "He believed a strong pot needs well-prepared clay."], 3, "Madhu said, &ldquo;A pot is only as strong as the clay it is made of.&rdquo;"], ["E", "Why did Madhu refuse the merchant&rsquo;s offer?", ["The price offered was too low.", "He could not make five hundred good pots in ten days.", "He did not like people from the city.", "He was too ill to work."], 1, "&ldquo;In ten days I can make five hundred pots, but not five hundred good pots.&rdquo;"], ["E", "What happened to the pots the merchant bought from another workshop?", ["They leaked and broke during the festival.", "They were sold at a high price.", "They were returned unused.", "They won a prize at the festival."], 0, "News came that the pots &ldquo;had leaked and broken during the festival&rdquo;."], ["E", "Which of the following is NOT true according to the passage?", ["Madhu had worked as a potter for nearly fifty years.", "Biren made a large water jar on his very first day.", "The merchant later came back humbly.", "Biren continued the work after Madhu grew old."], 1, "Biren only <i>wanted</i> to make a water jar on the first day; Madhu gave him clay to knead instead."], ["E", "What is the main lesson of the passage?", ["Hard work always brings wealth.", "Merchants cannot be trusted.", "Patience and care matter more than speed.", "Young people should leave their villages."], 2, "Madhu: &ldquo;Patience is the first tool of every craftsman&rdquo;; Biren: &ldquo;Speed is useful, but without care it is worth nothing.&rdquo;"], ["E", "The word &lsquo;grumbled&rsquo; as used in the passage means:", ["laughed", "complained", "shouted", "prayed"], 1, "To <b>grumble</b> is to complain in a low, bad-tempered way, as Biren did about &ldquo;wasting his time&rdquo;."], ["E", "Which of the following words is opposite in meaning to &lsquo;impatient&rsquo;?", ["restless", "eager", "anxious", "patient"], 3, "<b>Patient</b> is the antonym; restless, eager and anxious are close in meaning to impatient."], ["G", "Which river is popularly known as the &lsquo;Dakshin Ganga&rsquo;?", ["Krishna", "Kaveri", "Godavari", "Mahanadi"], 2, "The <b>Godavari</b>, the longest river of peninsular India, is called the Dakshin Ganga."], ["G", "Which of the following States does NOT share a border with Odisha?", ["Bihar", "Jharkhand", "Chhattisgarh", "Andhra Pradesh"], 0, "Odisha borders West Bengal, Jharkhand, Chhattisgarh and Andhra Pradesh &mdash; not <b>Bihar</b>."], ["G", "The International Court of Justice is located at?", ["Geneva", "New York", "Vienna", "The Hague"], 3, "The ICJ, the principal judicial organ of the UN, sits at the Peace Palace in <b>The Hague</b>, Netherlands."], ["G", "Which one of the following is the capital of Arunachal Pradesh?", ["Dispur", "Kohima", "Aizawl", "Itanagar"], 3, "<b>Itanagar</b>. (Dispur &ndash; Assam, Kohima &ndash; Nagaland, Aizawl &ndash; Mizoram.)"], ["G", "Which one of the following is the smallest country in the world by area?", ["Monaco", "Vatican City", "San Marino", "Nauru"], 1, "<b>Vatican City</b> (about 0.44 sq km) is the smallest country; Monaco is second."], ["G", "Who among the following is the author of the book &ldquo;Wings of Fire&rdquo;?", ["A.P.J. Abdul Kalam", "Jawaharlal Nehru", "Vikram Sarabhai", "Homi J. Bhabha"], 0, "<i>Wings of Fire</i> (1999) is the autobiography of <b>Dr A.P.J. Abdul Kalam</b>, written with Arun Tiwari."], ["G", "Which of the following events does not tally with the year?<br>(i) Battle of Plassey &ndash; 1757<br>(ii) Battle of Buxar &ndash; 1764<br>(iii) Jallianwala Bagh massacre &ndash; 1921<br>(iv) Partition of Bengal &ndash; 1915", ["(i) &amp; (ii)", "(ii) &amp; (iii)", "(iii) &amp; (iv)", "(i) &amp; (iv)"], 2, "Jallianwala Bagh massacre was in <b>1919</b> and the Partition of Bengal in <b>1905</b>. Plassey (1757) and Buxar (1764) are correct."], ["G", "Identify the pairs that are correctly matched.<br>(i) Charminar &ndash; Hyderabad &nbsp; (ii) Gateway of India &ndash; Mumbai<br>(iii) Victoria Memorial &ndash; Chennai &nbsp; (iv) Sun Temple &ndash; Konark", ["(i), (ii) &amp; (iii)", "(ii), (iii) &amp; (iv)", "(i), (iii) &amp; (iv)", "(i), (ii) &amp; (iv)"], 3, "The Victoria Memorial is in <b>Kolkata</b>, so (iii) is wrong; the other three are correct."], ["G", "Match the National Parks with their States.<br>National Parks: (i) Kaziranga (ii) Bhitarkanika (iii) Gir (iv) Jim Corbett<br>States: (a) Gujarat (b) Assam (c) Uttarakhand (d) Odisha", ["(i)-(b), (ii)-(d), (iii)-(a), (iv)-(c)", "(i)-(d), (ii)-(b), (iii)-(a), (iv)-(c)", "(i)-(b), (ii)-(d), (iii)-(c), (iv)-(a)", "(i)-(b), (ii)-(a), (iii)-(d), (iv)-(c)"], 0, "Kaziranga &ndash; Assam, Bhitarkanika &ndash; Odisha, Gir &ndash; Gujarat, Jim Corbett &ndash; Uttarakhand."], ["G", "Who is the author of the book &ldquo;The Discovery of India&rdquo;?", ["Mahatma Gandhi", "Jawaharlal Nehru", "Rabindranath Tagore", "B.R. Ambedkar"], 1, "<b>Jawaharlal Nehru</b> wrote it in 1944 while imprisoned in Ahmednagar Fort; it was published in 1946."], ["G", "Who founded the Mughal Empire in India?", ["Humayun", "Akbar", "Sher Shah Suri", "Babur"], 3, "<b>Babur</b> founded it after defeating Ibrahim Lodi at the First Battle of Panipat in 1526."], ["G", "Who wrote the famous novel &ldquo;Train to Pakistan&rdquo;?", ["R.K. Narayan", "Mulk Raj Anand", "Vikram Seth", "Khushwant Singh"], 3, "<i>Train to Pakistan</i> (1956), set during the Partition, is by <b>Khushwant Singh</b>."], ["G", "Penicillin, the first antibiotic, was discovered by:", ["Alexander Fleming", "Louis Pasteur", "Edward Jenner", "Robert Koch"], 0, "<b>Alexander Fleming</b> discovered penicillin in 1928."], ["G", "Which of the following pairs is not correctly matched?", ["Electron &ndash; J.J. Thomson", "Neutron &ndash; James Chadwick", "Radioactivity &ndash; Albert Einstein", "Proton &ndash; Ernest Rutherford"], 2, "Radioactivity was discovered by <b>Henri Becquerel</b> (1896), not Einstein. The other pairs are correct."], ["G", "Which team won the ICC Men&rsquo;s T20 World Cup 2026, co-hosted by India and Sri Lanka?", ["Australia", "New Zealand", "South Africa", "India"], 3, "<b>India</b> beat New Zealand by 96 runs in the final at Ahmedabad (8 March 2026), retaining the title and winning its third T20 World Cup.", "ca"], ["G", "Who was awarded the Nobel Peace Prize 2026?", ["Narges Mohammadi", "Navi Pillay", "Nihon Hidankyo", "Mar&iacute;a Corina Machado"], 1, "<b>Navi Pillay</b> of South Africa, former UN High Commissioner for Human Rights. (2023: Narges Mohammadi; 2024: Nihon Hidankyo; 2025: Mar&iacute;a Corina Machado.)", "ca"], ["G", "Which country holds the G20 presidency in 2026?", ["United States of America", "South Africa", "Brazil", "United Kingdom"], 0, "The <b>USA</b> holds the 2026 G20 presidency, with the leaders&rsquo; summit scheduled for 14&ndash;15 December 2026 at Doral, Miami. (2024: Brazil; 2025: South Africa.)", "ca"], ["G", "The XXV Olympic Winter Games, held in February 2026 at Milano Cortina, were hosted by which country?", ["France", "Switzerland", "Italy", "Austria"], 2, "<b>Italy</b> hosted the 2026 Winter Olympics in Milan and Cortina d&rsquo;Ampezzo, opening on 6 February 2026.", "ca"], ["G", "Match the following countries with their currencies.<br>Country: (i) Japan (ii) Bangladesh (iii) Myanmar (iv) Bhutan<br>Currency: (a) Kyat (b) Ngultrum (c) Yen (d) Taka", ["(i)-(c), (ii)-(a), (iii)-(d), (iv)-(b)", "(i)-(c), (ii)-(d), (iii)-(a), (iv)-(b)", "(i)-(c), (ii)-(d), (iii)-(b), (iv)-(a)", "(i)-(d), (ii)-(c), (iii)-(a), (iv)-(b)"], 1, "Japan &ndash; Yen, Bangladesh &ndash; Taka, Myanmar &ndash; Kyat, Bhutan &ndash; Ngultrum."], ["G", "Which of the following classical dance forms is NOT correctly matched with its State?", ["Odissi &ndash; Odisha", "Kathakali &ndash; Kerala", "Manipuri &ndash; Manipur", "Kuchipudi &ndash; Tamil Nadu"], 3, "Kuchipudi belongs to <b>Andhra Pradesh</b>; Tamil Nadu&rsquo;s classical dance is Bharatanatyam."], ["M", "What decimal of a day is 45 minutes?", ["0.0325", "0.03125", "0.3125", "0.0375"], 1, "1 day = 24 &times; 60 = 1440 min. 45/1440 = 1/32 = <b>0.03125</b>."], ["M", "Which one of the following rational numbers represents the number 0.<span style='text-decoration:overline'>36</span> ?", ["9/25", "2/11", "4/11", "36/90"], 2, "0.363636&hellip; = 36/99 = <b>4/11</b>."], ["M", "What is the least number which, when divided by 12, 15 and 20, leaves the remainders 8, 11 and 16 respectively?", ["64", "52", "56", "116"], 2, "In each case divisor &minus; remainder = 4. LCM(12, 15, 20) = 60, so the number = 60 &minus; 4 = <b>56</b>."], ["M", "Three ropes of lengths 84 m, 126 m and 210 m are to be cut into pieces of equal length, as long as possible. What is the total number of pieces?", ["8", "10", "12", "15"], 1, "HCF(84, 126, 210) = 42 m. Pieces = 84/42 + 126/42 + 210/42 = 2 + 3 + 5 = <b>10</b>."], ["M", "If &radic;(x/169) = 54/39, then x is equal to:", ["108", "216", "288", "324"], 3, "&radic;x/13 = 54/39 = 18/13 &rArr; &radic;x = 18 &rArr; x = <b>324</b>."], ["M", "The value of the expression &#8731;0.000729 + &#8731;0.125 is equal to:", ["0.59", "0.95", "0.509", "0.9"], 0, "&#8731;0.000729 = 0.09 and &#8731;0.125 = 0.5. Sum = <b>0.59</b>."], ["M", "If the price of sugar rises by 25%, by what percent must a family reduce its consumption so that the expenditure remains the same?", ["25%", "22.5%", "20%", "15%"], 2, "Reduction = 25/(100 + 25) &times; 100 = <b>20%</b>."], ["M", "A sum of money amounts to Rs. 9,800 after 5 years and to Rs. 12,005 after 8 years at the same rate of simple interest. What is the rate of interest per annum?", ["10%", "12%", "8%", "15%"], 1, "SI for 3 years = 12005 &minus; 9800 = 2205, so SI per year = 735. Principal = 9800 &minus; 5 &times; 735 = 6125. Rate = 735/6125 &times; 100 = <b>12%</b>."], ["M", "What is the compound interest on Rs. 8,000 at 10% per annum for 2 years, compounded annually?", ["Rs. 1,600", "Rs. 1,648", "Rs. 1,760", "Rs. 1,680"], 3, "Amount = 8000 &times; (1.1)&sup2; = 9680. CI = 9680 &minus; 8000 = <b>Rs. 1,680</b>."], ["M", "A shopkeeper marks his goods 25% above the cost price and allows a discount of 10%. What is his profit percent?", ["12.5%", "15%", "10%", "13.5%"], 0, "SP = 1.25 &times; 0.90 = 1.125 of CP &rArr; profit = <b>12.5%</b>."], ["M", "If the selling price of 18 articles is equal to the cost price of 21 articles, then what is the gain percent?", ["14 2/7%", "16 2/3%", "15%", "18%"], 1, "SP of 18 = CP of 21 &rArr; SP/CP = 21/18 = 7/6. Gain = 1/6 = <b>16 2/3%</b>."], ["M", "A 40-litre mixture contains milk and water in the ratio 3 : 1. How much water must be added to make the ratio 3 : 2?", ["8 litres", "12 litres", "15 litres", "10 litres"], 3, "Milk = 30 L, water = 10 L. For 3 : 2, water must be 20 L. Add 20 &minus; 10 = <b>10 L</b>."], ["M", "A started a business with Rs. 3,500. After 5 months, B joined him with some capital. At the end of the year, the profit was divided between A and B in the ratio 2 : 3. What was B&rsquo;s capital?", ["Rs. 9,000", "Rs. 8,000", "Rs. 7,500", "Rs. 10,500"], 0, "A: 3500 &times; 12 = 42,000. B invests for 7 months: 7x. 42000 : 7x = 2 : 3 &rArr; 7x = 63,000 &rArr; x = <b>Rs. 9,000</b>."], ["M", "If A : B = 2 : 3 and B : C = 4 : 5, then A : B : C is:", ["2 : 3 : 5", "8 : 12 : 10", "8 : 12 : 15", "6 : 12 : 15"], 2, "Make B equal: A : B = 8 : 12 and B : C = 12 : 15, so A : B : C = <b>8 : 12 : 15</b>."], ["M", "The sum of the present ages of a father and his son is 56 years. Four years ago, the father&rsquo;s age was three times the son&rsquo;s age. What is the present age of the father?", ["42 years", "40 years", "38 years", "44 years"], 1, "Let son = s. (56 &minus; s) &minus; 4 = 3(s &minus; 4) &rArr; 52 &minus; s = 3s &minus; 12 &rArr; s = 16. Father = 56 &minus; 16 = <b>40 years</b>."], ["M", "A can do a piece of work in 12 days and B in 18 days. They work together for 4 days, after which A leaves. In how many days will B finish the remaining work?", ["6 days", "9 days", "10 days", "8 days"], 3, "Work in 4 days = 4(1/12 + 1/18) = 4 &times; 5/36 = 5/9. Remaining 4/9 &times; 18 = <b>8 days</b>."], ["M", "Find the median of the data: 7, 3, 9, 15, 11, 5, 13, 8", ["8", "8.5", "9", "9.5"], 1, "Arranged: 3, 5, 7, 8, 9, 11, 13, 15. With 8 values, median = (8 + 9)/2 = <b>8.5</b>."], ["M", "The average of five consecutive odd numbers is 61. What is the largest of these numbers?", ["65", "63", "67", "69"], 0, "The middle number equals the average, 61. The numbers are 57, 59, 61, 63, <b>65</b>."], ["M", "The price of an article is Rs. 1,200 and GST is charged at 18%. What amount does the buyer pay?", ["Rs. 1,380", "Rs. 1,398", "Rs. 1,416", "Rs. 1,436"], 2, "GST = 18% of 1200 = 216. Amount payable = 1200 + 216 = <b>Rs. 1,416</b>."], ["M", "A house worth Rs. 4,50,000 is insured for 80% of its value. If the rate of premium is 0.5%, what is the annual premium?", ["Rs. 2,250", "Rs. 1,500", "Rs. 2,000", "Rs. 1,800"], 3, "Insured value = 80% of 4,50,000 = 3,60,000. Premium = 0.5% of 3,60,000 = <b>Rs. 1,800</b>."], ["R", "A man travels from his home to his office at 40 km/hr and returns by the same route at 60 km/hr. What is his average speed for the whole journey?", ["50 km/hr", "45 km/hr", "48 km/hr", "52 km/hr"], 2, "For equal distances, average speed = 2ab/(a + b) = 2 &times; 40 &times; 60/100 = <b>48 km/hr</b>."], ["R", "Which of the following numbers is divisible by 8, 9 and 11?", ["3186", "3168", "3618", "3816"], 1, "LCM(8, 9, 11) = 792, and 3168 = 792 &times; 4. Check: last three digits 168 &divide; 8 = 21; digit sum 18; (3+6) &minus; (1+8) = 0. So <b>3168</b>."], ["R", "What is the smallest digit that must replace * in the number 43*62 to make it divisible by 9?", ["1", "3", "5", "6"], 1, "Digit sum = 4 + 3 + 6 + 2 = 15; the next multiple of 9 is 18, so * = <b>3</b>."], ["R", "Identify the missing number at the end of the following number series.<br>5, 11, 23, 47, 95, (?)", ["189", "190", "192", "191"], 3, "Each term = previous &times; 2 + 1. So 95 &times; 2 + 1 = <b>191</b>."], ["R", "A train 240 metres long crosses a platform 360 metres long in 30 seconds. What is the speed of the train in km/hr?", ["72", "60", "54", "80"], 0, "Distance = 240 + 360 = 600 m; speed = 600/30 = 20 m/s = 20 &times; 18/5 = <b>72 km/hr</b>."], ["R", "A fruit seller buys oranges at 6 for Rs. 5 and sells them at 5 for Rs. 6. What is his profit percentage?", ["40%", "42%", "44%", "48%"], 2, "CP per orange = 5/6, SP = 6/5. SP/CP = 36/25 = 1.44 &rArr; profit = <b>44%</b>."], ["R", "A two-digit number is four times the sum of its digits. If 18 is added to the number, its digits are reversed. The number is:", ["36", "24", "12", "48"], 1, "10a + b = 4(a + b) &rArr; b = 2a. Also 9(b &minus; a) = 18 &rArr; b &minus; a = 2. So a = 2, b = 4: the number is <b>24</b> (24 + 18 = 42)."], ["R", "The area of a rectangular field is 360 sq. m and its length is 24 m. What is its perimeter?", ["76 m", "84 m", "72 m", "78 m"], 3, "Breadth = 360/24 = 15 m. Perimeter = 2(24 + 15) = <b>78 m</b>."], ["R", "A vessel contains 60 litres of milk. 6 litres of milk is taken out and replaced by water. This process is repeated once more. How much milk is now left in the vessel?", ["48.6 litres", "48 litres", "50.4 litres", "46.8 litres"], 0, "Milk left = 60 &times; (1 &minus; 6/60)&sup2; = 60 &times; 0.81 = <b>48.6 L</b>."], ["R", "If TABLE is written as UBCMF, then what will be the code for CHAIR?", ["DIBKS", "DJBJS", "DIBJS", "BGZHQ"], 2, "Each letter moves one step forward: C&rarr;D, H&rarr;I, A&rarr;B, I&rarr;J, R&rarr;S = <b>DIBJS</b>."], ["R", "Which number is wrong in the number series given below?<br>3, 7, 15, 31, 63, 125, 255", ["15", "63", "125", "255"], 2, "Each term = previous &times; 2 + 1: 63 &times; 2 + 1 = 127, not 125. (127 &times; 2 + 1 = 255.) So <b>125</b> is wrong."], ["R", "If CAT is coded as 24, then DOG will be coded as:", ["25", "26", "27", "28"], 1, "Code = sum of alphabet positions: C(3) + A(1) + T(20) = 24. D(4) + O(15) + G(7) = <b>26</b>."], ["R", "Doctor is to Hospital as Teacher is to:", ["Student", "Book", "School", "Blackboard"], 2, "A doctor works in a hospital; a teacher works in a <b>school</b> (person : workplace)."], ["R", "Arrange the following words in a meaningful sequence.<br>(a) Seed (b) Plant (c) Fruit (d) Flower (e) Tree", ["a, b, d, e, c", "a, e, b, d, c", "b, a, e, d, c", "a, b, e, d, c"], 3, "Seed &rarr; Plant &rarr; Tree &rarr; Flower &rarr; Fruit: <b>a, b, e, d, c</b>."], ["R", "Which of the following pairs of words is differently related?", ["Pen : Write", "Book : Library", "Knife : Cut", "Needle : Sew"], 1, "In the other pairs the second word is the <i>function</i> of the tool. <b>Book : Library</b> is object : place where it is kept."], ["R", "Pointing to a girl in a photograph, Rohit says, &ldquo;She is the daughter of the only son of my grandfather.&rdquo; How is the girl related to Rohit?", ["Sister", "Cousin", "Niece", "Aunt"], 0, "The only son of Rohit&rsquo;s grandfather is Rohit&rsquo;s father. His daughter is Rohit&rsquo;s <b>sister</b>."], ["R", "Given the following statements, find out the correct answer from the alternatives given below.<br>Assertion (A): Plants release oxygen in the presence of sunlight.<br>Reason (R): Plants absorb oxygen during photosynthesis.", ["A is true but R is false", "A is false but R is true", "Both A and R are true", "Both A and R are false"], 0, "A is true: oxygen is released during photosynthesis. R is false: in photosynthesis plants absorb <i>carbon dioxide</i>, not oxygen."], ["R", "In a test of 25 questions, 3 marks are given for each correct answer and 1 mark is deducted for each wrong answer. A student attempted all the questions and scored 43 marks. How many questions did he answer correctly?", ["16", "18", "17", "19"], 2, "3c &minus; (25 &minus; c) = 43 &rArr; 4c = 68 &rArr; c = <b>17</b>."], ["R", "A batsman has an average of 36 runs after 16 innings. He scores 70 runs in the 17th innings. What is his new average?", ["37", "38", "39", "40"], 1, "Total = 16 &times; 36 + 70 = 646. New average = 646/17 = <b>38</b>."], ["R", "Ravi walks 5 km towards North, turns right and walks 3 km, then turns right again and walks 9 km. How far and in which direction is he now from his starting point?", ["5 km, South-East", "5 km, North-East", "4 km, South", "7 km, East"], 0, "Net movement: 9 &minus; 5 = 4 km South and 3 km East. Distance = &radic;(4&sup2; + 3&sup2;) = <b>5 km, South-East</b>."], ["R", "A can type a 60-page document in 3 hours and B can type it in 4 hours. They share 140 pages so that both finish at the same time. How many pages does A type?", ["70", "84", "60", "80"], 3, "A types 20 pages/hr, B types 15 pages/hr. Ratio 20 : 15 = 4 : 3, so A types 140 &times; 4/7 = <b>80</b> pages."], ["R", "12 men working 8 hours a day can finish a work in 10 days. In how many days will 16 men working 6 hours a day finish the same work?", ["8", "12", "10", "9"], 2, "Men &times; hours &times; days is constant: 12 &times; 8 &times; 10 = 16 &times; 6 &times; d &rArr; d = 960/96 = <b>10 days</b>."], ["R", "What is 40% of 60% of 250?", ["60", "50", "75", "40"], 0, "60% of 250 = 150; 40% of 150 = <b>60</b>."], ["R", "The average age of 30 students in a class is 14 years. When the teacher&rsquo;s age is included, the average increases by 1 year. What is the age of the teacher?", ["44 years", "46 years", "31 years", "45 years"], 3, "New total = 31 &times; 15 = 465; old total = 30 &times; 14 = 420. Teacher = <b>45 years</b>."], ["R", "Of three friends P, Q and R, exactly one is lying. P says, &ldquo;Q took the book.&rdquo; Q says, &ldquo;I did not take the book.&rdquo; R says, &ldquo;P is telling the truth.&rdquo; Who is lying?", ["P", "R", "Q", "Cannot be determined"], 2, "If P lied, R (who supports P) would also be lying &mdash; two liars, not allowed. So P is truthful, Q took the book, and <b>Q</b> is the one lying."], ["R", "What should be the first step in the process of decision making?", ["Implementing the decision immediately", "Identifying and defining the problem clearly", "Choosing the cheapest alternative", "Asking others to decide"], 1, "Every sound decision starts with <b>identifying and defining the problem</b>; only then are alternatives evaluated and one implemented."], ["R", "Just before an important deadline, you notice that a colleague has made a serious error in a file. What will you do?", ["Ignore it, as it is not your work", "Report it to the boss to blame the colleague", "Point it out politely and help to correct it", "Correct it secretly without telling anyone"], 2, "The responsible and cooperative action is to <b>point it out politely and help correct it</b> so the deadline is met and the colleague learns."], ["R", "How many prime numbers are there between 50 and 80?", ["6", "8", "7", "9"], 2, "53, 59, 61, 67, 71, 73, 79 &mdash; <b>7</b> prime numbers."], ["R", "Which step comes LAST in the problem-solving process?", ["Defining the problem", "Gathering information", "Generating alternative solutions", "Implementing and evaluating the solution"], 3, "The order is: define the problem &rarr; gather information &rarr; generate alternatives &rarr; choose &rarr; <b>implement and evaluate</b>."], ["R", "In how many different ways can the letters of the word &ldquo;LEADER&rdquo; be arranged?", ["720", "360", "180", "120"], 1, "LEADER has 6 letters with E repeated twice: 6!/2! = 720/2 = <b>360</b>."]];
+var SEC=[{k:"E",n:"General English",from:0,to:29},{k:"G",n:"GK & Current Affairs",from:30,to:49},{k:"M",n:"General Mathematics",from:50,to:69},{k:"R",n:"Reasoning & Mental Ability",from:70,to:99}];
+var TOTAL=Q.length, DURATION=7200, KEY="ges_ssb_ja_2026_mt2_v1";
+var L=["A","B","C","D"];
+function $(id){return document.getElementById(id)}
+function secOf(i){for(var s=0;s<SEC.length;s++)if(i>=SEC[s].from&&i<=SEC[s].to)return s;return 0}
+
+/* ============== STATE ============== */
+var S=null, tick=null;
+function fresh(name){return{name:name||"",ans:new Array(TOTAL).fill(-1),mark:new Array(TOTAL).fill(false),vis:new Array(TOTAL).fill(false),cur:0,end:Date.now()+DURATION*1000,done:false}}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}}
+function load(){try{var v=localStorage.getItem(KEY);return v?JSON.parse(v):null}catch(e){return null}}
+function clearSave(){try{localStorage.removeItem(KEY)}catch(e){}}
+function show(id){["login","intro","exam","result"].forEach(function(x){$(x).classList.toggle("hide",x!==id)});window.scrollTo(0,0)}
+
+/* ============== INTRO ============== */
+(function(){
+  var old=load();
+  if(old&&!old.done&&old.end>Date.now()){$("resumeBox").classList.remove("hide");$("startBtn").classList.add("hide")}
+  $("resumeBtn").onclick=function(){S=old;startExam()};
+  $("discardBtn").onclick=function(){clearSave();$("resumeBox").classList.add("hide");$("startBtn").classList.remove("hide")};
+  $("startBtn").onclick=function(){S=fresh($("nm").value.trim());startExam()};
+})();
+
+/* ============== EXAM ============== */
+function startExam(){
+  $("cName").textContent=S.name||"Candidate";
+  show("exam");
+  buildTabs();
+  go(S.cur);
+  clearInterval(tick);tick=setInterval(tickFn,1000);tickFn();
+}
+function tickFn(){
+  var left=Math.max(0,Math.round((S.end-Date.now())/1000));
+  var h=Math.floor(left/3600),m=Math.floor(left%3600/60),s=left%60;
+  var t=$("timer");t.textContent=[h,m,s].map(function(n){return String(n).padStart(2,"0")}).join(":");
+  t.classList.toggle("low",left<=300);
+  if(left<=0){clearInterval(tick);finish(true)}
+}
+function buildTabs(){
+  var t=$("tabs");t.innerHTML="";
+  SEC.forEach(function(s,i){var b=document.createElement("button");b.className="tab";b.textContent=s.n;b.onclick=function(){go(s.from)};b.id="tab"+i;t.appendChild(b)});
+}
+function status(i){
+  if(!S.vis[i])return 0;
+  var a=S.ans[i]>=0,m=S.mark[i];
+  if(a&&m)return 4; if(m)return 3; if(a)return 2; return 1;
+}
+function go(i){
+  if(i<0)i=0;if(i>=TOTAL)i=TOTAL-1;
+  S.cur=i;S.vis[i]=true;save();
+  var q=Q[i],si=secOf(i);
+  document.querySelectorAll(".tab").forEach(function(t,k){t.classList.toggle("on",k===si)});
+  $("secLbl").textContent=SEC[si].n;
+  $("qno").textContent="Question No. "+(i+1);
+  var html="";
+  var isP=i>=23&&i<=29;
+  var qcol='<div class="qcol"><div class="qtext">'+q[1]+'</div>';
+  q[2].forEach(function(o,k){
+    qcol+='<label class="opt'+(S.ans[i]===k?' sel':'')+'" data-k="'+k+'"><input type="radio" name="o" '+(S.ans[i]===k?'checked':'')+'><span class="l">'+L[k]+'.</span><span>'+o+'</span></label>';
+  });
+  qcol+='</div>';
+  if(isP){
+    html='<div class="split"><div class="passage"><h3>Read the passage and answer Q.24 to Q.30</h3>'+PASSAGE.map(function(p){return"<p>"+p+"</p>"}).join("")+'</div>'+qcol+'</div>';
+  }else html=qcol;
+  $("qbody").innerHTML=html;
+  $("qbody").scrollTop=0;
+  document.querySelectorAll(".opt").forEach(function(el){el.onclick=function(e){e.preventDefault();S.ans[i]=+el.dataset.k;save();go(i)}});
+  $("bPrev").disabled=i===0;
+  renderPal();
+}
+function renderPal(){
+  var si=secOf(S.cur),sec=SEC[si];
+  $("palSec").textContent=sec.n;
+  var g=$("grid");g.innerHTML="";
+  for(var i=sec.from;i<=sec.to;i++){
+    (function(i){
+      var b=document.createElement("button");
+      var sp=document.createElement("span");
+      sp.className="sym s"+status(i)+(i===S.cur?" cur":"");
+      sp.textContent=i+1;b.appendChild(sp);b.onclick=function(){go(i);closePal()};g.appendChild(b);
+    })(i);
+  }
+  var c=[0,0,0,0,0];for(var j=0;j<TOTAL;j++)c[status(j)]++;
+  $("cV").textContent=c[0];$("cN").textContent=c[1];$("cA").textContent=c[2];$("cM").textContent=c[3];$("cAM").textContent=c[4];
+}
+function closePal(){$("pal").classList.remove("open")}
+$("palBtn").onclick=function(){$("pal").classList.add("open")};
+$("palClose").onclick=closePal;
+$("bSave").onclick=function(){go(S.cur+1)};
+$("bMark").onclick=function(){S.mark[S.cur]=true;save();go(S.cur+1)};
+$("bClear").onclick=function(){S.ans[S.cur]=-1;S.mark[S.cur]=false;save();go(S.cur)};
+$("bPrev").onclick=function(){go(S.cur-1)};
+document.addEventListener("keydown",function(e){
+  if($("exam").classList.contains("hide")||document.querySelector(".overlay"))return;
+  if(e.key==="ArrowRight")go(S.cur+1);else if(e.key==="ArrowLeft")go(S.cur-1);
+  else if("abcd".indexOf(e.key.toLowerCase())>-1&&e.key.length===1){S.ans[S.cur]="abcd".indexOf(e.key.toLowerCase());save();go(S.cur)}
+});
+
+/* ============== SUBMIT ============== */
+function modal(html){var d=document.createElement("div");d.className="overlay";d.innerHTML='<div class="modal">'+html+'</div>';$("modalHost").appendChild(d);return d}
+$("bSubmit").onclick=function(){
+  var rows="",tot=[0,0,0,0,0];
+  SEC.forEach(function(s){
+    var c=[0,0,0,0,0];for(var i=s.from;i<=s.to;i++)c[status(i)]++;
+    for(var k=0;k<5;k++)tot[k]+=c[k];
+    rows+="<tr><td>"+s.n+"</td><td>"+(s.to-s.from+1)+"</td><td>"+(c[2]+c[4])+"</td><td>"+c[1]+"</td><td>"+(c[3]+c[4])+"</td><td>"+c[0]+"</td></tr>";
+  });
+  var d=modal('<h2>Submit Test?</h2><table class="sumtab"><tr><th>Section</th><th>Total</th><th>Answered</th><th>Not Ans.</th><th>Marked</th><th>Not Visited</th></tr>'+rows+'</table><p style="font-size:13.5px">Once submitted, you cannot change your answers.</p><div style="display:flex;gap:8px"><button class="btn o" id="mNo" style="flex:1">Go Back</button><button class="btn r" id="mYes" style="flex:1">Yes, Submit</button></div>');
+  $("mNo").onclick=function(){d.remove()};
+  $("mYes").onclick=function(){d.remove();finish(false)};
+};
+function finish(auto){
+  clearInterval(tick);S.done=true;S.finished=Date.now();save();
+  if(auto){var d=modal('<h2>Time is up</h2><p>Your test has been submitted automatically.</p><button class="btn g" id="mOk" style="width:100%">View Result</button>');$("mOk").onclick=function(){d.remove();showResult()}}
+  else showResult();
+}
+
+/* ============== RESULT ============== */
+var filt="all";
+function calc(){
+  var r={secs:[],c:0,w:0,u:0};
+  SEC.forEach(function(s){
+    var o={n:s.n,c:0,w:0,u:0,t:s.to-s.from+1};
+    for(var i=s.from;i<=s.to;i++){
+      if(S.ans[i]<0)o.u++;else if(S.ans[i]===Q[i][3])o.c++;else o.w++;
+    }
+    o.m=o.c*2-o.w*0.5;r.secs.push(o);r.c+=o.c;r.w+=o.w;r.u+=o.u;
+  });
+  r.m=r.c*2-r.w*0.5;return r;
+}
+function showResult(){
+  show("result");
+  var r=calc(),att=r.c+r.w,acc=att?Math.round(r.c/att*100):0;
+  var pass=r.m>=80;
+  var used=Math.min(DURATION,Math.round(((S.finished||Date.now())-(S.end-DURATION*1000))/1000));
+  var h='<div class="card"><h1>'+(S.name?S.name+" &mdash; ":"")+'Your Result</h1><div style="color:var(--mut);font-size:13px">SSB Junior Assistant 2026 &bull; Mock Test 2 &bull; Time taken: '+Math.floor(used/60)+' min '+(used%60)+' s</div>'
+  +'<div class="score" style="margin-top:12px"><div class="kpi"><b>'+r.m.toFixed(2)+' / 200</b><span>Total Marks</span></div><div class="kpi"><b>'+r.c+'</b><span>Correct (+2)</span></div><div class="kpi"><b>'+r.w+'</b><span>Wrong (&minus;0.5)</span></div><div class="kpi"><b>'+r.u+'</b><span>Unattempted</span></div><div class="kpi"><b>'+acc+'%</b><span>Accuracy</span></div></div>'
+  +'<p class="note">Reference: the qualifying mark is 40% (80/200) for Unreserved and 30% (60/200) for SC/ST/SEBC &amp; PwD candidates. '+(pass?'You are above the Unreserved qualifying mark in this mock.':'You are below the Unreserved qualifying mark in this mock. Review the solutions below.')+'</p></div>';
+  h+='<div class="card"><h2>Section-wise Performance</h2><table class="sumtab"><tr><th>Section</th><th>Correct</th><th>Wrong</th><th>Unattempted</th><th>Marks</th></tr>';
+  r.secs.forEach(function(s){h+='<tr><td>'+s.n+'</td><td>'+s.c+'</td><td>'+s.w+'</td><td>'+s.u+'</td><td>'+s.m.toFixed(2)+' / '+s.t*2+'</td></tr>'});
+  h+='</table></div>';
+  h+='<div class="card noprint"><div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn g" id="again">Retake Test</button><button class="btn o" id="prt">Print / Save as PDF</button></div></div>';
+  h+='<div class="card"><h2>Detailed Solutions</h2><div class="flt noprint" id="flt"></div><div id="rvList"></div></div>';
+  h+='<div class="card"><div class="note" style="margin:0"><b>Source note.</b> All questions are original Gyana Education Service questions set on the SSB Odisha Junior Assistant 2024 paper pattern and the Advt. No. 01/2026 syllabus. Q.45&ndash;48 are verified 2026 current affairs.</div></div>';
+  h+='<div class="foot"><b>Gyana Education Service</b> &bull; Contact: 9776188019</div>';
+  $("resBody").innerHTML=h;
+  $("again").onclick=function(){clearSave();location.reload()};
+  $("prt").onclick=function(){window.print()};
+  var f=$("flt");
+  [["all","All"],["w","Wrong"],["u","Unattempted"],["c","Correct"]].concat(SEC.map(function(s,i){return["s"+i,s.n]})).forEach(function(p){
+    var b=document.createElement("button");b.textContent=p[1];b.className=filt===p[0]?"on":"";b.onclick=function(){filt=p[0];showResult();window.scrollTo(0,document.getElementById("flt").offsetTop)};f.appendChild(b);
+  });
+  renderRV();
+}
+function renderRV(){
+  var out="";
+  for(var i=0;i<TOTAL;i++){
+    var q=Q[i],a=S.ans[i],st=a<0?"u":(a===q[3]?"c":"w");
+    if(filt==="w"&&st!=="w")continue;if(filt==="u"&&st!=="u")continue;if(filt==="c"&&st!=="c")continue;
+    if(filt.charAt(0)==="s"&&secOf(i)!==+filt.slice(1))continue;
+    var tag=q[5]==="ca"?'<span class="tag ca">GES 2026 CA</span>':'<span class="tag">SSB 2024 PYQ pattern</span>';
+    out+='<div class="rv '+st+'"><div class="h"><span><b>Q.'+(i+1)+'</b> &bull; '+SEC[secOf(i)].n+' '+tag+'</span><span>'+(st==="c"?"Correct +2":st==="w"?"Wrong &minus;0.5":"Unattempted 0")+'</span></div>';
+    if(i>=23&&i<=29)out+='<div class="note" style="margin:0 0 6px">Passage-based question (the potter passage, Q.24&ndash;30).</div>';
+    out+='<div class="qtext" style="font-size:15px">'+q[1]+'</div>';
+    q[2].forEach(function(o,k){
+      var cls=k===q[3]?"ok":(k===a?"no":"");
+      out+='<div class="o '+cls+'"><b>'+L[k]+'.</b> '+o+(k===q[3]?" &#10003;":"")+(k===a&&k!==q[3]?" &mdash; your answer":"")+'</div>';
+    });
+    out+='<div class="exp"><b>Solution:</b> '+q[4]+'</div></div>';
+  }
+  $("rvList").innerHTML=out||'<p class="note">No questions in this filter.</p>';
+}
+/* ============== LOGIN / LOGOUT ============== */
+var LKEY="ges_ssb_ja_2026_mt2_login";
+function isIn(){try{return localStorage.getItem(LKEY)==="1"}catch(e){return !!window.__in}}
+function setIn(v){window.__in=v;try{v?localStorage.setItem(LKEY,"1"):localStorage.removeItem(LKEY)}catch(e){}}
+$("lgBtn").onclick=function(){
+  if(!$("lgUser").value.trim())$("lgUser").value="GES-SSBJA-MT2";
+  setIn(true);afterLogin();
+};
+[$("lgUser"),$("lgPass")].forEach(function(el){el.addEventListener("keydown",function(e){if(e.key==="Enter")$("lgBtn").click()})});
+function afterLogin(){
+  var o=load();
+  if(o&&!o.done&&o.end>Date.now()){S=o;startExam();return}
+  show("intro");
+}
+document.querySelectorAll("[data-lo]").forEach(function(b){b.onclick=function(){
+  var inExam=!$("exam").classList.contains("hide");
+  var d=modal('<h2>Logout?</h2><p style="font-size:14px">'+(inExam?'Your answers are saved on this device. The timer keeps running, as in the real exam. Sign in again to continue the same attempt.':'You will return to the login screen.')+'</p><div style="display:flex;gap:8px"><button class="btn o" id="loNo" style="flex:1">Cancel</button><button class="btn r" id="loYes" style="flex:1">Logout</button></div>');
+  $("loNo").onclick=function(){d.remove()};
+  $("loYes").onclick=function(){d.remove();clearInterval(tick);closePal();setIn(false);location.reload()};
+}});
+/* If the page is reopened after the test was finished, offer the result directly */
+(function(){var o=load();if(o&&o.done){S=o;$("resumeBox").classList.remove("hide");$("resumeBox").innerHTML='Your last attempt is finished. <button class="btn y" id="vr" style="padding:6px 12px">View Result</button> <button class="btn o" id="nw" style="padding:6px 12px">Start New Test</button>';$("vr").onclick=showResult;$("nw").onclick=function(){clearSave();location.reload()}}})();
+if(isIn())afterLogin();else show("login");
+</script>
+</body>
+</html>
